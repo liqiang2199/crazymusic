@@ -53,7 +53,13 @@
         <!-- 退出时的动画 -->
         <item name="@android:windowExitAnimation">@anim/dialog_bottom_out</item>
     </style>
-
+    <!--pop_style_out弹出选择方式-->
+    <style name="pop_style_out" parent="android:Animation">
+        <!-- 进入时的动画 -->
+        <item name="@android:windowEnterAnimation">@anim/anim_dialog_enter</item>
+        <!-- 退出时的动画 -->
+        <item name="@android:windowExitAnimation">@anim/anim_dialog_enter</item>
+    </style>
     <!--底部对话框-->
     <style name="AppTheme.bottomDialog" parent="android:Theme.Dialog">
         <item name="android:windowNoTitle">true</item><!--无标题-->

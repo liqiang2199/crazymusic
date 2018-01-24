@@ -1,5 +1,6 @@
 package com.music;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Build;
@@ -56,6 +57,7 @@ public class BaseApp extends XApplication {
         });
     }
 
+    @SuppressLint("RestrictedApi")
     @Override
     public void onCreate() {
         super.onCreate();

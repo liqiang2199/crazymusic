@@ -25,7 +25,9 @@ public class XActionUtil {
 
     public static XActionUtil action() {
         if (xActionUtil == null) {
-            xActionUtil = new XActionUtil();
+            synchronized (XActionUtil.class){
+                xActionUtil = new XActionUtil();
+            }
         }
         return xActionUtil;
     }

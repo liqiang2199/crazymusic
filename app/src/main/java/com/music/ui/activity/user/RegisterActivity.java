@@ -118,6 +118,10 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
         }
     }
 
+    /**发送短信
+     *
+     * @param phoneNumber
+     */
     private void sendVerificationCode(String phoneNumber) {
         TreeMap<String, String> params = new TreeMap<String, String>();
         params.put("phone", phoneNumber);
@@ -167,6 +171,9 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
                 });
     }
 
+    /**
+     * 注册
+     */
     private void register() {
         final String phoneNumber = edtMobile.getText().toString().trim();
         if (TextUtils.isEmpty(phoneNumber)) {

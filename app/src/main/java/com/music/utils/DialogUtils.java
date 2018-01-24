@@ -1,5 +1,6 @@
 package com.music.utils;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
@@ -10,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
@@ -46,7 +48,7 @@ public class DialogUtils {
      *
      * @param context
      */
-    public static void showPost(final Context context) {
+    public static void showPost(final Context context, final Activity activity) {
         final PopupWindow popupWindow = new PopupWindow(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         View viewPost = LayoutInflater.from(context).inflate(R.layout.popup_relaese, null);
         popupWindow.setContentView(viewPost);
@@ -54,6 +56,14 @@ public class DialogUtils {
         popupWindow.setOutsideTouchable(true);
         popupWindow.showAtLocation(LayoutInflater.from(context).inflate(R.layout.activity_main, null),
                 Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, 0);
+
+        // 设置背景颜色变暗
+        WindowManager.LayoutParams lp = activity.getWindow().getAttributes();
+        lp.alpha = 0.7f;
+        activity.getWindow().setAttributes(lp);
+
+        popupWindow.setAnimationStyle(R.style.pop_style_out);
+
         LinearLayout btBuy = (LinearLayout) viewPost.findViewById(R.id.bt_buy);
         LinearLayout btnRelease = (LinearLayout) viewPost.findViewById(R.id.btn_release);
         View btView = (View) viewPost.findViewById(R.id.bt_view);
@@ -62,6 +72,9 @@ public class DialogUtils {
             @Override
             public void onDismiss() {
                 popupWindow.dismiss();
+                WindowManager.LayoutParams lp = activity.getWindow().getAttributes();
+                lp.alpha = 1f;
+                activity.getWindow().setAttributes(lp);
             }
         });
 

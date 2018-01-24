@@ -119,7 +119,7 @@ public class MainActivity extends BaseActivity {
                 break;
             case R.id.tab_fb:
                 //发布
-                DialogUtils.showPost(this);
+                DialogUtils.showPost(this,this);
                 break;
         }
     }

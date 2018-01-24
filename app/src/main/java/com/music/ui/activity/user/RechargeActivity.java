@@ -21,8 +21,8 @@ public class RechargeActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setContentView(R.layout.activity_recharge);
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_recharge);
     }
 
     private void initViews() {
