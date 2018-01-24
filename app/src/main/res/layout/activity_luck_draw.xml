@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/coordinatorLayout_Style"
+    android:background="@color/white"
+    app:statusBarBackground="@drawable/bg_base_bar">
+
+    <include layout="@layout/base_top" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/common_layout_10"
+            android:text="每分享一次，可抽奖一次" />
+
+        <RelativeLayout
+            android:layout_width="316dp"
+            android:layout_height="316dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/common_height20">
+
+            <com.music.view.luckdraw.LuckyMonkeyPanelView
+                android:id="@+id/lucky_panel"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <Button
+                android:id="@+id/btn_action"
+                android:layout_width="82dp"
+                android:layout_height="82dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/bg_lucky_monkey_go"
+                android:text="Go"
+                android:textColor="#4d1c01"
+                android:textSize="34sp" />
+        </RelativeLayout>
+    </LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

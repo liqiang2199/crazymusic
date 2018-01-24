@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/coordinatorLayout_Style"
+    app:statusBarBackground="@drawable/bg_base_bar">
+
+    <include layout="@layout/base_top" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:padding="@dimen/common_layout_10">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/upload_personally_identifiable_information"
+                    android:textColor="@color/color333333"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp"
+                    android:text="@string/positive_and_negative"
+                    android:textColor="@color/color999999"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginBottom="17dp"
+                android:background="@android:color/white"
+                android:orientation="horizontal"
+                android:paddingLeft="13dp"
+                android:paddingRight="13dp">
+
+                <ImageView
+                    android:id="@+id/iv_on"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/common_layout_10"
+                    android:layout_weight="1"
+                    android:background="@color/colorFAFAFA"
+                    android:contentDescription="@null"
+                    android:src="@mipmap/bg_img_def" />
+
+                <View
+                    android:layout_width="13dp"
+                    android:layout_height="match_parent" />
+
+                <ImageView
+                    android:id="@+id/iv_up"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/common_layout_10"
+                    android:layout_weight="1"
+                    android:background="@color/colorFAFAFA"
+                    android:contentDescription="@null"
+                    android:src="@mipmap/bg_img_def" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="167dp"
+                android:background="@android:color/white"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="14dp"
+                    android:layout_marginLeft="13dp"
+                    android:layout_marginStart="13dp"
+                    android:layout_marginTop="17dp"
+                    android:text="@string/upload_qualification_certificate"
+                    android:textColor="@color/color333333"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:id="@+id/iv_zl"
+                    android:layout_width="160dp"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="13dp"
+                    android:layout_marginStart="13dp"
+                    android:background="@color/colorFAFAFA"
+                    android:contentDescription="@null"
+                    android:src="@mipmap/bg_img_def" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="13dp"
+                android:layout_marginStart="13dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/upload_pictures_clear_complete_information"
+                android:textColor="@color/color16BCB6"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_upload"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/color00BEE7"
+            android:gravity="center"
+            android:text="@string/upload"
+            android:textColor="@android:color/white"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>

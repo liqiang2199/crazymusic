@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="#fff4f4f4"
+        android:gravity="center"
+        android:padding="@dimen/common_height10"
+        android:text="评价"
+        android:textColor="#333333"
+        android:textSize="@dimen/common_size14" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/gap_14"
+        android:layout_marginTop="@dimen/gap_10"
+        android:text="商品评价(1250)"
+        android:textColor="#ff333333"
+        android:textSize="13dp" />
+
+    <include layout="@layout/item_all_evaluate" />
+
+    <TextView
+        android:id="@+id/bt_pingjia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/gap_10"
+        android:background="@drawable/bg_orange_holl_fillet_frame"
+        android:clickable="true"
+        android:paddingLeft="@dimen/common_layout_10"
+        android:paddingRight="@dimen/common_layout_10"
+        android:text="查看全部评价"
+        android:textColor="@color/blue_bar"
+        android:textSize="@dimen/common_size14" />
+</LinearLayout>

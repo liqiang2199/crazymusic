@@ -1,0 +1,174 @@
+<resources>
+    <string name="app_name">HI乐</string>
+
+    <!--首页-->
+    <string name="home">首页</string>
+    <string name="happy_buy">乐购</string>
+    <string name="community">社区</string>
+    <string name="my">我的</string>
+    <string name="search">搜索</string>
+    <string name="live">直播</string>
+    <string name="video">视频</string>
+    <string name="relevant_information">相关资料</string>
+    <string name="learn_music">学音乐</string>
+    <string name="into_the_hall">进入大厅</string>
+    <string name="see_more">查看更多</string>
+    <string name="free">免费</string>
+    <string name="already_uploaded_classes">已经上传课时</string>
+
+    <!--订单管理-->
+    <string name="order_management">订单管理</string>
+    <string name="unpaid">待付款</string>
+    <string name="to_be_delivered">待发货</string>
+    <string name="to_be_received">待收货</string>
+    <string name="to_be_evaluated">待评价</string>
+    <string name="refunds">退货/退款</string>
+    <string name="happy_buy_mall">乐购商城</string>
+    <string name="waiting_for_receipt">等待收货</string>
+    <string name="confirm_receipt">确认收货</string>
+    <string name="already_paid">已付款</string>
+    <string name="continue_payment">继续付款</string>
+    <string name="complaints_refunds">投诉/退款</string>
+    <string name="immediate_evaluation">立即评价</string>
+    <string name="comment">评论</string>
+
+    <string name="junior_teacher">初级教师</string>
+    <string name="intermediate_teacher">中级教师</string>
+    <string name="advanced_teacher">高级教师</string>
+    <string name="publish">发布</string>
+    <string name="student">学员</string>
+    <string name="last_upload_time_colon">上次上传时间：</string>
+
+    <string name="coupon">优惠券</string>
+    <string name="discount_coupon">折扣优惠券</string>
+    <string name="expiration_colon">过期时间：</string>
+
+    <string name="statement">免责信息和版权申明 \n Copyright ©2017 四川成都嗨乐科技有限公司</string>
+
+    <string name="video_play">视频</string>
+    
+    <string name="title_activity_music_player">正在播放</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="goods_info">商品详情</string>
+    <string name="order_info">订单详情</string>
+    <string name="title_activity_my_create_music">MyCreateMusicActivity</string>
+    <string name="title_activity_music_player_home">玩音乐</string>
+    <string name="off_line">线下约</string>
+    <string name="finish">完成</string>
+    <string name="no_regist_info">还没有账号？注册一个吧</string>
+    <string name="login">登录</string>
+    <string name="pwd">请输入6-12为密码字母或数字</string>
+    <string name="mobile">手机号</string>
+    <string name="check_pwd">记住密码</string>
+    <string name="forgot_pwd">忘记密码</string>
+    <string name="register">注册</string>
+    <string name="detail">详情</string>
+    <string name="topic_post">发帖</string>
+    <string name="input_info">请输入内容</string>
+    <string name="input_title">请输入标题</string>
+    <string name="send">发布</string>
+    <string name="shop_car">购物车</string>
+
+    <string name="address_list">收货地址</string>
+    <string name="add_adderss">新增收货地址</string>
+    <string name="edit_adderss">编辑收货地址</string>
+    <string name="shouhuoren">收货人</string>
+    <string name="input_shouhu">请输入收货人姓名</string>
+    <string name="contact_mobile">联系电话</string>
+    <string name="input_contact">请输入联系电话、</string>
+    <string name="load_area">所在区域</string>
+    <string name="input_area">请选择省市区</string>
+    <string name="street">详细地址</string>
+    <string name="input_street">请填写详细地址</string>
+    <string name="postal">提现</string>
+    <string name="all_evaluate">全部评价</string>
+    <string name="order">订单</string>
+    <string name="reply">回复</string>
+    <string name="kuchun">库存</string>
+    <string name="apily">支付宝支付</string>
+    <string name="weixin_pay">微信支付</string>
+    <string name="teacher">教师认证</string>
+    <string name="upload">上传</string>
+    <string name="user_info">用户信息</string>
+    <string name="youhuiquan">优惠券</string>
+    <string name="set">设置</string>
+    <string name="my_teacher">我是老师</string>
+    <string name="sell">我是卖家</string>
+    <string name="collect">商品收藏</string>
+    <string name="reset_pwd">找回密码</string>
+    <string name="sure">确定</string>
+    <string name="copaly" />
+    <string name="luck">活动抽奖</string>
+
+    <!--我的-->
+    <!--<string name="my">我的</string>-->
+    <string name="login_or_register">登录/注册</string>
+    <string name="my_courses">我的课程</string>
+    <string name="my_video">我的视频</string>
+    <string name="video_collection">视频收藏</string>
+    <string name="my_community">我的社区</string>
+    <string name="my_wallet">我的钱包</string>
+    <string name="rmb_symbol">¥</string>
+    <string name="my_order">我的订单</string>
+    <string name="product_collection">商品收藏</string>
+    <string name="apply_for_teacher">申请老师</string>
+    <string name="address_management">地址管理</string>
+    <string name="set_up">设置</string>
+    <!--用户信息-->
+    <string name="avatar">头像</string>
+    <string name="signature">个性签名</string>
+    <string name="gender">性别</string>
+    <string name="good_at">擅长</string>
+    <string name="address">地址</string>
+    <string name="job_rank">职位等级</string>
+    <!--我的钱包-->
+    <string name="balance">余额</string>
+    <string name="withdraw">提现</string>
+    <string name="recharge">充值</string>
+    <!--提现-->
+    <string name="into_the_channel">到账渠道</string>
+    <string name="alipay">支付宝</string>
+    <string name="wechat">微信</string>
+    <string name="withdraw_amount">提现金额</string>
+    <string name="balance_colon">剩余金额：</string>
+    <string name="yuan">元</string>
+    <!--充值-->
+    <string name="recharge_channels">充值渠道</string>
+    <string name="recharge_amount">充值金额</string>
+    <string name="account_balance_colon">账户金额：</string>
+    <!--设置-->
+    <string name="system_message_push">系统消息推送</string>
+    <string name="version_update">版本更新</string>
+    <string name="terms_of_the_agreement">协议条款</string>
+    <string name="clear_cache">清除缓存</string>
+    <string name="sign_out">退出登录</string>
+    <!--登录-->
+    <string name="sign_up_and_agree_to_comply_with_the_software_related_agreement">注册即同意并且遵守本软件相关协议</string>
+    <string name="tip_phone_number_can_not_be_empty">手机号不能为空</string>
+    <string name="tip_login_password_can_not_be_empty">登录密码不能为空</string>
+    <string name="tip_verification_code_can_not_be_empty">验证码不能为空</string>
+
+    <string name="upload_personally_identifiable_information">上传个人身份信息验证</string>
+    <string name="positive_and_negative">(正反面)</string>
+    <string name="upload_qualification_certificate">上传资历证书</string>
+    <string name="upload_pictures_clear_complete_information">(上传图片清晰明了，信息完整)</string>
+
+    <string name="system_error">系统错误</string>
+    <string name="data_error">数据错误</string>
+
+    <!--注册-->
+    <string name="please_enter_verification_code">请输入验证码</string>
+    <string name="send_verification_code">发送验证码</string>
+    <string name="please_enter_a_6_12_alphanumeric_password">请输入6-12位字母或数字的新密码</string>
+    <string name="i_have_read_and_agree_to_the_user_agreement">我已阅读并同意《用户协议》</string>
+    <string name="user_agreement_content">《用户协议》</string>
+    <string name="resend_confirm_your_new_password">请确认您的新密码</string>
+    <string name="resend_verification_code">重新发送</string>
+    <string name="request">请求中</string>
+    <string name="you_have_not_landed_please_login_to_operate">您还未登陆，请登陆后操作</string>
+    <!--找回密码-->
+    <string name="tip_new_login_password_can_not_be_empty">新密码不能为空</string>
+    <string name="tip_new_login_password_again_can_not_be_empty">确认新密码不能为空</string>
+    <string name="enter_the_password_twice_inconsistent">两次密码输入不一致</string>
+</resources>

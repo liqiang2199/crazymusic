@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <com.framework.view.viewPager.XSlidingPlayView
+        android:id="@+id/mXSlidingPlayView"
+        android:layout_width="match_parent"
+        android:layout_height="233dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="93dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/bt_live"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:drawablePadding="3dp"
+            android:drawableTop="@mipmap/ic_zhibo"
+            android:gravity="center"
+            android:text="@string/live"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/bt_video"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:drawablePadding="3dp"
+            android:drawableTop="@mipmap/ic_shipin"
+            android:gravity="center"
+            android:text="@string/video"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/bt_online"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:drawablePadding="3dp"
+            android:drawableTop="@mipmap/ic_xianxiayuw"
+            android:gravity="center"
+            android:text="@string/relevant_information"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/bt_music"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:drawablePadding="3dp"
+            android:drawableTop="@mipmap/ic_wanyinyue"
+            android:gravity="center"
+            android:text="@string/learn_music"
+            android:textSize="14sp" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/coordinatorLayout_Style"
+    app:statusBarBackground="@drawable/bg_base_bar">
+
+    <include layout="@layout/base_top" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <EditText
+            android:id="@+id/edt_mobile"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_height48"
+            android:layout_marginBottom="@dimen/common_height20"
+            android:layout_marginEnd="20dp"
+            android:inputType="number"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="@dimen/common_height20"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/bg_gray_holl_fillet_frame40"
+            android:hint="@string/mobile"
+            android:maxLength="11"
+            android:paddingEnd="20dp"
+            android:paddingLeft="@dimen/common_height20"
+            android:paddingRight="20dp"
+            android:paddingStart="20dp"
+            android:textColor="@color/colorCommonText"
+            android:textColorHint="@color/colorCommonHint"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_height48"
+            android:layout_marginBottom="@dimen/common_height20"
+            android:layout_marginEnd="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginStart="20dp">
+
+            <EditText
+                android:id="@+id/edt_verification_code"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/bg_gray_holl_fillet_frame40"
+                android:hint="@string/please_enter_verification_code"
+                android:paddingEnd="20dp"
+                android:paddingLeft="@dimen/common_height20"
+                android:inputType="number"
+                android:paddingRight="20dp"
+                android:paddingStart="20dp"
+                android:textColor="@color/colorCommonText"
+                android:textColorHint="@color/colorCommonHint"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_get_verification_code"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/common_height5"
+                android:layout_marginStart="5dp"
+                android:background="@drawable/bg_base_bar_round"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="@string/send_verification_code"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/edt_password"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_height48"
+            android:layout_marginBottom="@dimen/common_height10"
+            android:layout_marginEnd="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginStart="20dp"
+            android:background="@drawable/bg_gray_holl_fillet_frame40"
+            android:hint="@string/please_enter_a_6_12_alphanumeric_password"
+            android:inputType="textPassword"
+            android:maxLength="12"
+            android:paddingEnd="0dp"
+            android:paddingLeft="@dimen/common_height20"
+            android:paddingRight="0dp"
+            android:paddingStart="20dp"
+            android:textColor="@color/colorCommonText"
+            android:textColorHint="@color/colorCommonHint"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_agreement"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:text="@string/i_have_read_and_agree_to_the_user_agreement" />
+
+        <Button
+            android:id="@+id/btn_register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/bg_base_bar_round"
+            android:text="@string/register"
+            android:textColor="@color/white" />
+    </LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--是否必填-->
+    <attr name="isRequired" format="boolean" />
+    <!--标题栏宽度-->
+    <attr name="titleWidth" format="dimension" />
+    <!--标题-->
+    <attr name="title" format="string" />
+    <attr name="titleColor" format="color" />
+    <attr name="titleSize" format="dimension" />
+    <!--底部分割线颜色-->
+    <attr name="splitLineColor" format="color"></attr>
+    <!--底部线条高度-->
+    <attr name="splitLineHeight" format="dimension"></attr>
+    <!--内容对其方式-->
+    <attr name="contentGravity">
+        <enum name="right" value="5" />
+        <enum name="left" value="3" />
+    </attr>
+    <!--图标-->
+    <attr name="icon" format="reference"></attr>
+
+    <declare-styleable name="ItemOptionView">
+        <!--图标-->
+        <attr name="icon" />
+        <!--右边图标-->
+        <attr name="rightIcon" format="reference"></attr>
+        <!--右图标颜色-->
+        <attr name="rightIconColor" format="color"></attr>
+        <!--右图标大小-->
+        <attr name="rightIconSize" format="dimension"></attr>
+        <!--底部分割线颜色-->
+        <attr name="splitLineColor"></attr>
+        <!--底部线条高度-->
+        <attr name="splitLineHeight"></attr>
+        <!--分割线左边间距-->
+        <attr name="splitLineLeft" format="dimension"></attr>
+        <!--分割线右间距-->
+        <attr name="splitLineRight" format="dimension" />
+        <!--是否显示右边箭头-->
+        <attr name="isShowRight" format="boolean" />
+        <!--显示内容字体大小-->
+        <attr name="contentSize" format="dimension" />
+        <!--显示内容-->
+        <attr name="content" format="string" />
+        <!--显示内容颜色-->
+        <attr name="contentColor" format="color" />
+        <!--提示-->
+        <attr name="hide" format="string" />
+        <!--提示文字颜色-->
+        <attr name="hideColor" format="color" />
+        <!--红点数字-->
+        <attr name="num" format="string" />
+        <!--是否显示红点-->
+        <attr name="isRed" format="boolean" />
+        <!--标题-->
+        <attr name="title" />
+        <!--标题字体大小-->
+        <attr name="titleSize" />
+        <!--标题字体颜色-->
+        <attr name="titleColor" />
+        <!--是否显示无 数字红点-->
+        <attr name="onlyDot" format="boolean" />
+        <!--是否必填-->
+        <attr name="isRequired" />
+        <!--标题栏宽度-->
+        <attr name="titleWidth" />
+        <!--内容对其方式-->
+        <attr name="contentGravity" />
+    </declare-styleable>
+    <!--带标题的编辑框-->
+    <declare-styleable name="EditTitleView">
+        <!--标题颜色-->
+        <attr name="titleColor" />
+        <!--标题内容-->
+        <attr name="title" />
+        <!--居中-->
+        <attr name="titleCenterVertical" format="boolean"></attr>
+        <!--标题字体大小-->
+        <attr name="titleSize" />
+        <!--标题宽度-->
+        <attr name="titleWidth" />
+        <!--标题距左边-->
+        <attr name="titlePaddingLeft" format="dimension" />
+        <!--标题距顶部-->
+        <attr name="titlePaddingTop" format="dimension" />
+        <!--底部分割线颜色-->
+        <attr name="splitLineColor"></attr>
+        <!--底部线条高度-->
+        <attr name="splitLineHeight"></attr>
+        <!--分割线左边间距-->
+        <attr name="spliLineLeft" format="dimension"></attr>
+        <!--分割线右间距-->
+        <attr name="spliLineRight" format="dimension" />
+    </declare-styleable>
+    <!--<declare-styleable name="RedDotTextView">-->
+    <!--<attr name="onlyDot" format="boolean"/>-->
+    <!--</declare-styleable>-->
+
+    <!--侧滑按钮-->
+    <declare-styleable name="SwipeLayout">
+        <attr name="drag_edge">
+            <flag name="left" value="1" />
+            <flag name="right" value="2" />
+            <flag name="top" value="4" />
+            <flag name="bottom" value="8" />
+        </attr>
+        <attr name="leftEdgeSwipeOffset" format="dimension" />
+        <attr name="rightEdgeSwipeOffset" format="dimension" />
+        <attr name="topEdgeSwipeOffset" format="dimension" />
+        <attr name="bottomEdgeSwipeOffset" format="dimension" />
+        <attr name="show_mode" format="enum">
+            <enum name="lay_down" value="0" />
+            <enum name="pull_out" value="1" />
+        </attr>
+        <attr name="clickToClose" format="boolean" />
+    </declare-styleable>
+</resources>

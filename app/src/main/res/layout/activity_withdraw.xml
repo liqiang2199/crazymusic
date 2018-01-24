@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/coordinatorLayout_Style"
+    app:statusBarBackground="@color/blue">
+
+    <include layout="@layout/base_blue_top" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="13dp"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="47dp"
+                android:background="@color/colorF7F7F7"
+                android:gravity="center_vertical"
+                android:paddingEnd="18dp"
+                android:paddingLeft="18dp"
+                android:paddingRight="18dp"
+                android:paddingStart="18dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/into_the_channel"
+                    android:textColor="@color/color666666"
+                    android:textSize="13sp" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginRight="20dp"
+                        android:checked="true"
+                        android:text="@string/alipay"
+                        android:textColor="@color/color666666"
+                        android:textSize="13sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/wechat"
+                        android:textColor="@color/color666666"
+                        android:textSize="13sp" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/colorCommonLine" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginBottom="29dp"
+                android:layout_marginTop="26dp"
+                android:paddingEnd="0dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="0dp"
+                android:paddingStart="20dp"
+                android:text="@string/withdraw_amount"
+                android:textColor="@color/color333333"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingEnd="16dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingStart="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginRight="5dp"
+                    android:text="@string/rmb_symbol"
+                    android:textColor="@color/colorCommonText"
+                    android:textSize="24sp" />
+
+                <EditText
+                    android:id="@+id/edt_money"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:hint="0.00"
+                    android:textColor="@color/colorCommonText"
+                    android:textSize="27sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginEnd="14dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="14dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/color333333" />
+
+            <TextView
+                android:id="@+id/tv_balance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="16dp"
+                android:paddingEnd="0dp"
+                android:paddingLeft="19dp"
+                android:paddingRight="0dp"
+                android:paddingStart="19dp"
+                android:paddingTop="16dp"
+                android:text="剩余金额：1172.00元"
+                android:textColor="@color/colorCommonHint"
+                android:textSize="@dimen/common_size14" />
+
+            <Button
+                android:id="@+id/btn_withdraw"
+                android:layout_width="140dp"
+                android:layout_height="41dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="27dp"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/btn_blue_fillet_solid"
+                android:text="@string/withdraw"
+                android:textColor="@color/white" />
+        </LinearLayout>
+    </LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

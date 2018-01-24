@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/coordinatorLayout_Style"
+    app:statusBarBackground="@drawable/bg_base_bar">
+
+    <include layout="@layout/base_top" />
+
+
+    <RelativeLayout
+        android:id="@+id/app_video_box"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="330dp"
+            android:layout_gravity="bottom"
+            android:clipToPadding="false"
+            android:overScrollMode="never"
+            android:paddingBottom="30dp"
+            android:paddingEnd="@dimen/common_hight_60"
+            android:paddingLeft="@dimen/common_hight_60"
+            android:paddingRight="@dimen/common_hight_60"
+            android:paddingStart="@dimen/common_hight_60" />
+    </RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>

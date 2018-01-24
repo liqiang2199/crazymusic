@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/common_height10"
+    android:background="@color/white"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/common_height10">
+
+        <ImageView
+            android:id="@+id/iv_head"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:src="@mipmap/ic_head" />
+
+        <TextView
+            android:id="@+id/tv_user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="5dp"
+            android:text="用户昵称"
+            android:textColor="@color/colorCommonText"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/common_layout_10"
+        android:paddingLeft="@dimen/common_layout_10"
+        android:paddingRight="@dimen/common_layout_10"
+        android:text="商品信息（商品规格等等）"
+        android:textColor="@color/colorCommonDark"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tv_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/common_layout_10"
+        android:paddingLeft="@dimen/common_layout_10"
+        android:paddingRight="@dimen/common_layout_10"
+        android:text="内容内容内容内容内容内容内容内容内容"
+        android:textColor="@color/colorCommonDark"
+        android:textSize="14sp" />
+
+    <com.framework.view.XGridViewForScrollView
+        android:id="@+id/gridView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:listSelector="@color/transparent"
+        android:numColumns="3" />
+
+</LinearLayout>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/coordinatorLayout_Style"
+    app:statusBarBackground="@color/blue">
+
+    <include layout="@layout/base_blue_top" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorF7F7F7"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/blue"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="22dp"
+                android:layout_marginTop="27dp"
+                android:gravity="center"
+                android:text="@string/balance"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv_balance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="30dp"
+                android:text="￥3999.00"
+                android:textColor="@color/white"
+                android:textSize="24sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_withdraw"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:background="@color/white"
+            android:drawableEnd="@mipmap/ic_right"
+            android:drawableRight="@mipmap/ic_right"
+            android:gravity="center_vertical"
+            android:paddingEnd="20dp"
+            android:paddingLeft="13dp"
+            android:paddingRight="20dp"
+            android:paddingStart="13dp"
+            android:text="@string/withdraw"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/colorCommonLine" />
+
+        <TextView
+            android:id="@+id/tv_recharge"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:background="@color/white"
+            android:drawableEnd="@mipmap/ic_right"
+            android:drawableRight="@mipmap/ic_right"
+            android:gravity="center_vertical"
+            android:paddingEnd="20dp"
+            android:paddingLeft="13dp"
+            android:paddingRight="20dp"
+            android:paddingStart="13dp"
+            android:text="@string/recharge"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/colorCommonLine" />
+
+        <RelativeLayout
+            android:id="@+id/rlyt_coupon"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:background="@android:color/white"
+            android:paddingEnd="20dp"
+            android:paddingLeft="13dp"
+            android:paddingRight="20dp"
+            android:paddingStart="13dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:text="@string/coupon"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_coupon"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:background="@color/white"
+                android:drawableEnd="@mipmap/ic_right"
+                android:drawablePadding="11dp"
+                android:drawableRight="@mipmap/ic_right"
+                android:gravity="center_vertical"
+                android:text="5"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+    </LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

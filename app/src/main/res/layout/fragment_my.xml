@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorF7F7F7"
+    app:statusBarBackground="@drawable/bg_base_bar">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:paddingBottom="24dp"
+                android:paddingEnd="16dp"
+                android:paddingLeft="13dp"
+                android:paddingRight="16dp"
+                android:paddingStart="13dp"
+                android:paddingTop="40dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/iv_avatar"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="14dp"
+                        android:layout_marginRight="14dp"
+                        android:contentDescription="@null"
+                        android:src="@mipmap/ic_head" />
+
+                    <TextView
+                        android:id="@+id/tv_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@+id/iv_avatar"
+                        android:layout_toRightOf="@+id/iv_avatar"
+                        android:text="无敌的毛毛在杨帆起航"
+                        android:textColor="@color/color333333"
+                        android:textSize="16sp" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:contentDescription="@null"
+                        android:paddingEnd="10dp"
+                        android:paddingLeft="0dp"
+                        android:paddingRight="10dp"
+                        android:paddingStart="0dp"
+                        android:src="@mipmap/ic_message" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/colorCommonLine" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="95dp"
+                android:background="@android:color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_my_courses"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawablePadding="7dp"
+                    android:drawableTop="@mipmap/ic_my_courses"
+                    android:gravity="center"
+                    android:text="@string/my_courses"
+                    android:textColor="@color/color000000"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_my_video"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawablePadding="7dp"
+                    android:drawableTop="@mipmap/ic_my_video"
+                    android:gravity="center"
+                    android:text="@string/my_video"
+                    android:textColor="@color/color000000"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_video_collection"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawablePadding="7dp"
+                    android:drawableTop="@mipmap/ic_video_collection"
+                    android:gravity="center"
+                    android:text="@string/video_collection"
+                    android:textColor="@color/color000000"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_my_community"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawablePadding="7dp"
+                    android:drawableTop="@mipmap/ic_my_community"
+                    android:gravity="center"
+                    android:text="@string/my_community"
+                    android:textColor="@color/color000000"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="@color/colorF7F7F7" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/rlyt_my_wallet"
+                    android:layout_width="match_parent"
+                    android:layout_height="47dp"
+                    android:background="@android:color/white"
+                    android:paddingLeft="22dp"
+                    android:paddingRight="22dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        android:gravity="center_vertical"
+                        android:text="@string/my_wallet"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/tv_my_balance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:background="@color/white"
+                        android:drawableEnd="@mipmap/ic_right"
+                        android:drawablePadding="11dp"
+                        android:drawableRight="@mipmap/ic_right"
+                        android:gravity="center_vertical"
+                        android:text="¥3999.00"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/colorCommonLine" />
+
+                <TextView
+                    android:id="@+id/tv_my_order"
+                    android:layout_width="match_parent"
+                    android:layout_height="47dp"
+                    android:background="@color/white"
+                    android:drawableEnd="@mipmap/ic_right"
+                    android:drawableRight="@mipmap/ic_right"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="22dp"
+                    android:paddingRight="22dp"
+                    android:text="@string/my_order"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="@color/colorF7F7F7" />
+
+                <TextView
+                    android:id="@+id/tv_product_collection"
+                    android:layout_width="match_parent"
+                    android:layout_height="47dp"
+                    android:background="@color/white"
+                    android:drawableEnd="@mipmap/ic_right"
+                    android:drawableRight="@mipmap/ic_right"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="22dp"
+                    android:paddingRight="22dp"
+                    android:text="@string/product_collection"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="@color/colorF7F7F7" />
+
+                <TextView
+                    android:id="@+id/tv_apply_for_teacher"
+                    android:layout_width="match_parent"
+                    android:layout_height="47dp"
+                    android:background="@color/white"
+                    android:drawableEnd="@mipmap/ic_right"
+                    android:drawableRight="@mipmap/ic_right"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="22dp"
+                    android:paddingRight="22dp"
+                    android:text="@string/apply_for_teacher"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/colorCommonLine" />
+
+                <TextView
+                    android:id="@+id/tv_address_management"
+                    android:layout_width="match_parent"
+                    android:layout_height="47dp"
+                    android:background="@color/white"
+                    android:drawableEnd="@mipmap/ic_right"
+                    android:drawableRight="@mipmap/ic_right"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="22dp"
+                    android:paddingRight="22dp"
+                    android:text="@string/address_management"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/colorCommonLine" />
+
+                <TextView
+                    android:id="@+id/tv_set_up"
+                    android:layout_width="match_parent"
+                    android:layout_height="47dp"
+                    android:background="@color/white"
+                    android:drawableEnd="@mipmap/ic_right"
+                    android:drawableRight="@mipmap/ic_right"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="22dp"
+                    android:paddingRight="22dp"
+                    android:text="@string/set_up"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="61dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</android.support.design.widget.CoordinatorLayout>

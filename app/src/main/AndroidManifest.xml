@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.music">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+
+    <application
+        android:name=".BaseApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_logo_big"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity
+            android:name=".ui.activity.SplashActivity"
+            android:theme="@style/AppTheme.Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".ui.activity.user.LoginActivity" />
+
+        <activity
+            android:name=".ui.activity.MainActivity"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name=".ui.activity.video.VideoActivity"
+            android:label="@string/video_play" />
+        <activity
+            android:name=".ui.activity.video.VideoPlayActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/video_play"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ui.activity.shop.GoodsInfoActivity" />
+        <activity
+            android:name=".ui.activity.shop.SureOrderActivity"
+            android:label="@string/order_info"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name=".ui.activity.music.MusicPlayerActivity"
+            android:label="@string/title_activity_music_player" />
+        <activity
+            android:name=".ui.activity.music.MyCreateMusicActivity"
+            android:label="@string/title_activity_my_create_music" />
+        <activity
+            android:name=".ui.activity.music.MusicPlayerHomeActivity"
+            android:label="@string/title_activity_music_player_home"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".ui.activity.video.OffLineActivity"
+            android:label="@string/off_line" />
+        <activity
+            android:name=".ui.activity.index.CommunityDetailActivity"
+            android:label="@string/detail" />
+
+        <activity android:name=".ui.activity.video.LiveVideoActivity" />
+        <activity
+            android:name=".ui.activity.index.TipsPostActivity"
+            android:label="@string/topic_post"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name=".ui.activity.shop.ShopCarActivity"
+            android:label="@string/shop_car" />
+        <activity android:name=".ui.activity.shop.SearchActivity" />
+
+        <activity
+            android:name=".ui.activity.user.MyWalletActivity"
+            android:label="@string/my_wallet" />
+        <activity
+            android:name=".ui.activity.shop.AddressListActivity"
+            android:label="@string/address_list" />
+
+        <activity
+            android:name=".ui.activity.shop.AddEditAddressActivity"
+            android:label=""
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name=".ui.activity.user.WithdrawActivity"
+            android:label="@string/withdraw"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name=".ui.activity.user.RechargeActivity"
+            android:label="@string/recharge"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+
+        <activity
+            android:name=".ui.activity.shop.AllEvaluateActivity"
+            android:label="@string/all_evaluate" />
+        <activity
+            android:name=".ui.activity.shop.OrderListActivity"
+            android:label="@string/order" />
+        <activity
+            android:name=".ui.activity.index.ReplyActivity"
+            android:label="@string/reply"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name=".ui.activity.user.ApplyForTeacherActivity"
+            android:label="@string/teacher" />
+        <activity
+            android:name=".ui.activity.user.UserInfoActivity"
+            android:label="@string/user_info" />
+        <activity
+            android:name=".ui.activity.user.MyCoursesActivity"
+            android:label="@string/my_courses" />
+        <activity
+            android:name=".ui.activity.user.CollectGoodsActivity"
+            android:label="@string/collect" />
+        <activity
+            android:name=".ui.activity.user.AddressManagementActivity"
+            android:label="@string/address_management" />
+        <activity
+            android:name=".ui.activity.shop.GoodsSearchActivity"
+            android:label=""
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name=".ui.activity.user.SetActivity"
+            android:label="@string/set" />
+        <activity
+            android:name=".ui.activity.user.ResetPwdActivity"
+            android:label="@string/reset_pwd"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name=".ui.activity.user.RegisterActivity"
+            android:label="@string/register"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity android:name=".ui.activity.guide.GuideActivity" />
+
+        <activity
+            android:name=".ui.activity.LuckDrawActivity"
+            android:label="@string/luck" />
+    </application>
+</manifest>

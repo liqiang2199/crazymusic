@@ -1,0 +1,60 @@
+package com.music.ui.activity.guide;
+
+import android.content.Context;
+import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
+
+import com.music.R;
+
+public class GalleryImageAdapter extends PagerAdapter {
+
+    private LayoutInflater mInflater;
+    private Context context;
+    LayoutInflater inflater;
+
+    public GalleryImageAdapter(Context context) {
+        mInflater = LayoutInflater.from(context);
+        inflater = LayoutInflater.from(context);
+        this.context = context;
+    }
+
+    @Override
+    public int getCount() {
+        return 3;
+    }
+
+    @Override
+    public void destroyItem(ViewGroup container, int position, Object object) {
+        ((ViewPager) container).removeView((View) object);
+    }
+
+    @Override
+    public boolean isViewFromObject(View view, Object object) {
+        return view.equals(object);
+    }
+
+    @Override
+    public Object instantiateItem(ViewGroup view, int position) {
+        final ViewHolder holder;
+        holder = new ViewHolder();
+        View imageLayout = mInflater.inflate(R.layout.gallery_image_item, null);
+        holder.image = (LinearLayout) imageLayout.findViewById(R.id.gallery_image_item_view);
+
+        if (position == 3) {
+            holder.image.setEnabled(true);
+        } else {
+            holder.image.setEnabled(false);
+        }
+        ((ViewPager) view).addView(imageLayout, 0);
+        return imageLayout;
+    }
+
+    class ViewHolder {
+        private LinearLayout image;
+    }
+
+}

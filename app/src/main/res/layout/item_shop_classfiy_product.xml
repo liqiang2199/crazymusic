@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="1dp">
+
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:padding="5dp"
+        >
+
+
+        <ImageView
+            android:id="@+id/image_goods"
+            android:layout_width="133dp"
+            android:layout_height="133dp"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/bg_img_def"/>
+
+        <TextView
+            android:id="@+id/tv_goodsName"
+            android:layout_width="190dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="19dp"
+            android:layout_toRightOf="@id/image_goods"
+            android:ellipsize="end"
+            android:lines="2"
+            android:padding="5dp"
+            android:text="无敌好用的吉他等你来拿，不错的哟，犀牛骨头，龙骨经，一首断肠人在天涯让你永远无法忘怀"
+            android:textColor="@color/colorCommonText"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/show_des"
+            android:layout_width="199dp"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/tv_goodsName"
+            android:layout_alignStart="@id/tv_goodsName"
+            android:layout_below="@id/tv_goodsName"
+            android:layout_marginTop="@dimen/dp_8"
+            android:ellipsize="end"
+            android:lines="1"
+            android:text="无敌好用的吉他等你来拿，不错的哟，犀牛骨头，龙骨经，一首断肠人在天涯让你永远无法忘怀"
+            android:textColor="#ff999999"
+            android:textSize="13sp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/show_des"
+            android:layout_toRightOf="@id/image_goods"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/tv_cost_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$123"
+                android:textColor="@color/blue_bar"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/tv_old_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3233333"
+                android:textColor="@color/colorCommonHint"
+                android:textSize="12sp"/>
+
+
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>
