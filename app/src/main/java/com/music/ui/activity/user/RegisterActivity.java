@@ -22,6 +22,7 @@ import com.music.api.API;
 import com.music.ui.activity.BaseActivity;
 import com.music.utils.CountDownHelper;
 import com.music.utils.UIHelper;
+import com.music.utils.UtilsTools;
 import com.wega.library.loadingDialog.LoadingDialog;
 
 import org.json.JSONObject;
@@ -97,6 +98,10 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
                 String phoneNumber = edtMobile.getText().toString().trim();
                 if (TextUtils.isEmpty(phoneNumber)) {
                     UIHelper.showToast(mContext, getString(R.string.tip_phone_number_can_not_be_empty));
+                    return;
+                }
+                if (!UtilsTools.isPhoneNum(phoneNumber)){
+                    UIHelper.showToast(mContext, getString(R.string.tip_phone_is_sure));
                     return;
                 }
                 sendVerificationCode(phoneNumber);
@@ -188,6 +193,10 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
         final String loginPassword = edtPassword.getText().toString().trim();
         if (TextUtils.isEmpty(phoneNumber)) {
             UIHelper.showToast(mContext, getString(R.string.tip_login_password_can_not_be_empty));
+            return;
+        }
+        if (!UtilsTools.isPhoneNum(phoneNumber)){
+            UIHelper.showToast(mContext, getString(R.string.tip_phone_is_sure));
             return;
         }
         TreeMap<String, String> params = new TreeMap<String, String>();

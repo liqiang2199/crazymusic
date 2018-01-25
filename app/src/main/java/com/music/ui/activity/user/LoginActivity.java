@@ -26,6 +26,7 @@ import com.music.ui.activity.BaseActivity;
 import com.music.ui.activity.MainActivity;
 import com.music.utils.CacheUtil;
 import com.music.utils.UIHelper;
+import com.music.utils.UtilsTools;
 import com.wega.library.loadingDialog.LoadingDialog;
 
 import org.json.JSONObject;
@@ -122,6 +123,10 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
             UIHelper.showToast(mContext, getString(R.string.tip_login_password_can_not_be_empty));
             return;
         }
+        if (!UtilsTools.isPhoneNum(phoneNumber)){
+            UIHelper.showToast(mContext, getString(R.string.tip_phone_is_sure));
+            return;
+        }
         TreeMap<String, String> params = new TreeMap<String, String>();
         params.put("phone", phoneNumber);
         params.put("password", loginPassword);
@@ -155,6 +160,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                             Gson gson = new Gson();
                             LoginRes loginRes = gson.fromJson(stringResponse.body(), LoginRes.class);
                             if (StatusCode.SUCCESS.getType() == loginRes.getCode()) {
+                                //保存
                                 CacheUtil.put(Constants.PHONE, phoneNumber);
                                 CacheUtil.put(Constants.TOKEN, loginRes.getData().getToken());
                                 startActivity(new Intent(mContext, MainActivity.class));
