@@ -161,7 +161,7 @@
     <!--注册-->
     <string name="please_enter_verification_code">请输入验证码</string>
     <string name="send_verification_code">发送验证码</string>
-    <string name="please_enter_a_6_12_alphanumeric_password">请输入6-12位字母或数字的新密码</string>
+    <string name="please_enter_a_6_12_alphanumeric_password">请输入6-12位字母或数字的密码</string>
     <string name="i_have_read_and_agree_to_the_user_agreement">我已阅读并同意《用户协议》</string>
     <string name="user_agreement_content">《用户协议》</string>
     <string name="resend_confirm_your_new_password">请确认您的新密码</string>
@@ -172,4 +172,9 @@
     <string name="tip_new_login_password_can_not_be_empty">新密码不能为空</string>
     <string name="tip_new_login_password_again_can_not_be_empty">确认新密码不能为空</string>
     <string name="enter_the_password_twice_inconsistent">两次密码输入不一致</string>
+
+    <!--Toast  提示-->
+    <string name="Toast_send_sms">发送短信成功</string>
+    <string name="Toast_send_sms_fail">发送短信失败，请重新发送</string>
+    <string name="Toast_register">注册成功</string>
 </resources>

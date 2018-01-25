@@ -15,6 +15,7 @@
  */
 package com.framework.utils;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
@@ -44,6 +45,7 @@ public class XToastUtil {
      * 主要Handler类，在线程中可用
      * what：0.提示文本信息
      */
+    @SuppressLint("HandlerLeak")
     private static Handler baseHandler = new Handler() {
 
         @Override

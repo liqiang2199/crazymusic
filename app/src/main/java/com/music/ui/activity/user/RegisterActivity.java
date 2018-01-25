@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.framework.utils.XToastUtil;
 import com.google.gson.Gson;
 import com.klinker.android.link_builder.Link;
 import com.klinker.android.link_builder.LinkBuilder;
@@ -19,12 +20,18 @@ import com.lzy.okgo.model.Response;
 import com.lzy.okrx2.adapter.ObservableResponse;
 import com.music.R;
 import com.music.api.API;
+import com.music.common.Constants;
+import com.music.model.RegisterBeen;
+import com.music.model.ResponseBeen;
+import com.music.model.busbeen.LoginFinishBus;
 import com.music.ui.activity.BaseActivity;
+import com.music.utils.CacheUtil;
 import com.music.utils.CountDownHelper;
 import com.music.utils.UIHelper;
 import com.music.utils.UtilsTools;
 import com.wega.library.loadingDialog.LoadingDialog;
 
+import org.greenrobot.eventbus.EventBus;
 import org.json.JSONObject;
 
 import java.util.TreeMap;
@@ -104,17 +111,9 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
                     UIHelper.showToast(mContext, getString(R.string.tip_phone_is_sure));
                     return;
                 }
+                mLoadingDialog = new LoadingDialog(this);
                 sendVerificationCode(phoneNumber);
-                CountDownHelper helper = new CountDownHelper(tvGetVerificationCode, getString(R.string.send_verification_code),
-                        getString(R.string.resend_verification_code), 60, 1);
-                helper.setOnFinishListener(new CountDownHelper.OnFinishListener() {
 
-                    @Override
-                    public void finish() {
-
-                    }
-                });
-                helper.start();
                 break;
             case R.id.btn_register:
                 mLoadingDialog = new LoadingDialog(this);
@@ -154,10 +153,28 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
 
                     @Override
                     public void onNext(@NonNull Response<String> stringResponse) {
-                        Log.e(TAG, stringResponse.body());
+                        String msg = stringResponse.body();
+                        Log.e(TAG, msg);
                         try {
-                            Gson gson = new Gson();
+                            ResponseBeen responseBeen = getNewGson().fromJson(msg,ResponseBeen.class);
+                            String code = responseBeen.getCode();
+                            if (!TextUtils.isEmpty(code)&&code.equals("0")){
+                                XToastUtil.showToast(RegisterActivity.this,R.string.Toast_send_sms);
+                                // 只有成功 才开始倒计时
+                                CountDownHelper helper = new CountDownHelper(tvGetVerificationCode, getString(R.string.send_verification_code),
+                                        getString(R.string.resend_verification_code), 60, 1);
+                                helper.setOnFinishListener(new CountDownHelper.OnFinishListener() {
 
+                                    @Override
+                                    public void finish() {
+
+                                    }
+                                });
+                                helper.start();
+                            }else{
+                                XToastUtil.showToast(RegisterActivity.this,responseBeen.getMsg());
+                            }
+                            mLoadingDialog.cancel();
                         } catch (Exception e) {
                             onError(e);
                         }
@@ -167,11 +184,13 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
                     public void onError(@NonNull Throwable e) {
                         e.printStackTrace();
                         UIHelper.showToast(mContext, getResources().getString(R.string.system_error));
+                        mLoadingDialog.cancel();
                     }
 
                     @Override
                     public void onComplete() {
                         disposable.dispose();
+                        mLoadingDialog.cancel();
                     }
                 });
     }
@@ -228,9 +247,27 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
 
                     @Override
                     public void onNext(@NonNull Response<String> stringResponse) {
-                        Log.e(TAG, stringResponse.body());
+                        String msg = stringResponse.body();
+                        Log.e(TAG, msg);
                         try {
-                            Gson gson = new Gson();
+                            //注册成功
+                            ResponseBeen responseBeen = getNewGson().fromJson(msg,ResponseBeen.class);
+                            String code = responseBeen.getCode();
+                            if (!TextUtils.isEmpty(code)&&code.equals("0")){
+                                //成功
+                                String data = responseBeen.getData();
+                                if (!TextUtils.isEmpty(data)){
+                                    RegisterBeen registerBeen = getNewGson().fromJson(data,RegisterBeen.class);
+                                    CacheUtil.put(Constants.PHONE, phoneNumber);
+                                    CacheUtil.put(Constants.TOKEN, registerBeen.getToken());
+                                    CacheUtil.put(Constants.HEADIMAGE,registerBeen.getHead_img());
+                                }
+                                //关闭 登录界面
+                                EventBus.getDefault().post(new LoginFinishBus());
+                                finish();
+                            }
+
+                            XToastUtil.showToast(RegisterActivity.this,responseBeen.getMsg());
                         } catch (Exception e) {
                             onError(e);
                         }

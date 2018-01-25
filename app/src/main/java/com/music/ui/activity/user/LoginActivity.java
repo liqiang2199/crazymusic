@@ -22,6 +22,7 @@ import com.music.api.API;
 import com.music.common.Constants;
 import com.music.common.StatusCode;
 import com.music.model.LoginRes;
+import com.music.model.busbeen.LoginFinishBus;
 import com.music.ui.activity.BaseActivity;
 import com.music.ui.activity.MainActivity;
 import com.music.utils.CacheUtil;
@@ -29,6 +30,7 @@ import com.music.utils.UIHelper;
 import com.music.utils.UtilsTools;
 import com.wega.library.loadingDialog.LoadingDialog;
 
+import org.greenrobot.eventbus.Subscribe;
 import org.json.JSONObject;
 
 import java.util.TreeMap;
@@ -155,10 +157,10 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
 
                     @Override
                     public void onNext(@NonNull Response<String> stringResponse) {
-                        Log.e(TAG,stringResponse.body());
+                        String msg = stringResponse.body();
+                        Log.e(TAG,msg);
                         try {
-                            Gson gson = new Gson();
-                            LoginRes loginRes = gson.fromJson(stringResponse.body(), LoginRes.class);
+                            LoginRes loginRes = getNewGson().fromJson(msg, LoginRes.class);
                             if (StatusCode.SUCCESS.getType() == loginRes.getCode()) {
                                 //保存
                                 CacheUtil.put(Constants.PHONE, phoneNumber);
@@ -194,5 +196,11 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
 
     private void wechatLogin(){
 
+    }
+    @Subscribe
+    public void onEventMainThread(LoginFinishBus event){
+        if (event != null){
+            finish();
+        }
     }
 }

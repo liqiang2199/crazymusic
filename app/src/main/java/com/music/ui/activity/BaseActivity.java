@@ -11,8 +11,12 @@ import android.view.View;
 
 import com.framework.utils.StatusBarUtil;
 import com.framework.view.Toolbar;
+import com.google.gson.Gson;
 import com.music.BaseApp;
 import com.music.R;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
 
 /**
  * 基本Activity
@@ -21,7 +25,9 @@ public class BaseActivity extends AppCompatActivity implements View.OnClickListe
     protected Toolbar toolbar;
 
     protected Context mContext;
+    protected Gson gson;
 
+    @Subscribe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         BaseApp.getActivities().add(this);
@@ -49,6 +55,21 @@ public class BaseActivity extends AppCompatActivity implements View.OnClickListe
         return super.onOptionsItemSelected(item);
     }
 
+    @Subscribe
+    @Override
+    public void setContentView(int layoutResID) {
+        super.setContentView(layoutResID);
+        EventBus.getDefault().register(this);
+    }
+
+    @Subscribe
+    @Override
+    public void setContentView(View view) {
+        super.setContentView(view);
+        EventBus.getDefault().register(this);
+    }
+
+
     @Override
     public void onClick(View v) {
     }
@@ -56,6 +77,19 @@ public class BaseActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        EventBus.getDefault().unregister(this);
         BaseApp.getActivities().remove(this);
+
+    }
+
+    /**
+     * 返回公用的Gson 对象
+     * @return
+     */
+    protected Gson getNewGson(){
+        if (gson == null){
+            gson = new Gson();
+        }
+        return gson;
     }
 }
