@@ -18,4 +18,26 @@ public class UtilsTools {
         return m.matches();
     }
 
+    public static boolean isStringNull(String s){
+        if (s == null||s.equals(null)||s.equals("null")||s.equals("")){
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * 读取缓存的字符串
+     * @param key
+     * @return
+     */
+    public static String getReadCacheUtilData(String key){
+        if (!isStringNull(key)){
+            return "";
+        }
+        if (CacheUtil.contains(key)){
+            return CacheUtil.get(key);
+        }
+        return "";
+    }
+
 }

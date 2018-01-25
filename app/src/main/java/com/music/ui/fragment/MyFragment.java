@@ -25,6 +25,7 @@ import com.music.ui.activity.user.SetActivity;
 import com.music.ui.activity.user.UserInfoActivity;
 import com.music.utils.CacheUtil;
 import com.music.utils.UIHelper;
+import com.music.utils.UtilsTools;
 
 /**
  * 个人中心
@@ -44,10 +45,13 @@ public class MyFragment extends Fragment implements View.OnClickListener {
     private TextView tvApplyForTeacher;
     private TextView tvAddressManagement;
     private TextView tvSetUp;
+    private RelativeLayout relative_useInfo;
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        rootView = inflater.inflate(R.layout.fragment_my, null, false);
+        if (rootView == null){
+            rootView = inflater.inflate(R.layout.fragment_my, null, false);
+        }
         initView();
         return rootView;
     }
@@ -67,6 +71,8 @@ public class MyFragment extends Fragment implements View.OnClickListener {
         tvAddressManagement = (TextView) rootView.findViewById(R.id.tv_address_management);
         tvSetUp = (TextView) rootView.findViewById(R.id.tv_set_up);
 
+        relative_useInfo = (RelativeLayout)rootView.findViewById(R.id.relative_useInfo);
+
         ivAvatar.setOnClickListener(this);
         tvName.setOnClickListener(this);
         tvMyCourses.setOnClickListener(this);
@@ -79,6 +85,7 @@ public class MyFragment extends Fragment implements View.OnClickListener {
         tvApplyForTeacher.setOnClickListener(this);
         tvAddressManagement.setOnClickListener(this);
         tvSetUp.setOnClickListener(this);
+        relative_useInfo.setOnClickListener(this);
 
         tvName.setText(R.string.login_or_register);
         tvMyBalance.setText("");
@@ -92,8 +99,9 @@ public class MyFragment extends Fragment implements View.OnClickListener {
 //            startActivity(new Intent(getActivity(), LoginActivity.class));
 //        } else {
         switch (v.getId()) {
-            case R.id.tv_name:
-            case R.id.iv_avatar:
+//            case R.id.tv_name:
+//            case R.id.iv_avatar:
+            case R.id.relative_useInfo:
                 //个人信息
                 startActivity(new Intent(getActivity(), UserInfoActivity.class));
                 break;
@@ -136,5 +144,12 @@ public class MyFragment extends Fragment implements View.OnClickListener {
                 break;
         }
     }
-//    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (tvName != null){
+            tvName.setText(UtilsTools.getReadCacheUtilData(Constants.PHONE));
+        }
+    }
 }

@@ -43,7 +43,9 @@ public class OrderListFragment extends Fragment implements XRecyclerView.PullLoa
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        rootView = inflater.inflate(R.layout.fragment_list, null);
+        if (rootView == null){
+            rootView = inflater.inflate(R.layout.fragment_list, null);
+        }
         initView();
         return rootView;
     }

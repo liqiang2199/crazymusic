@@ -29,6 +29,7 @@
                 android:paddingTop="40dp">
 
                 <RelativeLayout
+                    android:id="@+id/relative_useInfo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 

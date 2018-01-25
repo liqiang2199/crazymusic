@@ -48,7 +48,9 @@ public class ShopFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        rootView = inflater.inflate(R.layout.fragment_shop, null);
+        if (rootView == null){
+            rootView = inflater.inflate(R.layout.fragment_shop, null);
+        }
         initView();
         getData();
         return rootView;
