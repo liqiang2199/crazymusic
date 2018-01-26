@@ -9,6 +9,7 @@ import android.widget.LinearLayout;
 
 /**
  * Created by empty cup on 2018/1/26.
+ * 卡劵 的样式
  */
 
 public class CouponDisplayView extends LinearLayout{
