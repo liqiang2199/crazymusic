@@ -24,6 +24,7 @@ public class API {
     public static String USER_SKILLEDLIST = HOST + "/user/skilledList";
     public static String USER_GETUSERSKILLLIST = HOST + "/user/getUserSkillList";
     public static String COUPON_RANDOMGETCOUPONS = HOST + "/coupon/randomGetCoupons";
+    //获取优惠券列表
     public static String COUPON_GETUSERCOUPONS = HOST + "/coupon/getUserCoupons";
     public static String COUPON_RECIEVECOUPONS = HOST + "/coupon/recieveCoupons";
 

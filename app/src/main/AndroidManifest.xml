@@ -91,6 +91,9 @@
             android:label="@string/recharge"
             android:windowSoftInputMode="stateHidden|adjustResize" />
 
+        <activity android:name=".ui.activity.user.CouponActivity"
+            android:label="@string/withdrawals_coupons"/>
+
         <activity
             android:name=".ui.activity.shop.AllEvaluateActivity"
             android:label="@string/all_evaluate" />

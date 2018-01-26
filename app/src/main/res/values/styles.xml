@@ -77,4 +77,14 @@
         <item name="android:windowTranslucentStatus" tools:ignore="NewApi">true</item>
         <item name="android:windowBackground">@mipmap/bg_start</item>
     </style>
+
+    <style name="font_size_14_colorCommonAssist">
+        <item name="android:textSize">@dimen/text_14</item>
+        <item name="android:textColor">@color/colorCommonAssist</item>
+    </style>
+    <style name="font_size_25_black">
+        <item name="android:textSize">@dimen/text_25</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
 </resources>

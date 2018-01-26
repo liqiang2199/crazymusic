@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="@dimen/gap_15"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/gap_15"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/coupons_Name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                style="@style/font_size_25_black"
+                android:paddingBottom="@dimen/common_height20"/>
+            <TextView
+                android:id="@+id/coupons_Time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                style="@style/font_size_14_colorCommonAssist"/>
+
+        </LinearLayout>
+
+        <com.music.view.CouponDisplayView
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:layout_height="match_parent"
+            android:background="@color/coupons_package"
+            android:layout_marginRight="@dimen/common_height10">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textView"
+                    style="@style/font_size_14_colorCommonAssist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/coupons_price"
+                    android:layout_alignBottom="@+id/coupons_price"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_gravity="center_vertical"
+                    android:paddingLeft="@dimen/common_height10"
+                    android:text="￥"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/coupons_price"
+                    style="@style/font_size_14_colorCommonAssist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@+id/textView"
+                    android:layout_toRightOf="@+id/textView"
+                    android:gravity="bottom"
+                    android:text="@string/app_name"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_25" />
+            </RelativeLayout>
+
+
+
+        </com.music.view.CouponDisplayView>
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

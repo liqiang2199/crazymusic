@@ -32,5 +32,6 @@ public class WithdrawActivity extends BaseActivity {
         btnWithdraw = (Button) findViewById(R.id.btn_withdraw);
 
         btnWithdraw.setOnClickListener(this);
+
     }
 }

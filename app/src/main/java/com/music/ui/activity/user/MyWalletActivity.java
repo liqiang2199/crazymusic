@@ -18,6 +18,7 @@ public class MyWalletActivity extends BaseActivity implements View.OnClickListen
     private TextView tvWithdraw;
     private TextView tvRecharge;
     private RelativeLayout rlytCoupon;
+    private RelativeLayout rlyt_bankList;
     private TextView tvCoupon;
 
     @Override
@@ -32,11 +33,13 @@ public class MyWalletActivity extends BaseActivity implements View.OnClickListen
         tvWithdraw = (TextView)findViewById( R.id.tv_withdraw );
         tvRecharge = (TextView)findViewById( R.id.tv_recharge );
         rlytCoupon = (RelativeLayout)findViewById( R.id.rlyt_coupon );
+        rlyt_bankList = (RelativeLayout)findViewById( R.id.rlyt_bankList );
         tvCoupon = (TextView)findViewById( R.id.tv_coupon );
 
         tvWithdraw.setOnClickListener(this);
         tvRecharge.setOnClickListener(this);
         rlytCoupon.setOnClickListener(this);
+        rlyt_bankList.setOnClickListener(this);
     }
 
     @Override
@@ -53,6 +56,10 @@ public class MyWalletActivity extends BaseActivity implements View.OnClickListen
                 break;
             case R.id.rlyt_coupon:
                 //优惠券
+                startActivity(new Intent(mContext,CouponActivity.class));
+                break;
+            case R.id.rlyt_bankList:
+                //银行卡管理
                 break;
         }
     }

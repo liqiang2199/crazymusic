@@ -15,6 +15,7 @@ import com.framework.view.Toolbar;
 import com.google.gson.Gson;
 import com.music.BaseApp;
 import com.music.R;
+import com.wega.library.loadingDialog.LoadingDialog;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -29,6 +30,8 @@ public class BaseActivity extends AppCompatActivity implements View.OnClickListe
     protected Gson gson;
     protected  int width;
     protected  int height;
+
+    protected  LoadingDialog mLoadingDialog;
 
     @Subscribe
     @Override

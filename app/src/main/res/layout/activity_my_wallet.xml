@@ -85,6 +85,45 @@
             android:background="@color/colorCommonLine" />
 
         <RelativeLayout
+            android:id="@+id/rlyt_bankList"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:background="@android:color/white"
+            android:paddingEnd="20dp"
+            android:paddingLeft="13dp"
+            android:paddingRight="20dp"
+            android:paddingStart="13dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:text="@string/bank_manage"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_bankList"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:background="@color/white"
+                android:drawableEnd="@mipmap/ic_right"
+                android:drawablePadding="11dp"
+                android:drawableRight="@mipmap/ic_right"
+                android:gravity="center_vertical"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/colorCommonLine" />
+
+        <RelativeLayout
             android:id="@+id/rlyt_coupon"
             android:layout_width="match_parent"
             android:layout_height="47dp"

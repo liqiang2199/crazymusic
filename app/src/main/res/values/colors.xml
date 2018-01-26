@@ -49,4 +49,6 @@
     <!--商城-->
     <color name="checked">#00BEE7</color>
     <color name="un_checked">#333333</color>
+
+    <color name="coupons_package">#00bee7</color>
 </resources>

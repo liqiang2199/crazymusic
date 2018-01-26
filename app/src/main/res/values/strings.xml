@@ -40,6 +40,7 @@
     <string name="last_upload_time_colon">上次上传时间：</string>
 
     <string name="coupon">优惠券</string>
+    <string name="bank_manage">银行卡管理</string>
     <string name="discount_coupon">折扣优惠券</string>
     <string name="expiration_colon">过期时间：</string>
 
@@ -133,6 +134,7 @@
     <string name="withdraw_amount">提现金额</string>
     <string name="balance_colon">剩余金额：</string>
     <string name="yuan">元</string>
+    <string name="withdrawals_coupons">优惠劵</string>
     <!--充值-->
     <string name="recharge_channels">充值渠道</string>
     <string name="recharge_amount">充值金额</string>
