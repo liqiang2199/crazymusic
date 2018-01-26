@@ -55,6 +55,7 @@ public class BaseApp extends XApplication {
                 return new ClassicsFooter(context).setSpinnerStyle(SpinnerStyle.Translate);
             }
         });
+
     }
 
     @SuppressLint("RestrictedApi")
