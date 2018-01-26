@@ -53,13 +53,14 @@
                 android:paddingLeft="20dp"
                 android:paddingRight="0dp"
                 android:paddingStart="20dp"
+                android:maxLength="6"
                 android:textColor="@color/colorCommonText"
                 android:textColorHint="@color/colorCommonHint"
                 android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/tv_get_verification_code"
-                android:layout_width="100dp"
+                android:layout_width="125dp"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="5dp"
                 android:layout_marginStart="5dp"

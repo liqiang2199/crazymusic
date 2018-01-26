@@ -218,6 +218,10 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
             UIHelper.showToast(mContext, getString(R.string.tip_phone_is_sure));
             return;
         }
+        if (!UtilsTools.isSixLength(verificationCode)){
+            UIHelper.showToast(mContext, getString(R.string.tip_verification_six));
+            return;
+        }
         TreeMap<String, String> params = new TreeMap<String, String>();
         params.put("phone", phoneNumber);
         params.put("code", verificationCode);
@@ -258,9 +262,11 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
                                 String data = responseBeen.getData();
                                 if (!TextUtils.isEmpty(data)){
                                     RegisterBeen registerBeen = getNewGson().fromJson(data,RegisterBeen.class);
+
                                     CacheUtil.put(Constants.PHONE, phoneNumber);
                                     CacheUtil.put(Constants.TOKEN, registerBeen.getToken());
                                     CacheUtil.put(Constants.HEADIMAGE,registerBeen.getHead_img());
+                                    CacheUtil.put(Constants.NINCKNAME, registerBeen.getNick_name());
                                 }
                                 //关闭 登录界面
                                 EventBus.getDefault().post(new LoginFinishBus());

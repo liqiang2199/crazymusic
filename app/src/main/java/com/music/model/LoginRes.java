@@ -60,6 +60,7 @@ public class LoginRes {
         private int sex;
         private String sign;
         private String token;
+        private String nick_name;
         private List<SkiledsBean> skileds;
 
         public String getHead_img() {
@@ -132,6 +133,14 @@ public class LoginRes {
 
         public void setSkileds(List<SkiledsBean> skileds) {
             this.skileds = skileds;
+        }
+
+        public String getNick_name() {
+            return nick_name;
+        }
+
+        public void setNick_name(String nick_name) {
+            this.nick_name = nick_name;
         }
 
         public static class RegionBean {

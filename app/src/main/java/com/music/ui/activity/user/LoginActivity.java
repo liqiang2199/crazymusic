@@ -165,6 +165,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                                 //保存
                                 CacheUtil.put(Constants.PHONE, phoneNumber);
                                 CacheUtil.put(Constants.TOKEN, loginRes.getData().getToken());
+                                CacheUtil.put(Constants.NINCKNAME, loginRes.getData().getNick_name());
                                 startActivity(new Intent(mContext, MainActivity.class));
                                 LoginActivity.this.finish();
                             } else {

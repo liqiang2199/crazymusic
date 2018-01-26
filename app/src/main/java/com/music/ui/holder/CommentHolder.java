@@ -76,13 +76,17 @@ public class CommentHolder extends IViewHolder {
 
         @Override
         protected void onBindData(final CommunityListEntity itemData) {
-            XImageLoadUtils.loadCircleImage(mContext, itemData.getHead_img(), ivHead);
+            XImageLoadUtils.loadCircleImage(mContext, itemData.getHead_img(), ivHead,1,R.mipmap.ic_head);
+
             tvTitle.setText(itemData.getNick_name());
             tvContent.setText(itemData.getContent());
-            //图片展示
-            TopicImgAdapter topicImgAdapter = new TopicImgAdapter(mContext);
-            gridView.setAdapter(topicImgAdapter);
-            topicImgAdapter.setList(itemData.getImgList());
+            if (itemData.getImgList().size() > 0){
+                //图片展示
+                TopicImgAdapter topicImgAdapter = new TopicImgAdapter(mContext);
+                gridView.setAdapter(topicImgAdapter);
+                topicImgAdapter.setList(itemData.getImgList());
+            }
+
             tvZan.setText(itemData.getPerfect_count() + "");
             tvPing.setText(itemData.getEvaluate_count() + "");
 
@@ -99,6 +103,7 @@ public class CommentHolder extends IViewHolder {
                 @Override
                 public void onClick(View v) {
                     if (isZan) {
+                        //点赞
                         HttpRequesParams params = new HttpRequesParams(ConstHost.COMMUNITY_PREFECT);
                         JSONObject jsonObject = new JSONObject();
                         try {
@@ -135,6 +140,7 @@ public class CommentHolder extends IViewHolder {
                             }
                         });
                     } else {
+                        //取消点赞
                         HttpRequesParams params = new HttpRequesParams(ConstHost.COMMUNITY_CANCEL_PREFECT);
                         JSONObject jsonObject = new JSONObject();
                         try {

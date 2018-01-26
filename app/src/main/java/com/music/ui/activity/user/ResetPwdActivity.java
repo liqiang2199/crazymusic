@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.framework.utils.XToastUtil;
 import com.google.gson.Gson;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.convert.StringConvert;
@@ -16,6 +17,7 @@ import com.lzy.okgo.model.Response;
 import com.lzy.okrx2.adapter.ObservableResponse;
 import com.music.R;
 import com.music.api.API;
+import com.music.model.ResponseBeen;
 import com.music.ui.activity.BaseActivity;
 import com.music.utils.CountDownHelper;
 import com.music.utils.UIHelper;
@@ -75,16 +77,7 @@ public class ResetPwdActivity extends BaseActivity implements View.OnClickListen
                     return;
                 }
                 sendVerificationCode(phoneNumber);
-                CountDownHelper helper = new CountDownHelper(tvGetVerificationCode, getString(R.string.send_verification_code),
-                        getString(R.string.resend_verification_code), 60, 1);
-                helper.setOnFinishListener(new CountDownHelper.OnFinishListener() {
 
-                    @Override
-                    public void finish() {
-
-                    }
-                });
-                helper.start();
                 break;
             case R.id.btn_register:
                 mLoadingDialog = new LoadingDialog(this);
@@ -128,9 +121,24 @@ public class ResetPwdActivity extends BaseActivity implements View.OnClickListen
 
                     @Override
                     public void onNext(@NonNull Response<String> stringResponse) {
-                        Log.e(TAG, stringResponse.body());
+                        String msg = stringResponse.body();
+                        Log.e(TAG, msg);
                         try {
-                            Gson gson = new Gson();
+                            ResponseBeen responseBeen = getNewGson().fromJson(msg,ResponseBeen.class);
+                            String code = responseBeen.getCode();
+                            if (!UtilsTools.isStringNull(code)&&code.equals("0")){
+                                CountDownHelper helper = new CountDownHelper(tvGetVerificationCode, getString(R.string.send_verification_code),
+                                        getString(R.string.resend_verification_code), 60, 1);
+                                helper.setOnFinishListener(new CountDownHelper.OnFinishListener() {
+
+                                    @Override
+                                    public void finish() {
+
+                                    }
+                                });
+                                helper.start();
+                            }
+                            XToastUtil.showToast(mContext,responseBeen.getMsg());
 
                         } catch (Exception e) {
                             onError(e);
@@ -171,12 +179,16 @@ public class ResetPwdActivity extends BaseActivity implements View.OnClickListen
             UIHelper.showToast(mContext, getString(R.string.tip_new_login_password_again_can_not_be_empty));
             return;
         }
-        if (TextUtils.equals(loginPassword, loginNewPassword)) {
+        if (!TextUtils.equals(loginPassword, loginNewPassword)) {
             UIHelper.showToast(mContext, getString(R.string.enter_the_password_twice_inconsistent));
             return;
         }
         if (!UtilsTools.isPhoneNum(phoneNumber)){
             UIHelper.showToast(mContext, getString(R.string.tip_phone_is_sure));
+            return;
+        }
+        if (!UtilsTools.isSixLength(verificationCode)){
+            UIHelper.showToast(mContext, getString(R.string.tip_verification_six));
             return;
         }
         TreeMap<String, String> params = new TreeMap<String, String>();
@@ -208,9 +220,15 @@ public class ResetPwdActivity extends BaseActivity implements View.OnClickListen
 
                     @Override
                     public void onNext(@NonNull Response<String> stringResponse) {
-                        Log.e(TAG, stringResponse.body());
+                        String msg = stringResponse.body();
+                        Log.e(TAG, msg);
                         try {
-                            Gson gson = new Gson();
+                            ResponseBeen responseBeen = getNewGson().fromJson(msg,ResponseBeen.class);
+                            String code = responseBeen.getCode();
+                            if (!UtilsTools.isStringNull(responseBeen.getCode())&&code.equals("0")){
+                                //更换成功
+                            }
+                            XToastUtil.showToast(mContext,responseBeen.getMsg());
                         } catch (Exception e) {
                             onError(e);
                         }

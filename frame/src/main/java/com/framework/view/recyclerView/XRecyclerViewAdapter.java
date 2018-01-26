@@ -70,6 +70,12 @@ public class XRecyclerViewAdapter extends RecyclerView.Adapter {
     }
 
 
+    /**
+     * 获取 RecycleView  的布局文件
+     * @param parent
+     * @param viewType
+     * @return
+     */
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         return list.get(viewType).getiViewHolder().create(parent, this);

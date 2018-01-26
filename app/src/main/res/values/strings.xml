@@ -172,6 +172,7 @@
     <string name="tip_new_login_password_can_not_be_empty">新密码不能为空</string>
     <string name="tip_new_login_password_again_can_not_be_empty">确认新密码不能为空</string>
     <string name="enter_the_password_twice_inconsistent">两次密码输入不一致</string>
+    <string name="tip_verification_six">请输入6位数验证码</string>
 
     <!--Toast  提示-->
     <string name="Toast_send_sms">发送短信成功</string>

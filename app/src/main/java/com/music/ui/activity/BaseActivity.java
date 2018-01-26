@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 
 import com.framework.utils.StatusBarUtil;
 import com.framework.view.Toolbar;
@@ -26,6 +27,8 @@ public class BaseActivity extends AppCompatActivity implements View.OnClickListe
 
     protected Context mContext;
     protected Gson gson;
+    protected  int width;
+    protected  int height;
 
     @Subscribe
     @Override
@@ -79,6 +82,19 @@ public class BaseActivity extends AppCompatActivity implements View.OnClickListe
         super.onDestroy();
         EventBus.getDefault().unregister(this);
         BaseApp.getActivities().remove(this);
+
+    }
+
+    /**
+     * 获取屏幕的高度
+     */
+    public void Width_Height(){
+
+        WindowManager wm = (WindowManager) mContext
+                .getSystemService(Context.WINDOW_SERVICE);
+
+        width = wm.getDefaultDisplay().getWidth();
+        height = wm.getDefaultDisplay().getHeight();
 
     }
 

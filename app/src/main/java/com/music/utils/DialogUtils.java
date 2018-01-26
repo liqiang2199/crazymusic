@@ -106,12 +106,16 @@ public class DialogUtils {
      *
      * @param context
      */
-    public static void showPhotoDialog(final Context context, final CramUtils cramUtils) {
+    public static void showPhotoDialog(final Context context, final CramUtils cramUtils,int w,int h) {
         final Dialog dlg = new Dialog(context, R.style.DialogThemeNoTitle);
         dlg.show();
         Window window = dlg.getWindow();
         window.setContentView(R.layout.dialog_photo);
         window.setWindowAnimations(R.style.mystyle);
+        WindowManager.LayoutParams params = window.getAttributes();
+        params.width = w-UtilsTools.dip2px(context,30);
+        window.setAttributes(params);
+
         Button photograph_btn = (Button) window.findViewById(R.id.photograph_btn);
         Button select_photo_btn = (Button) window.findViewById(R.id.select_photo_btn);
         //拍照选择

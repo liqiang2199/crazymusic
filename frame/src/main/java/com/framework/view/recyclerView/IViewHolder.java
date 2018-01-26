@@ -28,7 +28,7 @@ public abstract class IViewHolder {
         View view = LayoutInflater.from(parent.getContext()).inflate(getLayout(), parent, false);
         return create(view, adapter);
     }
-
+    //XViewHolder  返回这个对象
     protected abstract XViewHolder create(View view, RecyclerView.Adapter adapter);
 
     public abstract

@@ -40,6 +40,7 @@ public class XRecyclerView extends RefreshLayout {
         addView(mRecyclerView, LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
         layout = new LinearLayoutManager(getContext());
         mRecyclerView.setLayoutManager(layout);
+        // 绑定的Adapter
         mXRecyclerViewAdapter = new XRecyclerViewAdapter();
         mRecyclerView.setAdapter(mXRecyclerViewAdapter);
         LayoutParams layoutParams = new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0);

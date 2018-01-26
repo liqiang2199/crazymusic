@@ -57,7 +57,7 @@ public final class ConstHost {
     public static final String COMMUNITY_ADD = BASE_HOST + "community/communityAdd";
     //点赞接口
     public static final String COMMUNITY_PREFECT = BASE_HOST + "community/communityPerfect";
-    //消点赞接口
+    //取消点赞接口
     public static final String COMMUNITY_CANCEL_PREFECT = BASE_HOST + "community/cancelCommunityPerfect";
     //评论接口
     public static final String COMMUNITY_EVALUATE_ADD = BASE_HOST + "community/evaluateAdd";

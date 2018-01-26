@@ -1,5 +1,8 @@
 package com.music.utils;
 
+import android.content.Context;
+import android.text.TextUtils;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -8,6 +11,11 @@ import java.util.regex.Pattern;
  */
 
 public class UtilsTools {
+
+    public static int dip2px(Context context, double dpValue) {
+        float density = context.getResources().getDisplayMetrics().density;
+        return (int) (dpValue * density + 0.5);
+    }
     /**
      * 正则表达式 判断电话号是否正确
      */
@@ -19,7 +27,7 @@ public class UtilsTools {
     }
 
     public static boolean isStringNull(String s){
-        if (s == null||s.equals(null)||s.equals("null")||s.equals("")){
+        if (TextUtils.isEmpty(s)||s.equals("null")||s.equals("")){
             return true;
         }
         return false;
@@ -31,7 +39,7 @@ public class UtilsTools {
      * @return
      */
     public static String getReadCacheUtilData(String key){
-        if (!isStringNull(key)){
+        if (isStringNull(key)){
             return "";
         }
         if (CacheUtil.contains(key)){
@@ -39,6 +47,21 @@ public class UtilsTools {
         }
         return "";
 
+    }
+
+    /**
+     * 判断 输入验证码 是否是6位
+     * @param s
+     * @return
+     */
+    public static boolean isSixLength(String s){
+        if (isStringNull(s)){
+            return false;
+        }
+        if (s.length() == 6){
+            return true;
+        }
+        return false;
     }
 
 }

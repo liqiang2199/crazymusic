@@ -29,6 +29,7 @@ import com.music.ui.holder.adapter.UploadFileAdapter;
 import com.framework.utils.carme.CramUtils;
 import com.music.utils.DialogUtils;
 import com.music.utils.OssService;
+import com.music.utils.UtilsTools;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -53,15 +54,21 @@ public class TipsPostActivity extends BaseActivity implements AdapterView.OnItem
         setContentView(R.layout.activity_topic_post);
         super.onCreate(savedInstanceState);
         initView();
-        StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
-                .detectDiskReads().detectDiskWrites().detectNetwork()
-                .penaltyLog().build());
-        StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder()
-                .detectLeakedSqlLiteObjects().detectLeakedClosableObjects()
-                .penaltyLog().penaltyDeath().build());
+//        StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
+//                .detectDiskReads().detectDiskWrites().detectNetwork()
+//                .penaltyLog().build());
+//
+//        StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder()
+//                .detectLeakedSqlLiteObjects().detectLeakedClosableObjects()
+//                .penaltyLog().penaltyDeath().build());
+
+
     }
 
     private void initView() {
+
+        Width_Height();
+
         btnRight = (TextView) findViewById(R.id.btn_right);
         btnRight.setText(getString(R.string.send));
         etContent = (EditText) findViewById(R.id.et_content);
@@ -115,6 +122,10 @@ public class TipsPostActivity extends BaseActivity implements AdapterView.OnItem
         switch (v.getId()) {
             case R.id.btn_right:
                 //发布
+                if (UtilsTools.isStringNull(etTitle.getText().toString())){
+                    XToastUtil.showToast(this, getString(R.string.input_title));
+                    return;
+                }
                 if (TextUtils.isEmpty(etContent.getText().toString())) {
                     XToastUtil.showToast(this, getString(R.string.input_info));
                     return;
@@ -124,10 +135,11 @@ public class TipsPostActivity extends BaseActivity implements AdapterView.OnItem
         }
     }
 
+    //弹窗
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         if (position == uploadFileAdapter.getCount() - 1) {
-            DialogUtils.showPhotoDialog(this, cramUtils);
+            DialogUtils.showPhotoDialog(this, cramUtils,width,height);
         }
     }
 
