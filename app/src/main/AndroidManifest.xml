@@ -77,6 +77,10 @@
         <activity
             android:name=".ui.activity.shop.AddressListActivity"
             android:label="@string/address_list" />
+        <activity android:name=".ui.activity.user.AddBankActivity"
+            android:label="添加银行卡"/>
+        <activity android:name=".ui.activity.user.BankListManageActivity"
+            android:label="银行卡"/>
 
         <activity
             android:name=".ui.activity.shop.AddEditAddressActivity"
@@ -139,5 +143,7 @@
         <activity
             android:name=".ui.activity.LuckDrawActivity"
             android:label="@string/luck" />
+        <activity android:name=".ui.activity.user.MessgeActivity"
+            android:label="消息通知"/>
     </application>
 </manifest>

@@ -21,6 +21,7 @@ import com.music.ui.activity.user.AddressManagementActivity;
 import com.music.ui.activity.user.ApplyForTeacherActivity;
 import com.music.ui.activity.user.CollectGoodsActivity;
 import com.music.ui.activity.user.LoginActivity;
+import com.music.ui.activity.user.MessgeActivity;
 import com.music.ui.activity.user.MyCoursesActivity;
 import com.music.ui.activity.user.MyWalletActivity;
 import com.music.ui.activity.user.SetActivity;
@@ -48,6 +49,7 @@ public class MyFragment extends Fragment implements View.OnClickListener {
     private TextView tvAddressManagement;
     private TextView tvSetUp;
     private RelativeLayout relative_useInfo;
+    private ImageView info_image;
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -74,6 +76,7 @@ public class MyFragment extends Fragment implements View.OnClickListener {
         tvSetUp = (TextView) rootView.findViewById(R.id.tv_set_up);
 
         relative_useInfo = (RelativeLayout)rootView.findViewById(R.id.relative_useInfo);
+        info_image = rootView.findViewById(R.id.info_image);
 
         ivAvatar.setOnClickListener(this);
         tvName.setOnClickListener(this);
@@ -88,6 +91,7 @@ public class MyFragment extends Fragment implements View.OnClickListener {
         tvAddressManagement.setOnClickListener(this);
         tvSetUp.setOnClickListener(this);
         relative_useInfo.setOnClickListener(this);
+        info_image.setOnClickListener(this);
 
         tvName.setText(R.string.login_or_register);
         tvMyBalance.setText("");
@@ -143,6 +147,9 @@ public class MyFragment extends Fragment implements View.OnClickListener {
             case R.id.tv_set_up:
                 //设置
                 startActivity(new Intent(getActivity(), SetActivity.class));
+                break;
+            case R.id.info_image:
+                startActivity(new Intent(getActivity(), MessgeActivity.class));
                 break;
         }
     }

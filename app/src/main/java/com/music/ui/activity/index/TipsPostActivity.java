@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
@@ -96,6 +97,7 @@ public class TipsPostActivity extends BaseActivity implements AdapterView.OnItem
         HttpUtils.post(this, false, httpRequesParams, new HttpResponseCallBack() {
             @Override
             public void onSuccess(String result) {
+                Log.e("Tips","       发帖      "+result);
                 Gson gson = new Gson();
                 Type type = new TypeToken<XResult<String>>() {
                 }.getType();

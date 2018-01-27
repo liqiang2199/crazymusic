@@ -60,6 +60,7 @@ public class MyWalletActivity extends BaseActivity implements View.OnClickListen
                 break;
             case R.id.rlyt_bankList:
                 //银行卡管理
+                startActivity(new Intent(mContext,BankListManageActivity.class));
                 break;
         }
     }

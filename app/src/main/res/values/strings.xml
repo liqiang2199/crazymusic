@@ -127,6 +127,14 @@
     <string name="balance">余额</string>
     <string name="withdraw">提现</string>
     <string name="recharge">充值</string>
+    <string name="bank_use_Name">持卡人</string>
+    <string name="bank_use_Name_tip">请输入持卡人</string>
+    <string name="bank_num">卡号</string>
+    <string name="bank_num_tip">请输入卡号</string>
+    <string name="bank_open_Name">开户银行</string>
+    <string name="bank_open_Name_tip">请输入开户银行</string>
+    <string name="bank_type">（储蓄卡）</string>
+    <string name="addBank">添加银行卡</string>
     <!--提现-->
     <string name="into_the_channel">到账渠道</string>
     <string name="alipay">支付宝</string>
@@ -180,4 +188,9 @@
     <string name="Toast_send_sms">发送短信成功</string>
     <string name="Toast_send_sms_fail">发送短信失败，请重新发送</string>
     <string name="Toast_register">注册成功</string>
+
+    <!--dialog 提示框-->
+    <string name="dialog_sure">确定</string>
+    <string name="dialog_cancel">取消</string>
+
 </resources>

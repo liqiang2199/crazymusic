@@ -13,9 +13,12 @@ public class API {
     public static String USER_APPLYTEACHER = HOST + "/user/applyTeacher";
     public static String USER_FINDPWDCODE = HOST + "/user/findPwdCode";
     public static String USER_UPDATEPWDBYCODE = HOST + "/user/updatePwdByCode";
+    //新增和修改用户地址信息
     public static String USER_UPDATESAVEUSERREGION = HOST + "/user/updateSaveUserRegion";
+
     public static String USER_SETUSERCONFIRMDEFAULTADDR = HOST + "/user/setUserConfirmDefaultAddr";
     public static String USER_DELETEUSERCONFIRMADDR = HOST + "/user/deleteUserConfirmAddr";
+    //获取用户默认收货地址
     public static String USER_GETUSERDEFAULADDR = HOST + "/user/getUserDefaulAddr";
     public static String USER_UPDATEUSERINFO = HOST + "/user/updateUserInfo";
     public static String USER_GETUSERCONFIRMADDRS = HOST + "/user/getUserConfirmAddrs";
@@ -27,6 +30,10 @@ public class API {
     //获取优惠券列表
     public static String COUPON_GETUSERCOUPONS = HOST + "/coupon/getUserCoupons";
     public static String COUPON_RECIEVECOUPONS = HOST + "/coupon/recieveCoupons";
+    //添加银行卡
+    public static String USER_ADDUSERACCOUNTCARD = HOST + "/user/addUserAccountCard";
+    //个人银行卡列表
+    public static String USER_ACCOUNTCARDLIST = HOST + "/user/userAccountCardList";
 
     /**
      * 社区模块

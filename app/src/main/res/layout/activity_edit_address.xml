@@ -22,13 +22,15 @@
             android:padding="10dp">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="0.3"
                 android:layout_height="wrap_content"
                 android:text="@string/shouhuoren" />
 
             <EditText
                 android:id="@+id/et_receiptName"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
+                android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/common_height5"
                 android:background="@null"
@@ -51,13 +53,15 @@
             android:padding="10dp">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="0.3"
                 android:layout_height="wrap_content"
                 android:text="@string/contact_mobile" />
 
             <EditText
                 android:id="@+id/et_mobile"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
+                android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/common_height5"
                 android:background="@null"
@@ -91,13 +95,14 @@
             android:padding="10dp">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="0.3"
                 android:layout_height="wrap_content"
                 android:text="@string/load_area" />
 
             <TextView
                 android:id="@+id/et_address"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/common_height5"
                 android:layout_weight="1"
@@ -118,34 +123,41 @@
             android:layout_height="1px"
             android:background="@color/colorCommonLine" />
 
-        <LinearLayout
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:background="@color/white"-->
+            <!--android:gravity="center_vertical"-->
+            <!--android:minHeight="48dp"-->
+            <!--android:padding="10dp">-->
+
+            <!--<TextView-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_weight="0.3"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="@string/street" />-->
+
+            <!---->
+        <!--</LinearLayout>-->
+
+        <EditText
+            android:id="@+id/et_street"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/gap_200"
             android:background="@color/white"
-            android:gravity="center_vertical"
-            android:minHeight="48dp"
-            android:padding="10dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/street" />
-
-            <EditText
-                android:id="@+id/et_street"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/common_height5"
-                android:background="@null"
-                android:hint="@string/input_street"
-                android:textColor="@color/colorCommonText"
-                android:textColorHint="@color/colorCommonHint"
-                android:textSize="@dimen/common_size14" />
-        </LinearLayout>
+            android:hint="@string/input_street"
+            android:textColor="@color/colorCommonText"
+            android:textColorHint="@color/colorCommonHint"
+            android:textSize="@dimen/common_size14"
+            android:gravity="left|top"
+            android:padding="@dimen/gap_5"/>
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1px"
             android:background="@color/colorCommonLine" />
+
+        <include
+            layout="@layout/include_activity_btn"/>
     </LinearLayout>
 </android.support.design.widget.CoordinatorLayout>

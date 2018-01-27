@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/coordinatorLayout_Style"
+    app:statusBarBackground="@drawable/bg_base_bar">
+
+    <include layout="@layout/base_top" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <include
+            layout="@layout/include_layout_ver_10_height"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/gap_48"
+            android:orientation="horizontal"
+            android:background="@color/white">
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="0.3"
+                android:layout_height="match_parent"
+                android:text="@string/bank_use_Name"
+                android:gravity="center"/>
+
+            <EditText
+                android:id="@+id/bank_user_Name"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                style="@style/edit_Login"
+                android:maxLength="19"
+                android:inputType="text"
+                android:paddingLeft="@dimen/gap_5"
+                android:hint="@string/bank_use_Name_tip"
+                android:gravity="center|left"/>
+
+        </LinearLayout>
+
+        <include
+            layout="@layout/include_layout_ver_1_height"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/gap_48"
+            android:orientation="horizontal"
+            android:background="@color/white">
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="0.3"
+                android:layout_height="match_parent"
+                android:text="@string/bank_num"
+                android:gravity="center"/>
+
+            <EditText
+                android:id="@+id/bank_num"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                style="@style/edit_Login"
+                android:maxLength="19"
+                android:inputType="number"
+                android:paddingLeft="@dimen/gap_5"
+                android:hint="@string/bank_num_tip"
+                android:gravity="center|left"/>
+
+        </LinearLayout>
+
+        <include
+            layout="@layout/include_layout_ver_1_height"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/gap_48"
+            android:orientation="horizontal"
+            android:background="@color/white">
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="0.3"
+                android:layout_height="match_parent"
+                android:text="@string/bank_open_Name"
+                android:gravity="center"/>
+
+            <EditText
+                android:id="@+id/bank_open_Name"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                style="@style/edit_Login"
+                android:maxLength="19"
+                android:inputType="text"
+                android:paddingLeft="@dimen/gap_5"
+                android:hint="@string/bank_open_Name_tip"
+                android:gravity="center|left"/>
+
+        </LinearLayout>
+
+        <include
+            layout="@layout/include_layout_ver_1_height"/>
+
+        <include
+            layout="@layout/include_activity_btn"/>
+
+    </LinearLayout>
+
+
+</android.support.design.widget.CoordinatorLayout>

@@ -48,19 +48,19 @@ public class CouponsHolder extends IViewHolder {
             if (itemData != null){
 
                 coupons_Name.setText(itemData.getName());
-                coupons_Time.setText(itemData.getExpire_date());
+                coupons_price.setText(itemData.getPayment());
                 //1 未使用 0 已使用 -1 过期
                 if (itemData.getState() .equals("1") ){
-                    coupons_price.setText("过期时间："+itemData.getPayment());
+                    coupons_Time.setText("过期时间："+itemData.getExpire_date());
                 }
 
                 if (itemData.getState() .equals("0") )
                 {
-                    coupons_price.setText("已使用");
+                    coupons_Time.setText("已使用");
                 }
                 if (itemData.getState() .equals("-1") )
                 {
-                    coupons_price.setText("已过期");
+                    coupons_Time.setText("已过期");
                 }
             }
         }
