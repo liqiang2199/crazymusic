@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.text.TextUtils
 import android.util.Log
+import android.view.View
 import com.framework.utils.XToastUtil
 import com.framework.view.recyclerView.XRecyclerView
 import com.lzy.okgo.OkGo
@@ -19,6 +20,7 @@ import com.music.model.busbeen.LoginFinishBus
 import com.music.model.jsonbeen.BankListBeen
 import com.music.model.jsonbeen.CouponsListBeen
 import com.music.ui.activity.BaseActivity
+import com.music.ui.dialog.DialogCommonTip
 import com.music.ui.holder.AddBankHolder
 import com.music.ui.holder.BankListHolder
 import com.music.ui.holder.CouponsHolder
@@ -38,7 +40,52 @@ import java.util.*
  * Created by Administrator on 2018/1/27.
  * 银行卡列表
  */
-class BankListManageActivity :BaseActivity() {
+class BankListManageActivity :BaseActivity(), DialogCommonTip.DialogOnClickSubmit {
+    override fun onDialogClickSubmit() {
+        mLoadingDialog = LoadingDialog(this)
+        mLoadingDialog!!.show()
+
+        val params = TreeMap<String, String>()
+        params.put("id","")
+        val jsonObject = JSONObject(params)
+
+        OkGo.post<String>(API.USER_ACCOUNTDELETECARD)
+                .tag(this)
+                .upJson(jsonObject)
+                .converter(StringConvert())
+                .adapt(ObservableResponse<String>())
+                .subscribeOn(Schedulers.io())
+                .doOnSubscribe({ })
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(object : Observer<Response<String>> {
+
+                    private var disposable: Disposable? = null
+
+                    override fun onSubscribe(d: Disposable) {
+                        disposable = d
+                    }
+
+                    override fun onNext(stringResponse: Response<String>) {
+                        val msg = stringResponse.body()
+                        Log.v("BankList",msg)
+                        mLoadingDialog.cancel()
+                    }
+
+                    override fun onError(e: Throwable) {
+                        e.printStackTrace()
+                        UIHelper.showToast(mContext, resources.getString(R.string.system_error))
+                        mLoadingDialog.cancel()
+                    }
+
+                    override fun onComplete() {
+                        disposable!!.dispose()
+                        mLoadingDialog.cancel()
+                    }
+                })
+    }
+
+    override fun onDialogClickCancel() {
+    }
 
     private var recyclerview: XRecyclerView?= null
     private var refresh_layout: SmartRefreshLayout?= null
@@ -52,7 +99,7 @@ class BankListManageActivity :BaseActivity() {
     private fun initView(){
         recyclerview = findViewById(R.id.mRecyclerEntityView)
 
-
+        Width_Height()
 
     }
 
@@ -100,7 +147,6 @@ class BankListManageActivity :BaseActivity() {
                                     recyclerview!!.adapter.setData(0, responseBeen.data!!)
                                     recyclerview!!.adapter.setData(1, "")
                                 }
-                                recyclerview!!.recyclerView
                                 //else{
                                 //无数据显示
                                 //}
@@ -139,7 +185,15 @@ class BankListManageActivity :BaseActivity() {
     @Subscribe
     fun onEventMainThread(event: AddBankBus?) {
         if (event != null) {
-            startActivity(Intent(mContext, AddBankActivity::class.java))
+            if (event.index == 1){
+                startActivity(Intent(mContext, AddBankActivity::class.java))
+            }else{
+                val  dialogCommonDelet = DialogCommonTip(mContext,R.style.AppTheme_bottomDialog,width,height)
+                dialogCommonDelet.setDialogTitle("是否删除此卡？").setDialogCancel("取消")
+                        .setDialogSubmit("确定").setDialogOnClick(this).show()
+            }
+
         }
     }
+
 }

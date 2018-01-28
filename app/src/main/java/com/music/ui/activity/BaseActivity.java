@@ -1,5 +1,6 @@
 package com.music.ui.activity;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
@@ -23,6 +24,7 @@ import org.greenrobot.eventbus.Subscribe;
 /**
  * 基本Activity
  */
+@SuppressLint("Registered")
 public class BaseActivity extends AppCompatActivity implements View.OnClickListener {
     protected Toolbar toolbar;
 

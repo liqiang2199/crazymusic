@@ -82,7 +82,7 @@ public class BaseApp extends XApplication {
 
         CacheUtil.init(this);
         initOkGo();
-
+        //检测程序崩溃类和重新启动APP
         CustomActivityOnCrash.install(this);
     }
 

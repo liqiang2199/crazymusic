@@ -104,7 +104,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                 startActivity(new Intent(this, RegisterActivity.class));
                 break;
             case R.id.iv_qq:
-                //QQ
+                //qq
                 qqLogin();
                 break;
             case R.id.iv_wechat:

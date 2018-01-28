@@ -11,6 +11,7 @@
         android:layout_margin="@dimen/gap_20">
 
         <TextView
+            android:id="@+id/dialog_Title"
             android:layout_width="match_parent"
             android:layout_height="@dimen/gap_100"
             android:text="@string/app_name"
@@ -27,6 +28,7 @@
             android:layout_marginBottom="@dimen/gap_20">
 
             <TextView
+                android:id="@+id/dialog_cancel"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="@dimen/gap_48"
@@ -38,6 +40,7 @@
                 android:background="@drawable/home_btn_dialog"/>
 
             <TextView
+                android:id="@+id/dialog_submit"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="@dimen/gap_48"

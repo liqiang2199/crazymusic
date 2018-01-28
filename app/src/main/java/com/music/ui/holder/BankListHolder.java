@@ -1,13 +1,18 @@
 package com.music.ui.holder;
 
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.framework.view.recyclerView.IViewHolder;
 import com.framework.view.recyclerView.XViewHolder;
 import com.music.R;
+import com.music.model.busbeen.AddBankBus;
 import com.music.model.jsonbeen.BankListBeen;
+
+import org.greenrobot.eventbus.EventBus;
 
 /**
  * Created by Administrator on 2018/1/27.
@@ -29,6 +34,7 @@ public class BankListHolder extends IViewHolder {
         private TextView tv_name;
         private TextView tv_bank_name;
         private TextView tv_bank_num;
+        private LinearLayout liner_longClick;
         public ViewHolder(View itemView, RecyclerView.Adapter adapter) {
             super(itemView, adapter);
         }
@@ -38,6 +44,14 @@ public class BankListHolder extends IViewHolder {
             tv_name = rootView.findViewById(R.id.tv_name);
             tv_bank_name = rootView.findViewById(R.id.tv_bank_name);
             tv_bank_num = rootView.findViewById(R.id.tv_bank_num);
+            liner_longClick = rootView.findViewById(R.id.liner_longClick);
+            liner_longClick.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View view) {
+                    EventBus.getDefault().post(new AddBankBus(2));
+                    return false;
+                }
+            });
         }
 
         @Override

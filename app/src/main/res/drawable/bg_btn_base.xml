@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+     <stroke
+        android:width="0.2dp"
+        android:color="@color/coupons_package" />
+   <solid android:color="@color/coupons_package" />
+    <corners android:radius="@dimen/gap_20"  />
+</shape>  

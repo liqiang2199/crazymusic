@@ -145,5 +145,9 @@
             android:label="@string/luck" />
         <activity android:name=".ui.activity.user.MessgeActivity"
             android:label="消息通知"/>
+        <activity android:name=".ui.activity.user.UserAccountBindActivity"
+            android:label="账号管理"/>
+        <activity android:name=".ui.activity.user.BindPhoneActivity"
+            android:label="绑定手机号"/>
     </application>
 </manifest>

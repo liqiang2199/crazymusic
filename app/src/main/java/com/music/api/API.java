@@ -34,6 +34,8 @@ public class API {
     public static String USER_ADDUSERACCOUNTCARD = HOST + "/user/addUserAccountCard";
     //个人银行卡列表
     public static String USER_ACCOUNTCARDLIST = HOST + "/user/userAccountCardList";
+    //删除绑定银行卡
+    public static String USER_ACCOUNTDELETECARD = HOST + "/user/deleteUserAccountCard";
 
     /**
      * 社区模块

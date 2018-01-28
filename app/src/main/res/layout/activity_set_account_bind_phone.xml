@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/coordinatorLayout_Style"
+    app:statusBarBackground="@drawable/bg_base_bar">
+
+    <include layout="@layout/base_top" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@mipmap/bg_bind_phone"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/gap_48"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/gap_30"
+            android:layout_marginRight="@dimen/gap_10"
+            android:layout_marginLeft="@dimen/gap_10"
+            android:background="@drawable/bg_bind_phone_edit">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                style="@style/edit_Login"
+                android:textColor="@color/white"
+                android:paddingLeft="@dimen/gap_20"
+                android:paddingRight="@dimen/gap_20"
+                android:hint="@string/app_name"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/gap_48"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/gap_30"
+            android:layout_marginRight="@dimen/gap_10"
+            android:layout_marginLeft="@dimen/gap_10"
+            android:background="@drawable/bg_bind_phone_edit">
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                style="@style/edit_Login"
+                android:textColor="@color/white"
+                android:paddingLeft="@dimen/gap_20"
+                android:paddingRight="@dimen/gap_10"
+                android:hint="@string/app_name"/>
+            <TextView
+                android:id="@+id/tv_version_update"
+                android:layout_width="@dimen/gap_90"
+                android:layout_height="wrap_content"
+                android:text="@string/bind"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:padding="@dimen/gap_5"
+                android:gravity="center"
+                android:layout_marginRight="@dimen/gap_20"
+                android:background="@drawable/bg_bind_phone_edit_bg_white"/>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/submit"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/gap_48"
+            android:text="提交"
+            style="@style/btn_common"
+            android:background="@drawable/bg_btn_base"
+            android:layout_marginLeft="@dimen/gap_20"
+            android:layout_marginRight="@dimen/gap_20"
+            android:layout_marginTop="@dimen/gap_70"
+            android:gravity="center"/>
+
+    </LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

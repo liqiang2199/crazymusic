@@ -37,7 +37,7 @@ public class AddBankHolder extends IViewHolder {
             linear_add_bank.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    EventBus.getDefault().post(new AddBankBus());
+                    EventBus.getDefault().post(new AddBankBus(1));
                 }
             });
         }
