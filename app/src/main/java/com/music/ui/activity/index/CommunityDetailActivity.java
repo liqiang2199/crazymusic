@@ -16,6 +16,7 @@ import com.music.ui.entity.CommunityDetailListEntity;
 import com.music.ui.entity.CommunityListEntity;
 import com.music.ui.entity.XPage;
 import com.music.ui.entity.XResult;
+import com.music.ui.holder.CommentEditViewHolder;
 import com.music.ui.holder.CommentInfoListHolder;
 import com.music.ui.holder.CommentInfoTopHolder;
 
@@ -37,7 +38,7 @@ public class CommunityDetailActivity extends BaseActivity implements XRecyclerVi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 //        setContentView(R.layout.activity_list);
-        setContentView(R.layout.activity_goods_search);
+        setContentView(R.layout.activity_community_detail);
         super.onCreate(savedInstanceState);
         initView();
     }
@@ -46,6 +47,7 @@ public class CommunityDetailActivity extends BaseActivity implements XRecyclerVi
         mRecyclerEntityView = findViewById(R.id.mRecyclerEntityView);
         mRecyclerEntityView.getAdapter().bindHolder(new CommentInfoTopHolder());
         mRecyclerEntityView.getAdapter().bindHolder(new CommentInfoListHolder());
+//        mRecyclerEntityView.getAdapter().bindHolder(new CommentEditViewHolder());
 
         communityListEntity = EventBus.getDefault().getStickyEvent(CommunityListEntity.class);
 
@@ -88,6 +90,7 @@ public class CommunityDetailActivity extends BaseActivity implements XRecyclerVi
                         }
                     }
                 }
+//                mRecyclerEntityView.getAdapter().setData(2, "comment");
             }
             @Override
             public void onFailed(String failedMsg) {

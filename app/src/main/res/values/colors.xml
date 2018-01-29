@@ -38,7 +38,8 @@
     <color name="blue_bar_cen">#ff4f00</color>
     <color name="blue_bar_end">#ff4f00</color>
     <color name="blue_low">#3B7FF1</color>
-	
+    <color name="colorF4F4F4">#F4F4F4</color>
+
 	<!--我的-->
     <color name="color000000">#000000</color>
     <color name="colorF7F7F7">#F7F7F7</color>
