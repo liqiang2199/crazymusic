@@ -36,7 +36,8 @@ public class CommunityDetailActivity extends BaseActivity implements XRecyclerVi
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setContentView(R.layout.activity_list);
+//        setContentView(R.layout.activity_list);
+        setContentView(R.layout.activity_goods_search);
         super.onCreate(savedInstanceState);
         initView();
     }
@@ -45,8 +46,11 @@ public class CommunityDetailActivity extends BaseActivity implements XRecyclerVi
         mRecyclerEntityView = findViewById(R.id.mRecyclerEntityView);
         mRecyclerEntityView.getAdapter().bindHolder(new CommentInfoTopHolder());
         mRecyclerEntityView.getAdapter().bindHolder(new CommentInfoListHolder());
+
         communityListEntity = EventBus.getDefault().getStickyEvent(CommunityListEntity.class);
+
         EventBus.getDefault().removeStickyEvent(CommunityListEntity.class);
+
         if (communityListEntity != null) {
             mRecyclerEntityView.getAdapter().setData(0, communityListEntity);
             getData();

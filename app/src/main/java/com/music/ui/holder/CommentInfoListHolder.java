@@ -33,6 +33,7 @@ public class CommentInfoListHolder extends IViewHolder {
         protected TextView tvTitle;
         protected TextView tvFrom;
         protected TextView tvContent;
+        protected TextView tv_zan;
         private LinearLayout linInfo;
 
         public ViewHolder(View itemView, RecyclerView.Adapter adapter) {
@@ -46,13 +47,21 @@ public class CommentInfoListHolder extends IViewHolder {
             tvFrom = (TextView) rootView.findViewById(R.id.tv_from);
             tvContent = (TextView) rootView.findViewById(R.id.tv_content);
             linInfo = rootView.findViewById(R.id.lin_info);
+            tv_zan = rootView.findViewById(R.id.tv_zan);
         }
 
         @Override
         protected void onBindData(final CommunityDetailListEntity itemData) {
-            XImageLoadUtils.loadCircleImage(mContext, itemData.getHead_img(), ivHead);
+            XImageLoadUtils.loadCircleImage(mContext, itemData.getHead_img(), ivHead,0,R.mipmap.ic_head);
             tvTitle.setText(itemData.getNick_name());
             tvContent.setText(itemData.getContent());
+
+            //展示是否点赞
+//            if (itemData.isIs_perfect()) {
+//                tv_zan.setCompoundDrawablesWithIntrinsicBounds(mContext.getResources().getDrawable(R.mipmap.ic_zan_true), null, null, null);
+//            } else {
+//                tv_zan.setCompoundDrawablesWithIntrinsicBounds(mContext.getResources().getDrawable(R.mipmap.ic_zan), null, null, null);
+//            }
 
             linInfo.setOnClickListener(new View.OnClickListener() {
                 @Override

@@ -20,9 +20,10 @@
             android:src="@mipmap/ic_head" />
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
+            android:layout_weight="1"
             android:orientation="vertical">
 
             <TextView
@@ -39,6 +40,20 @@
                 android:layout_marginTop="5dp"
                 android:textSize="12sp" />
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_zan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="17dp"
+            android:layout_marginStart="17dp"
+            android:drawableLeft="@mipmap/ic_zan"
+            android:drawablePadding="@dimen/common_height5"
+            android:gravity="center_vertical"
+            android:text="0"
+            android:textColor="@color/colorCommonHint" />
+
     </LinearLayout>
 
     <TextView
@@ -48,8 +63,10 @@
         android:padding="@dimen/common_height10"
         android:textColor="@color/colorCommonHint" />
 
+
     <View
         android:layout_width="match_parent"
         android:layout_height="1px"
         android:background="@color/colorCommonLine" />
+
 </LinearLayout>

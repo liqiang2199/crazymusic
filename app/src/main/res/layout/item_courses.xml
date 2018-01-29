@@ -10,71 +10,120 @@
     android:orientation="vertical"
     app:cardCornerRadius="@dimen/common_height10">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="140dp"
-        android:orientation="vertical">
+    <!--<RelativeLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="140dp"-->
+        <!--android:orientation="vertical">-->
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="centerCrop"
-            android:src="@mipmap/ic_pic" />
+        <!--<ImageView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:scaleType="centerCrop"-->
+            <!--android:src="@mipmap/ic_pic" />-->
+
+        <!--<LinearLayout-->
+            <!--android:id="@+id/lin"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:padding="10dp">-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/tv_kv_name"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:layout_weight="1"-->
+                <!--android:text="吉他速成课程"-->
+                <!--android:textColor="@color/white"-->
+                <!--android:textSize="17sp" />-->
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center_vertical"-->
+                <!--android:background="@drawable/bg_base_40bar"-->
+                <!--android:padding="5dp"-->
+                <!--android:text="已上 3/6 课时"-->
+                <!--android:textColor="@color/white"-->
+                <!--android:textSize="14sp" />-->
+        <!--</LinearLayout>-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/tv_kv_teacher"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@+id/lin"-->
+            <!--android:layout_marginLeft="@dimen/common_layout_10"-->
+            <!--android:text="忘情老师"-->
+            <!--android:textColor="@color/white"-->
+            <!--android:textSize="14sp" />-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/tv_progress"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_above="@+id/mProgress"-->
+            <!--android:layout_marginLeft="@dimen/common_layout_10"-->
+            <!--android:text="完成50%"-->
+            <!--android:textColor="@color/yellow"-->
+            <!--android:textSize="14sp" />-->
+
+        <!--<ProgressBar-->
+            <!--android:id="@+id/mProgress"-->
+            <!--style="?android:attr/progressBarStyleHorizontal"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentBottom="true"-->
+            <!--android:layout_marginBottom="10dp"-->
+            <!--android:layout_marginTop="2dp" />-->
+    <!--</RelativeLayout>-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/gap_135"
+        android:orientation="horizontal">
 
         <LinearLayout
-            android:id="@+id/lin"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="10dp">
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/gap_15">
 
-            <TextView
-                android:id="@+id/tv_kv_name"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:text="吉他速成课程"
-                android:textColor="@color/white"
-                android:textSize="17sp" />
+            <com.music.view.myImageView
+                xmlns:imagecontrol="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/iv_head_me"
+                android:layout_width="@dimen/gap_80"
+                android:layout_height="@dimen/gap_80"
+                android:layout_gravity="center_horizontal"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/err"
+                imagecontrol:border_inside_color="@color/white"
+                imagecontrol:border_outside_color="@color/white"
+                imagecontrol:border_thickness="2dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:background="@drawable/bg_base_40bar"
-                android:padding="5dp"
-                android:text="已上 3/6 课时"
-                android:textColor="@color/white"
-                android:textSize="14sp" />
+                android:textColor="@color/color333333"
+                android:text="@string/app_name"
+                android:textSize="@dimen/text_14"
+                android:paddingTop="@dimen/gap_10"
+                android:layout_gravity="center"/>
+
+
+
         </LinearLayout>
 
         <TextView
-            android:id="@+id/tv_kv_teacher"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/lin"
-            android:layout_marginLeft="@dimen/common_layout_10"
-            android:text="忘情老师"
-            android:textColor="@color/white"
-            android:textSize="14sp" />
+            android:textColor="@color/color333333"
+            android:text="@string/app_name"
+            android:textSize="@dimen/text_14"
+            android:paddingTop="@dimen/gap_15"
+            android:paddingBottom="@dimen/gap_15"/>
 
-        <TextView
-            android:id="@+id/tv_progress"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/mProgress"
-            android:layout_marginLeft="@dimen/common_layout_10"
-            android:text="完成50%"
-            android:textColor="@color/yellow"
-            android:textSize="14sp" />
 
-        <ProgressBar
-            android:id="@+id/mProgress"
-            style="?android:attr/progressBarStyleHorizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="10dp"
-            android:layout_marginTop="2dp" />
-    </RelativeLayout>
+
+    </LinearLayout>
 </android.support.v7.widget.CardView>

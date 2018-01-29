@@ -21,13 +21,15 @@ public class MyCoursesActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setContentView(R.layout.activity_list);
+//        setContentView(R.layout.activity_list);
+        setContentView(R.layout.activity_goods_search);
         super.onCreate(savedInstanceState);
         initView();
     }
 
     private void initView() {
         mRecyclerEntityView = (XRecyclerView) findViewById(R.id.mRecyclerEntityView);
+
         mRecyclerEntityView.getRecyclerView().setLayoutManager(new LinearLayoutManager(this));
         mRecyclerEntityView.getAdapter().bindHolder(new CoursesListHolder());
 
