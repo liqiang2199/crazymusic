@@ -20,6 +20,7 @@
             android:orientation="vertical">
 
             <LinearLayout
+                android:id="@+id/linear_choice_bank"
                 android:layout_width="match_parent"
                 android:layout_height="47dp"
                 android:background="@color/colorF7F7F7"

@@ -3,10 +3,10 @@
    android:shape="rectangle" >
 
    <!-- 填充颜色 -->
-   <solid android:color="#ff000000" ></solid>
+   <solid android:color="#1A000000" ></solid>
 
    <!--线的宽度，颜色灰色-->
-   <stroke android:width="3px" android:color="#ff000000"></stroke>
+   <stroke android:width="2px" android:color="#1A000000"></stroke>
 
    <!-- 矩形的圆角半径 -->
    <corners android:radius="20dp" />

@@ -18,6 +18,7 @@
     <color name="colorCommonDark">#535353</color>
     <color name="colorCommonHint">#999999</color>
     <color name="colorCommonAssist">#b5b5b5</color>
+    <color name="colorCommonHintE">#cccccc</color>
     <color name="transparent">#00000000</color>
     <color name="transparent2">#B2000000</color>
     <color name="transparent4">#40000000</color>

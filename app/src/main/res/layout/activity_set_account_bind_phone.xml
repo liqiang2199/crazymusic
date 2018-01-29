@@ -29,6 +29,7 @@
                 android:textColor="@color/white"
                 android:paddingLeft="@dimen/gap_20"
                 android:paddingRight="@dimen/gap_20"
+                android:textColorHint="@color/colorCommonHintE"
                 android:hint="@string/app_name"/>
 
         </LinearLayout>
@@ -50,6 +51,7 @@
                 android:textColor="@color/white"
                 android:paddingLeft="@dimen/gap_20"
                 android:paddingRight="@dimen/gap_10"
+                android:textColorHint="@color/colorCommonHintE"
                 android:hint="@string/app_name"/>
             <TextView
                 android:id="@+id/tv_version_update"
@@ -57,7 +59,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/bind"
                 android:textColor="@color/white"
-                android:textSize="16sp"
+                android:textSize="@dimen/text_14"
                 android:padding="@dimen/gap_5"
                 android:gravity="center"
                 android:layout_marginRight="@dimen/gap_20"

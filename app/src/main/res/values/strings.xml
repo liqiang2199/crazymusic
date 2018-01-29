@@ -147,6 +147,9 @@
     <string name="recharge_channels">充值渠道</string>
     <string name="recharge_amount">充值金额</string>
     <string name="account_balance_colon">账户金额：</string>
+
+    <string name="dialog_choice_bank">选择到账银行卡</string>
+    <string name="dialog_choice_bank_add">添加银行卡</string>
     <!--设置-->
     <string name="system_message_push">系统消息推送</string>
     <string name="version_update">版本更新</string>
