@@ -21,7 +21,8 @@ public class VideoActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setContentView(R.layout.activity_list);
+//        setContentView(R.layout.activity_list);
+        setContentView(R.layout.activity_goods_search);
         super.onCreate(savedInstanceState);
         initView();
     }

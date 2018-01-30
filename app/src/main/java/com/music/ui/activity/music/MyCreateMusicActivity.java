@@ -16,7 +16,8 @@ public class MyCreateMusicActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setContentView(R.layout.activity_list);
+//        setContentView(R.layout.activity_list);
+        setContentView(R.layout.activity_goods_search);
         super.onCreate(savedInstanceState);
         setTitle("自创音乐");
         initView();
@@ -26,6 +27,7 @@ public class MyCreateMusicActivity extends BaseActivity {
         mXRecyclerEntityView = (XRecyclerView) findViewById(R.id.mRecyclerEntityView);
         //CreateMusicEntity
         mXRecyclerEntityView.getAdapter().bindHolder(new CreateMusicHolder());
+        mXRecyclerEntityView.getAdapter().setData(0,"dd");
     }
 
 }
