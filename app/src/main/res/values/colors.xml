@@ -10,6 +10,7 @@
 
     <!--背景色-->
     <color name="bgColor">#f0f0f0</color>
+    <color name="bgColorEEEEEE">#EEEEEE</color>
     <!--分割线-->
     <color name="colorCommonLine">#e1e1e1</color>
     <!--字体颜色-->
@@ -39,6 +40,8 @@
     <color name="blue_bar_end">#ff4f00</color>
     <color name="blue_low">#3B7FF1</color>
     <color name="colorF4F4F4">#F4F4F4</color>
+    <color name="colorFF5721">#FF5721</color>
+    <color name="colorFF3E00">#FF3E00</color>
 
 	<!--我的-->
     <color name="color000000">#000000</color>
@@ -51,6 +54,7 @@
     <!--商城-->
     <color name="checked">#00BEE7</color>
     <color name="un_checked">#333333</color>
+    <color name="un_checked00BEE7">#00BEE7</color>
 
     <color name="coupons_package">#00bee7</color>
 </resources>

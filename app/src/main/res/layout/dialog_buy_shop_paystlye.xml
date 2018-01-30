@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/home_time"
+    android:paddingBottom="@dimen/gap_30">
+
+    <ImageView
+        android:id="@+id/image_closed"
+        android:layout_width="@dimen/gap_18"
+        android:layout_height="@dimen/gap_18"
+        android:src="@mipmap/icon_common_closed"
+        android:layout_gravity="right"
+        android:layout_margin="@dimen/gap_10"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pay_choice_style"
+        android:textColor="@color/color333333"
+        android:textSize="@dimen/text_20"
+        android:padding="@dimen/gap_10"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/gap_70"
+        android:text="@string/app_name"
+        android:textColor="@color/color333333"
+        android:textSize="@dimen/text_16"
+        android:gravity="center"
+        android:background="@color/bgColorEEEEEE"
+        android:padding="@dimen/gap_10"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/colorCommonLine" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/weiChat_pay"
+        android:textColor="@color/color333333"
+        android:textSize="@dimen/text_16"
+        android:drawableLeft="@mipmap/icon_bind_weichat"
+        android:gravity="center_vertical"
+        android:drawablePadding="@dimen/gap_10"
+        android:padding="@dimen/gap_10"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/colorCommonLine" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/zfb_pay"
+        android:textColor="@color/color333333"
+        android:textSize="@dimen/text_16"
+        android:drawableLeft="@mipmap/icon_bind_weichat"
+        android:gravity="center_vertical"
+        android:drawablePadding="@dimen/gap_10"
+        android:padding="@dimen/gap_10"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/colorCommonLine" />
+
+
+</LinearLayout>

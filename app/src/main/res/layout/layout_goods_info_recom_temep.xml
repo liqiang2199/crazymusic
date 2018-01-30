@@ -23,7 +23,7 @@
         android:layout_marginTop="@dimen/gap_10"
         android:text="商品评价(1250)"
         android:textColor="#ff333333"
-        android:textSize="13dp" />
+        android:textSize="@dimen/text_14" />
 
     <include layout="@layout/item_all_evaluate" />
 
@@ -37,6 +37,8 @@
         android:clickable="true"
         android:paddingLeft="@dimen/common_layout_10"
         android:paddingRight="@dimen/common_layout_10"
+        android:paddingTop="@dimen/gap_5"
+        android:paddingBottom="@dimen/gap_5"
         android:text="查看全部评价"
         android:textColor="@color/blue_bar"
         android:textSize="@dimen/common_size14" />

@@ -63,6 +63,7 @@ public class ShopFragments extends Fragment implements View.OnClickListener {
         mView.findViewById(R.id.iv_search).setOnClickListener(this);
         mGoodsListView = mView.findViewById(R.id.goods_pager);
         mGoodsListView.getAdapter().bindHolder(new ShopHolder());
+
         mGoodsListView.getRecyclerView().addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
             public void onScrollStateChanged(RecyclerView recyclerView, int newState) {

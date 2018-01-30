@@ -27,7 +27,7 @@ public class ShopHolder extends IViewHolder {
     }
 
     private class ViewHolder extends XViewHolder<GoodsAllEntity.DataBean> {
-        protected XGridViewForScrollView girdView;
+        private XGridViewForScrollView girdView;
         private TextView title;
 
         public ViewHolder(View itemView, RecyclerView.Adapter adapter) {

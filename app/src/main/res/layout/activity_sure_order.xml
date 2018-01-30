@@ -78,12 +78,12 @@
                     </LinearLayout>
                 </LinearLayout>
 
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:scaleType="fitXY"
-                    android:src="@mipmap/ic_bitmap" />
+                <!--<ImageView-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_gravity="center"-->
+                    <!--android:scaleType="fitXY"-->
+                    <!--android:src="@mipmap/ic_bitmap" />-->
 
                 <TextView
                     android:layout_width="match_parent"
@@ -94,7 +94,7 @@
                     android:drawablePadding="@dimen/common_height10"
                     android:gravity="center_vertical"
                     android:padding="@dimen/common_height10"
-                    android:text="HI乐官方授权店"
+                    android:text="@string/hi_shop_tip"
                     android:textColor="@color/colorCommonText" />
 
                 <com.framework.view.XListViewForScrollView
@@ -105,44 +105,44 @@
                     android:dividerHeight="1px"
                     android:listSelector="@color/transparent" />
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="48dp"
-                    android:background="@color/white"
-                    android:gravity="center_vertical"
-                    android:padding="@dimen/common_height10">
+                <!--<RelativeLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="48dp"-->
+                    <!--android:background="@color/white"-->
+                    <!--android:gravity="center_vertical"-->
+                    <!--android:padding="@dimen/common_height10">-->
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="购买数量"
-                        android:textColor="@color/colorCommonText" />
+                    <!--<TextView-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:text="购买数量"-->
+                        <!--android:textColor="@color/colorCommonText" />-->
 
-                    <TextView
-                        android:id="@+id/tv_ress"
-                        android:layout_width="30dp"
-                        android:layout_height="wrap_content"
-                        android:layout_toLeftOf="@+id/tv_num"
-                        android:gravity="center"
-                        android:text="—" />
+                    <!--<TextView-->
+                        <!--android:id="@+id/tv_ress"-->
+                        <!--android:layout_width="30dp"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_toLeftOf="@+id/tv_num"-->
+                        <!--android:gravity="center"-->
+                        <!--android:text="—" />-->
 
-                    <TextView
-                        android:id="@+id/tv_num"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_toLeftOf="@+id/tv_add"
-                        android:gravity="center"
-                        android:minWidth="30dp"
-                        android:text="1" />
+                    <!--<TextView-->
+                        <!--android:id="@+id/tv_num"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_toLeftOf="@+id/tv_add"-->
+                        <!--android:gravity="center"-->
+                        <!--android:minWidth="30dp"-->
+                        <!--android:text="1" />-->
 
-                    <TextView
-                        android:id="@+id/tv_add"
-                        android:layout_width="30dp"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:gravity="center"
-                        android:text="+" />
-                </RelativeLayout>
+                    <!--<TextView-->
+                        <!--android:id="@+id/tv_add"-->
+                        <!--android:layout_width="30dp"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_alignParentRight="true"-->
+                        <!--android:gravity="center"-->
+                        <!--android:text="+" />-->
+                <!--</RelativeLayout>-->
 
                 <View
                     android:layout_width="match_parent"
@@ -159,17 +159,17 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="配送方式"
+                        android:text="@string/Express_cost"
                         android:textColor="@color/colorCommonText" />
 
-                    <TextView
-                        android:id="@+id/tv_kuaidi"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_toLeftOf="@+id/tv_youfei"
-                        android:paddingRight="@dimen/common_height10"
-                        android:text="快递"
-                        android:textColor="@color/colorCommonText" />
+                    <!--<TextView-->
+                        <!--android:id="@+id/tv_kuaidi"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_toLeftOf="@+id/tv_youfei"-->
+                        <!--android:paddingRight="@dimen/common_height10"-->
+                        <!--android:text="快递"-->
+                        <!--android:textColor="@color/colorCommonText" />-->
 
                     <TextView
                         android:id="@+id/tv_youfei"
@@ -178,6 +178,41 @@
                         android:layout_alignParentRight="true"
                         android:text="￥0"
                         android:textColor="@color/yellow" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/colorCommonLine" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/gap_48"
+                    android:background="@color/white"
+                    android:paddingLeft="@dimen/gap_10"
+                    android:paddingRight="@dimen/gap_10">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/shop_counpons"
+                        android:textColor="@color/color333333"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/tv_version_update"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:text="V1.0.01"
+                        android:textColor="@color/un_checked00BEE7"
+                        android:textSize="16sp"
+                        android:drawableEnd="@mipmap/ic_right"
+                        android:drawableRight="@mipmap/ic_right"/>
+
                 </RelativeLayout>
 
                 <View
@@ -209,43 +244,44 @@
                         android:textSize="14sp" />
                 </LinearLayout>
 
-                <RadioGroup
-                    android:id="@+id/radioGroup"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
 
-                    <RadioButton
-                        android:id="@+id/rb_appliy"
-                        android:layout_width="match_parent"
-                        android:layout_height="48dp"
-                        android:background="@color/white"
-                        android:button="@null"
-                        android:checked="true"
-                        android:drawablePadding="@dimen/common_height5"
-                        android:drawableRight="@drawable/rb_orange_select"
-                        android:paddingLeft="@dimen/common_height10"
-                        android:paddingRight="@dimen/common_height10"
-                        android:text="@string/weixin_pay"
-                        android:textColor="@color/colorCommonText" />
+                <!--<RadioGroup-->
+                    <!--android:id="@+id/radioGroup"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:orientation="vertical">-->
 
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1px"
-                        android:background="@color/colorCommonLine" />
+                    <!--<RadioButton-->
+                        <!--android:id="@+id/rb_appliy"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="48dp"-->
+                        <!--android:background="@color/white"-->
+                        <!--android:button="@null"-->
+                        <!--android:checked="true"-->
+                        <!--android:drawablePadding="@dimen/common_height5"-->
+                        <!--android:drawableRight="@drawable/rb_orange_select"-->
+                        <!--android:paddingLeft="@dimen/common_height10"-->
+                        <!--android:paddingRight="@dimen/common_height10"-->
+                        <!--android:text="@string/weixin_pay"-->
+                        <!--android:textColor="@color/colorCommonText" />-->
 
-                    <RadioButton
-                        android:id="@+id/rb_weixin"
-                        android:layout_width="match_parent"
-                        android:layout_height="48dp"
-                        android:background="@color/white"
-                        android:button="@null"
-                        android:drawablePadding="@dimen/common_height5"
-                        android:paddingLeft="@dimen/common_height10"
-                        android:paddingRight="@dimen/common_height10"
-                        android:text="@string/apily"
-                        android:textColor="@color/colorCommonText" />
-                </RadioGroup>
+                    <!--<View-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="1px"-->
+                        <!--android:background="@color/colorCommonLine" />-->
+
+                    <!--<RadioButton-->
+                        <!--android:id="@+id/rb_weixin"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="48dp"-->
+                        <!--android:background="@color/white"-->
+                        <!--android:button="@null"-->
+                        <!--android:drawablePadding="@dimen/common_height5"-->
+                        <!--android:paddingLeft="@dimen/common_height10"-->
+                        <!--android:paddingRight="@dimen/common_height10"-->
+                        <!--android:text="@string/apily"-->
+                        <!--android:textColor="@color/colorCommonText" />-->
+                <!--</RadioGroup>-->
 
                 <View
                     android:layout_width="match_parent"
@@ -276,7 +312,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="￥120"
-                        android:textColor="@color/yellow" />
+                        android:textColor="@color/colorFF3E00" />
                 </LinearLayout>
             </LinearLayout>
         </ScrollView>
@@ -305,7 +341,7 @@
                 android:layout_height="wrap_content"
                 android:paddingRight="@dimen/common_height10"
                 android:text="￥120"
-                android:textColor="@color/yellow" />
+                android:textColor="@color/colorFF3E00" />
 
             <Button
                 android:id="@+id/bt_submit"

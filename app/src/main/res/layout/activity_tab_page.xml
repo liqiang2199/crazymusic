@@ -17,8 +17,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/white"
-            app:tabIndicatorColor="@color/blue_bar"
-            app:tabSelectedTextColor="@color/blue_bar"
+            app:tabIndicatorColor="@color/coupons_package"
+            app:tabSelectedTextColor="@color/coupons_package"
             app:tabTextColor="@color/colorCommonDark" />
 
         <View

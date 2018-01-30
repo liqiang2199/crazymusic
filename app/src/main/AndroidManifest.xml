@@ -42,7 +42,7 @@
         <activity android:name=".ui.activity.shop.GoodsInfoActivity" />
         <activity
             android:name=".ui.activity.shop.SureOrderActivity"
-            android:label="@string/order_info"
+            android:label="@string/order_sure"
             android:windowSoftInputMode="stateHidden|adjustResize" />
         <activity
             android:name=".ui.activity.music.MusicPlayerActivity"

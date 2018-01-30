@@ -39,17 +39,28 @@
             android:gravity="center_vertical"
             android:padding="@dimen/common_height10"
             android:paddingLeft="@dimen/common_height10"
-            android:text="收藏"
-            android:textColor="@color/colorCommonHint"
+            android:text="@string/shop_collection"
+            android:textColor="@color/color333333"
             android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/iv_collect"
+            android:layout_toRightOf="@+id/iv_collect"
+            android:drawableLeft="@mipmap/xi_shop_car"
+            android:text="@string/shop_car"
+            android:textColor="@color/color333333"
+            android:gravity="center_vertical"/>
 
         <Button
             android:id="@+id/bt_add_car"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_toLeftOf="@+id/bt_buy"
-            android:background="@drawable/bg_base_bar"
-            android:text="加入购物车"
+            android:background="@color/colorFF5721"
+            android:text="@string/shop_add_cart"
             android:textColor="@color/white" />
 
         <Button
@@ -58,7 +69,7 @@
             android:layout_height="match_parent"
             android:layout_alignParentRight="true"
             android:background="@color/red"
-            android:text="立即购买"
+            android:text="@string/shop_buy_atOnce"
             android:textColor="@color/white" />
     </RelativeLayout>
 </LinearLayout>

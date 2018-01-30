@@ -55,6 +55,8 @@ public class OrderListFragment extends Fragment implements XRecyclerView.PullLoa
         mRecyclerEntityView.getRecyclerView().setLayoutManager(new LinearLayoutManager(getActivity()));
         mRecyclerEntityView.getAdapter().bindHolder(new OrderHolder());
         mRecyclerEntityView.setOnPullLoadMoreListener(this);
+
+        getData();
     }
 
     private void getData() {

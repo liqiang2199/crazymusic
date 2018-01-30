@@ -20,6 +20,7 @@ import com.music.http.HttpRequesParams;
 import com.music.http.HttpResponseCallBack;
 import com.music.http.HttpUtils;
 import com.music.ui.activity.BaseActivity;
+import com.music.ui.dialog.PayOrderDialog;
 import com.music.ui.entity.XResult;
 import com.music.ui.entity.shop.GoodsInfoEntity;
 import com.music.ui.holder.ShopListHolder;
@@ -40,16 +41,16 @@ public class SureOrderActivity extends BaseActivity implements RadioGroup.OnChec
     protected TextView tvCity;
     protected LinearLayout btnShopAddress;
     protected XListViewForScrollView mListViewForScrollView;
-    protected TextView tvRess;
-    protected TextView tvNum;
-    protected TextView tvAdd;
-    protected TextView tvKuaidi;
+//    protected TextView tvRess;
+//    protected TextView tvNum;
+//    protected TextView tvAdd;
+//    protected TextView tvKuaidi;
     protected TextView tvYoufei;
     protected TextView tvNumGoods;
     protected TextView tvGoodsPrice;
     protected TextView tvTotal;
     protected Button btSubmit;
-    protected RadioGroup radioGroup;
+//    protected RadioGroup radioGroup;
     protected EditText etBuyerMsg;
     private GoodsSureOrderAdapter orderAdapter;//商品列表
     private String spaceIds;
@@ -70,7 +71,7 @@ public class SureOrderActivity extends BaseActivity implements RadioGroup.OnChec
         if (goodsInfoEntity == null) {
             return;
         }
-        setData();
+//        setData();
     }
 
     private void setData() {
@@ -79,16 +80,16 @@ public class SureOrderActivity extends BaseActivity implements RadioGroup.OnChec
         tvCity = (TextView) findViewById(R.id.tv_city);
         btnShopAddress = (LinearLayout) findViewById(R.id.btn_shopAddress);
         mListViewForScrollView = (XListViewForScrollView) findViewById(R.id.mListViewForScrollView);
-        tvRess = (TextView) findViewById(R.id.tv_ress);
-        tvNum.setText(String.valueOf(num));
-        tvAdd = (TextView) findViewById(R.id.tv_add);
-        tvKuaidi = (TextView) findViewById(R.id.tv_kuaidi);
+//        tvRess = (TextView) findViewById(R.id.tv_ress);
+//        tvNum.setText(String.valueOf(num));
+//        tvAdd = (TextView) findViewById(R.id.tv_add);
+//        tvKuaidi = (TextView) findViewById(R.id.tv_kuaidi);
         tvYoufei = (TextView) findViewById(R.id.tv_youfei);
         tvNumGoods.setText("共" + num + "件商品");
         tvGoodsPrice.setText("￥" + num * goodsInfoEntity.getNow_price());
         tvTotal.setText("￥" + num * goodsInfoEntity.getNow_price());
-        radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
-        radioGroup.setOnCheckedChangeListener(this);
+//        radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
+//        radioGroup.setOnCheckedChangeListener(this);
         etBuyerMsg = (EditText) findViewById(R.id.et_buyer_msg);
         btSubmit = (Button) findViewById(R.id.bt_submit);
         btSubmit.setOnClickListener(this);
@@ -98,21 +99,22 @@ public class SureOrderActivity extends BaseActivity implements RadioGroup.OnChec
     }
 
     private void initView() {
+        Width_Height();
         tvConsignee = (TextView) findViewById(R.id.tv_consignee);
         tvMobile = (TextView) findViewById(R.id.tv_mobile);
         tvCity = (TextView) findViewById(R.id.tv_city);
         btnShopAddress = (LinearLayout) findViewById(R.id.btn_shopAddress);
         mListViewForScrollView = (XListViewForScrollView) findViewById(R.id.mListViewForScrollView);
-        tvRess = (TextView) findViewById(R.id.tv_ress);
-        tvNum = (TextView) findViewById(R.id.tv_num);
-        tvAdd = (TextView) findViewById(R.id.tv_add);
-        tvKuaidi = (TextView) findViewById(R.id.tv_kuaidi);
+//        tvRess = (TextView) findViewById(R.id.tv_ress);
+//        tvNum = (TextView) findViewById(R.id.tv_num);
+//        tvAdd = (TextView) findViewById(R.id.tv_add);
+//        tvKuaidi = (TextView) findViewById(R.id.tv_kuaidi);
         tvYoufei = (TextView) findViewById(R.id.tv_youfei);
         tvNumGoods = (TextView) findViewById(R.id.tv_num_goods);
         tvGoodsPrice = (TextView) findViewById(R.id.tv_goods_price);
         tvTotal = (TextView) findViewById(R.id.tv_total);
-        radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
-        radioGroup.setOnCheckedChangeListener(this);
+//        radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
+//        radioGroup.setOnCheckedChangeListener(this);
         etBuyerMsg = (EditText) findViewById(R.id.et_buyer_msg);
         btSubmit = (Button) findViewById(R.id.bt_submit);
         btSubmit.setOnClickListener(this);
@@ -126,8 +128,10 @@ public class SureOrderActivity extends BaseActivity implements RadioGroup.OnChec
         super.onClick(v);
         switch (v.getId()) {
             case R.id.bt_submit:
-                //提交数据
-                submitData();
+                //提交数据   选择支付方式
+//                submitData();
+                PayOrderDialog payOrderDialog = new PayOrderDialog(mContext,R.style.style_loading_dialog,width,height);
+                payOrderDialog.show();
                 break;
             case R.id.btn_shopAddress:
                 //选择地址
@@ -197,12 +201,12 @@ public class SureOrderActivity extends BaseActivity implements RadioGroup.OnChec
     @Override
     public void onCheckedChanged(RadioGroup group, int checkedId) {
         switch (checkedId) {
-            case R.id.rb_appliy:
-                //支付宝
-                break;
-            case R.id.rb_weixin:
-                //微信
-                break;
+//            case R.id.rb_appliy:
+//                //支付宝
+//                break;
+//            case R.id.rb_weixin:
+//                //微信
+//                break;
         }
     }
 }

@@ -156,7 +156,7 @@
         android:id="@+id/btn_submit"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@drawable/bg_base_bar"
+        android:background="@color/colorFF5721"
         android:clickable="true"
         android:gravity="center"
         android:text="确认"

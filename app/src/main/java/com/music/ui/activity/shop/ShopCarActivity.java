@@ -1,8 +1,11 @@
 package com.music.ui.activity.shop;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.util.Log;
+import android.view.View;
+import android.widget.TextView;
 
 import com.framework.view.recyclerView.XRecyclerView;
 import com.google.gson.Gson;
@@ -33,6 +36,7 @@ public class ShopCarActivity extends BaseActivity implements XRecyclerView.PullL
 
     protected XRecyclerView mRecyclerEntityView;
     private int page = 1, total;
+    private TextView bt_sure;//下单
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,10 +47,21 @@ public class ShopCarActivity extends BaseActivity implements XRecyclerView.PullL
     }
 
     private void initView() {
+
+        bt_sure = findViewById(R.id.bt_sure);
+
         mRecyclerEntityView = (XRecyclerView) findViewById(R.id.mRecyclerEntityView);
         mRecyclerEntityView.getRecyclerView().setLayoutManager(new LinearLayoutManager(this));
         mRecyclerEntityView.getAdapter().bindHolder(new ShopCarHolder());
         mRecyclerEntityView.setOnPullLoadMoreListener(this);
+
+        bt_sure.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //确定订单
+                startActivity(new Intent(mContext,SureOrderActivity.class));
+            }
+        });
     }
 
     private void getData() {
