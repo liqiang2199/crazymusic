@@ -2,6 +2,10 @@ package com.music.ui.activity.index;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.framework.view.recyclerView.XRecyclerView;
 import com.google.gson.Gson;
@@ -12,6 +16,7 @@ import com.music.http.HttpRequesParams;
 import com.music.http.HttpResponseCallBack;
 import com.music.http.HttpUtils;
 import com.music.ui.activity.BaseActivity;
+import com.music.ui.dialog.CommentsPublishDialog;
 import com.music.ui.entity.CommunityDetailListEntity;
 import com.music.ui.entity.CommunityListEntity;
 import com.music.ui.entity.XPage;
@@ -34,6 +39,10 @@ public class CommunityDetailActivity extends BaseActivity implements XRecyclerVi
     protected XRecyclerView mRecyclerEntityView;
     private CommunityListEntity communityListEntity;
     private int page = 1, total;
+    private EditText edit_comments;
+    private TextView text_publish_comments;
+    private TextView text_comments;
+    private LinearLayout liner_dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,10 +53,29 @@ public class CommunityDetailActivity extends BaseActivity implements XRecyclerVi
     }
 
     private void initView() {
+
+        Width_Height();
+        edit_comments = findViewById(R.id.edit_comments);
+        text_publish_comments = findViewById(R.id.text_publish_comments);
+        text_comments = findViewById(R.id.text_comments);
+        edit_comments.setVisibility(View.GONE);
+        text_comments.setVisibility(View.VISIBLE);
+        liner_dialog = findViewById(R.id.liner_dialog);
+
+
+        liner_dialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //评论点击
+                CommentsPublishDialog commentsPublishDialog = new CommentsPublishDialog(mContext,
+                        R.style.ScreenDialogStyle,width,height);
+                commentsPublishDialog.show();
+            }
+        });
+
         mRecyclerEntityView = findViewById(R.id.mRecyclerEntityView);
         mRecyclerEntityView.getAdapter().bindHolder(new CommentInfoTopHolder());
         mRecyclerEntityView.getAdapter().bindHolder(new CommentInfoListHolder());
-//        mRecyclerEntityView.getAdapter().bindHolder(new CommentEditViewHolder());
 
         communityListEntity = EventBus.getDefault().getStickyEvent(CommunityListEntity.class);
 
@@ -90,7 +118,6 @@ public class CommunityDetailActivity extends BaseActivity implements XRecyclerVi
                         }
                     }
                 }
-//                mRecyclerEntityView.getAdapter().setData(2, "comment");
             }
             @Override
             public void onFailed(String failedMsg) {
