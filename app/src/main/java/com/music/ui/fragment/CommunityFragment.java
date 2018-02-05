@@ -2,6 +2,7 @@ package com.music.ui.fragment;
 
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
@@ -53,14 +54,16 @@ public class CommunityFragment extends Fragment implements XRecyclerView.PullLoa
 
     private void initView() {
         toolbar = (Toolbar) rootView.findViewById(R.id.toolbar);
+        toolbar.setBackgroundResource(R.drawable.bg_base_bar);
         toolbar.setTitle(getString(R.string.community));
+        toolbar.setTitleTextColor(Color.parseColor("#333333"));
         mRecyclerEntityView = (XRecyclerView) rootView.findViewById(R.id.mRecyclerEntityView);
         mRecyclerEntityView.getRecyclerView().setLayoutManager(new LinearLayoutManager(getActivity()));
         mRecyclerEntityView.getAdapter().bindHolder(new CommentHolder());
         mRecyclerEntityView.setOnPullLoadMoreListener(this);
-        btnRight = (TextView) rootView.findViewById(R.id.btn_right);
-        btnRight.setText(getString(R.string.topic_post));
-        btnRight.setOnClickListener(this);
+//        btnRight = (TextView) rootView.findViewById(R.id.btn_right);
+//        btnRight.setText(getString(R.string.topic_post));
+//        btnRight.setOnClickListener(this);
 
         getData();
     }

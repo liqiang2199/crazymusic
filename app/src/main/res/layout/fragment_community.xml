@@ -8,6 +8,7 @@
 
     <include layout="@layout/base_top" />
 
+
     <com.framework.view.recyclerView.XRecyclerView
         android:id="@+id/mRecyclerEntityView"
         android:layout_width="match_parent"
