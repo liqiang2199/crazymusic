@@ -9,8 +9,8 @@ android {
         applicationId "com.music"
         minSdkVersion MIN_SDK_VERSION as int
         targetSdkVersion TARGET_SDK_VERSION as int
-        versionCode VERSION_CODE as int
-        versionName VERSION_NAME
+        versionCode 1
+        versionName "1.0.0"
         multiDexEnabled true
         vectorDrawables.useSupportLibrary = true
         ndk {
@@ -73,7 +73,8 @@ dependencies {
     //photoView
     compile 'com.bm.photoview:library:1.4.1'
     //状态开关
-    compile 'com.kyleduo.switchbutton:library:1.4.4'
+//    compile 'com.kyleduo.switchbutton:library:1.4.4'
+    compile 'ch.ielse:switchbutton:1.0.1'
     //  OSS Android SDK
     compile 'com.aliyun.dpa:oss-android-sdk:2.4.5'
     //network
