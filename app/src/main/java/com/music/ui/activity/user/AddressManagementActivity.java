@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.lzy.okgo.OkGo;
@@ -22,6 +23,7 @@ import com.music.model.LoginRes;
 import com.music.model.jsonbeen.GetAddressDefaulBeen;
 import com.music.ui.activity.BaseActivity;
 import com.music.ui.activity.MainActivity;
+import com.music.ui.ihanlder.IChoiceAddressHanlder;
 import com.music.utils.CacheUtil;
 import com.music.utils.UIHelper;
 import com.wega.library.loadingDialog.LoadingDialog;
@@ -39,13 +41,18 @@ import io.reactivex.schedulers.Schedulers;
 /**
  * 地址管理
  */
-public class AddressManagementActivity extends BaseActivity {
+public class AddressManagementActivity extends BaseActivity implements IChoiceAddressHanlder{
 
     private Button submit;
     private EditText et_receiptName;
     private EditText et_mobile;
     private EditText et_street;
     private TextView et_address;
+    private LinearLayout btn_address;
+
+    private String province;
+    private String city;
+    private String district;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,8 +68,12 @@ public class AddressManagementActivity extends BaseActivity {
         et_mobile = findViewById(R.id.et_mobile);
         et_street = findViewById(R.id.et_street);
         et_address = findViewById(R.id.et_address);
+        btn_address = findViewById(R.id.btn_address);
+
+        initJsonData();
 
         onBtnClick(submit);
+        onBtnClick(btn_address);
     }
 
     public void onBtnClick(View view){
@@ -72,7 +83,7 @@ public class AddressManagementActivity extends BaseActivity {
                 switch (view.getId()){
                     case R.id.btn_address:
                         //选择地址
-
+                        ShowPickerView(AddressManagementActivity.this);
                         break;
                     case R.id.submit:
                         initData();
@@ -201,5 +212,15 @@ public class AddressManagementActivity extends BaseActivity {
                         mLoadingDialog.cancel();
                     }
                 });
+    }
+
+    @Override
+    public void choicePostion(int pos1, int pos2, int pos3) {
+//        String s = options1Items.get(pos1).getPickerViewText() +
+//                options2Items.get(pos1).get(pos2) +
+//                options3Items.get(pos1).get(pos2).get(pos3);
+        province = options1Items.get(pos1).getPickerViewText();
+        city = options2Items.get(pos1).get(pos2);
+        district = options2Items.get(pos1).get(pos2);
     }
 }

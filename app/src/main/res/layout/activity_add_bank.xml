@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     style="@style/coordinatorLayout_Style"
-    app:statusBarBackground="@drawable/bg_base_bar">
+    app:statusBarBackground="@drawable/bg_base_bar_black">
 
     <include layout="@layout/base_top" />
 

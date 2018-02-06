@@ -2,7 +2,7 @@
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     style="@style/coordinatorLayout_Style"
-    app:statusBarBackground="@color/white">
+    app:statusBarBackground="@drawable/bg_base_bar">
 
     <RelativeLayout
         android:layout_width="match_parent"
