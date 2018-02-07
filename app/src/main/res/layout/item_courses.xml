@@ -79,27 +79,61 @@
     <!--</RelativeLayout>-->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/gap_135"
+        android:layout_height="@dimen/gap_145"
         android:orientation="horizontal">
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+        <FrameLayout
+            android:layout_width="@dimen/gap_150"
+            android:layout_height="@dimen/gap_140"
             android:orientation="vertical"
             android:layout_gravity="center"
-            android:layout_margin="@dimen/gap_15">
+            android:layout_margin="@dimen/gap_15"
+            android:layout_marginTop="@dimen/gap_10"
+            android:layout_marginBottom="@dimen/gap_10">
 
-            <com.music.view.myImageView
-                xmlns:imagecontrol="http://schemas.android.com/apk/res-auto"
-                android:id="@+id/iv_head_me"
-                android:layout_width="@dimen/gap_80"
-                android:layout_height="@dimen/gap_80"
-                android:layout_gravity="center_horizontal"
+
+            <com.music.view.SelectableRoundedImageView
+                android:layout_width="@dimen/gap_150"
+                android:layout_height="@dimen/gap_135"
+                android:src="@mipmap/ic_pic"
                 android:scaleType="centerCrop"
-                android:src="@mipmap/err"
-                imagecontrol:border_inside_color="@color/white"
-                imagecontrol:border_outside_color="@color/white"
-                imagecontrol:border_thickness="2dp"/>
+                app:sriv_left_bottom_corner_radius="@dimen/gap_10"
+                app:sriv_left_top_corner_radius="@dimen/gap_10"
+                app:sriv_right_bottom_corner_radius="@dimen/gap_10"
+                app:sriv_right_top_corner_radius="@dimen/gap_10"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/gap_30"
+                android:layout_gravity="bottom"
+                android:orientation="vertical">
+
+                <View
+                    android:id="@+id/view_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/gap_30"
+                    android:alpha="0.4"
+                    android:background="@drawable/loan_record_list" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:text="@string/app_name"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_14" />
+
+            </RelativeLayout>
+
+
+        </FrameLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -107,21 +141,27 @@
                 android:textColor="@color/color333333"
                 android:text="@string/app_name"
                 android:textSize="@dimen/text_14"
-                android:paddingTop="@dimen/gap_10"
-                android:layout_gravity="center"/>
+                android:paddingTop="@dimen/gap_15"
+                android:paddingBottom="@dimen/gap_15"/>
 
+            <com.music.view.myImageView xmlns:imagecontrol="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/iv_head_me"
+                android:layout_width="@dimen/gap_45"
+                android:layout_height="@dimen/gap_45"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="bottom|right"
+                android:layout_marginBottom="11dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginRight="15dp"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/ic_pic"
+                imagecontrol:border_inside_color="@color/white"
+                imagecontrol:border_outside_color="@color/white"
+                imagecontrol:border_thickness="2dp" />
 
-
-        </LinearLayout>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/color333333"
-            android:text="@string/app_name"
-            android:textSize="@dimen/text_14"
-            android:paddingTop="@dimen/gap_15"
-            android:paddingBottom="@dimen/gap_15"/>
+        </RelativeLayout>
 
 
 
