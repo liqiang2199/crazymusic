@@ -88,8 +88,8 @@
             android:orientation="vertical"
             android:layout_gravity="center"
             android:layout_margin="@dimen/gap_15"
-            android:layout_marginTop="@dimen/gap_10"
-            android:layout_marginBottom="@dimen/gap_10">
+            android:paddingTop="@dimen/gap_10"
+            android:paddingBottom="@dimen/gap_10">
 
 
             <com.music.view.SelectableRoundedImageView
