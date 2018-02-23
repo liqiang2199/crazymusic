@@ -157,8 +157,8 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
                         Log.e(TAG, msg);
                         try {
                             ResponseBeen responseBeen = getNewGson().fromJson(msg,ResponseBeen.class);
-                            String code = responseBeen.getCode();
-                            if (!TextUtils.isEmpty(code)&&code.equals("0")){
+                            int code = responseBeen.getCode();
+                            if (code == 0){
                                 XToastUtil.showToast(RegisterActivity.this,R.string.Toast_send_sms);
                                 // 只有成功 才开始倒计时
                                 CountDownHelper helper = new CountDownHelper(tvGetVerificationCode, getString(R.string.send_verification_code),
@@ -255,19 +255,19 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
                         Log.e(TAG, msg);
                         try {
                             //注册成功
-                            ResponseBeen responseBeen = getNewGson().fromJson(msg,ResponseBeen.class);
+                            RegisterBeen responseBeen = getNewGson().fromJson(msg,RegisterBeen.class);
                             String code = responseBeen.getCode();
                             if (!TextUtils.isEmpty(code)&&code.equals("0")){
                                 //成功
-                                String data = responseBeen.getData();
-                                if (!TextUtils.isEmpty(data)){
-                                    RegisterBeen registerBeen = getNewGson().fromJson(data,RegisterBeen.class);
-
-                                    CacheUtil.put(Constants.PHONE, phoneNumber);
-                                    CacheUtil.put(Constants.TOKEN, registerBeen.getToken());
-                                    CacheUtil.put(Constants.HEADIMAGE,registerBeen.getHead_img());
-                                    CacheUtil.put(Constants.NINCKNAME, registerBeen.getNick_name());
-                                }
+//                                String data = responseBeen.getData();
+//                                if (!TextUtils.isEmpty(data)){
+//                                    RegisterBeen registerBeen = getNewGson().fromJson(data,RegisterBeen.class);
+//
+//                                    CacheUtil.put(Constants.PHONE, phoneNumber);
+//                                    CacheUtil.put(Constants.TOKEN, registerBeen.getToken());
+//                                    CacheUtil.put(Constants.HEADIMAGE,registerBeen.getHead_img());
+//                                    CacheUtil.put(Constants.NINCKNAME, registerBeen.getNick_name());
+//                                }
                                 //关闭 登录界面
                                 EventBus.getDefault().post(new LoginFinishBus());
                                 finish();

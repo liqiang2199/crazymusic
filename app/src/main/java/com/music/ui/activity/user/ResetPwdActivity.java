@@ -10,7 +10,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.framework.utils.XToastUtil;
-import com.google.gson.Gson;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.convert.StringConvert;
 import com.lzy.okgo.model.Response;
@@ -93,7 +92,7 @@ public class ResetPwdActivity extends BaseActivity implements View.OnClickListen
         super.onCreate(savedInstanceState);
         findViews();
     }
-
+    //发送验证码
     private void sendVerificationCode(String phoneNumber) {
         TreeMap<String, String> params = new TreeMap<String, String>();
         params.put("phone", phoneNumber);
@@ -124,9 +123,10 @@ public class ResetPwdActivity extends BaseActivity implements View.OnClickListen
                         String msg = stringResponse.body();
                         Log.e(TAG, msg);
                         try {
+
                             ResponseBeen responseBeen = getNewGson().fromJson(msg,ResponseBeen.class);
-                            String code = responseBeen.getCode();
-                            if (!UtilsTools.isStringNull(code)&&code.equals("0")){
+                            int code = responseBeen.getCode();
+                            if (code == 0){
                                 CountDownHelper helper = new CountDownHelper(tvGetVerificationCode, getString(R.string.send_verification_code),
                                         getString(R.string.resend_verification_code), 60, 1);
                                 helper.setOnFinishListener(new CountDownHelper.OnFinishListener() {
@@ -158,6 +158,7 @@ public class ResetPwdActivity extends BaseActivity implements View.OnClickListen
                 });
     }
 
+    //修改登录密码
     private void resetPassword() {
         final String phoneNumber = edtMobile.getText().toString().trim();
         if (TextUtils.isEmpty(phoneNumber)) {
@@ -224,8 +225,8 @@ public class ResetPwdActivity extends BaseActivity implements View.OnClickListen
                         Log.e(TAG, msg);
                         try {
                             ResponseBeen responseBeen = getNewGson().fromJson(msg,ResponseBeen.class);
-                            String code = responseBeen.getCode();
-                            if (!UtilsTools.isStringNull(responseBeen.getCode())&&code.equals("0")){
+                            int code = responseBeen.getCode();
+                            if (code == 0){
                                 //更换成功
                             }
                             XToastUtil.showToast(mContext,responseBeen.getMsg());

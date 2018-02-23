@@ -58,7 +58,6 @@ public class AddressManagementActivity extends BaseActivity implements IChoiceAd
     protected void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.activity_edit_address);
         super.onCreate(savedInstanceState);
-
         initView();
     }
 
@@ -103,11 +102,11 @@ public class AddressManagementActivity extends BaseActivity implements IChoiceAd
         mLoadingDialog = new LoadingDialog(this);
         mLoadingDialog.show();
         TreeMap<String, String> params = new TreeMap<String, String>();
-        params.put("province", "四川省");
+        params.put("province", province);
         params.put("province_code", "51");
-        params.put("city","绵阳市");
+        params.put("city",city);
         params.put("city_code","07");
-        params.put("district","盐亭县");
+        params.put("district",district);
         params.put("district_code","23");
         params.put("region_id","");
         JSONObject jsonObject = new JSONObject(params);
@@ -222,5 +221,6 @@ public class AddressManagementActivity extends BaseActivity implements IChoiceAd
         province = options1Items.get(pos1).getPickerViewText();
         city = options2Items.get(pos1).get(pos2);
         district = options2Items.get(pos1).get(pos2);
+        et_address.setText(province+city+district);
     }
 }

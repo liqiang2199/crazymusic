@@ -6,7 +6,7 @@ package com.music.model
  * 请求成功后返回
  */
 class ResponseBeen {
-    var code:String ?= null
+    var code:Int ?= null
     var data:String ?= null
     var msg:String ?= null
 }
