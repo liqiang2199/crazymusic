@@ -145,6 +145,7 @@ public class MyFragment extends BaseFragment implements View.OnClickListener {
                 startActivity(new Intent(getActivity(), CollectGoodsActivity.class));
                 break;
             case R.id.tv_apply_for_teacher:
+
                 //成为老师
                 startActivity(new Intent(getActivity(), ApplyForTeacherActivity.class));
                 break;
