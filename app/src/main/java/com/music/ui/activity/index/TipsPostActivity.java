@@ -23,6 +23,7 @@ import com.music.R;
 import com.music.http.HttpRequesParams;
 import com.music.http.HttpResponseCallBack;
 import com.music.http.HttpUtils;
+import com.music.model.jsonbeen.ReleaseTipsBeen;
 import com.music.ui.activity.BaseActivity;
 import com.music.ui.entity.UploadEntity;
 import com.music.ui.entity.XResult;
@@ -30,7 +31,9 @@ import com.music.ui.holder.adapter.UploadFileAdapter;
 import com.framework.utils.carme.CramUtils;
 import com.music.utils.DialogUtils;
 import com.music.utils.OssService;
+import com.music.utils.UIHelper;
 import com.music.utils.UtilsTools;
+import com.wega.library.loadingDialog.LoadingDialog;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -83,6 +86,9 @@ public class TipsPostActivity extends BaseActivity implements AdapterView.OnItem
     }
 
     private void getData() {
+        mLoadingDialog = new LoadingDialog(this);
+        mLoadingDialog.loading(getString(R.string.Toast_community));
+
         HttpRequesParams httpRequesParams = new HttpRequesParams(ConstHost.COMMUNITY_ADD);
         JSONObject jsonObject = new JSONObject();
         try {
@@ -98,22 +104,33 @@ public class TipsPostActivity extends BaseActivity implements AdapterView.OnItem
             @Override
             public void onSuccess(String result) {
                 Log.e("Tips","       发帖      "+result);
-                Gson gson = new Gson();
-                Type type = new TypeToken<XResult<String>>() {
-                }.getType();
-                XResult<String> resultData = gson.fromJson(result, type);
-                if (resultData.code == 0) {
-                    XToastUtil.showToast(TipsPostActivity.this, resultData.getMsg());
-                    finish();
+                try {
+//                    Type type = new TypeToken<XResult<String>>() {
+//                    }.getType();
+//                    XResult<String> resultData = getNewGson().fromJson(result, type);
+//                    if (resultData.code == 0) {
+//                        XToastUtil.showToast(TipsPostActivity.this, resultData.getMsg());
+//                        finish();
+//                    }
+                    ReleaseTipsBeen releaseTipsBeen = getNewGson().fromJson(result,ReleaseTipsBeen.class);
+                    if (releaseTipsBeen.getCode() .equals("0")){
+                        XToastUtil.showToast(TipsPostActivity.this, releaseTipsBeen.getMsg());
+                        finish();
+                    }
+                }catch (Exception e){
+                    UIHelper.showToast(mContext, getResources().getString(R.string.system_error));
                 }
+                mLoadingDialog.cancel();
             }
 
             @Override
             public void onFailed(String failedMsg) {
+                mLoadingDialog.cancel();
             }
 
             @Override
             public void onFinished() {
+                mLoadingDialog.cancel();
             }
         });
     }

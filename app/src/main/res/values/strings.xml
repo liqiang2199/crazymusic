@@ -205,6 +205,7 @@
     <string name="Toast_register">注册成功</string>
     <string name="Toast_send_sms_ing">发送短信中</string>
     <string name="Toast_bind_phone_ing">绑定中</string>
+    <string name="Toast_community">发布中</string>
 
     <!--dialog 提示框-->
     <string name="dialog_sure">确定</string>
