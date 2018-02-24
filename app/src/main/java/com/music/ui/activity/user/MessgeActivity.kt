@@ -22,6 +22,10 @@ class MessgeActivity :BaseActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         setContentView(R.layout.activity_goods_search)
         super.onCreate(savedInstanceState)
+        if (!isActivityNeedLogin) {
+            this.finish()
+            return
+        }
         initView()
     }
 

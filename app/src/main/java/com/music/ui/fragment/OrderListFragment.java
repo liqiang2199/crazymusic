@@ -31,7 +31,7 @@ import java.lang.reflect.Type;
  * 订单
  */
 @SuppressLint("ValidFragment")
-public class OrderListFragment extends Fragment implements XRecyclerView.PullLoadMoreListener {
+public class OrderListFragment extends BaseFragment implements XRecyclerView.PullLoadMoreListener {
     private View rootView;
     protected XRecyclerView mRecyclerEntityView;
     private int page = 1, total;

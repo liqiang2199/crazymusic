@@ -166,12 +166,14 @@
     <string name="phone_bind_unBind">手机号绑定/解绑</string>
     <string name="bind">已绑定</string>
     <string name="NoBind">未绑定</string>
+    <string name="edit_phone">请输入手机号码</string>
     <!--登录-->
     <string name="sign_up_and_agree_to_comply_with_the_software_related_agreement">注册即同意并且遵守本软件相关协议</string>
     <string name="tip_phone_number_can_not_be_empty">手机号不能为空</string>
     <string name="tip_login_password_can_not_be_empty">登录密码不能为空</string>
     <string name="tip_verification_code_can_not_be_empty">验证码不能为空</string>
     <string name="tip_phone_is_sure">手机号码格式不正确</string>
+    <string name="tip_sms_send_code">验证码不正确</string>
 
     <string name="upload_personally_identifiable_information">上传个人身份信息验证</string>
     <string name="positive_and_negative">(正反面)</string>
@@ -201,6 +203,8 @@
     <string name="Toast_send_sms">发送短信成功</string>
     <string name="Toast_send_sms_fail">发送短信失败，请重新发送</string>
     <string name="Toast_register">注册成功</string>
+    <string name="Toast_send_sms_ing">发送短信中</string>
+    <string name="Toast_bind_phone_ing">绑定中</string>
 
     <!--dialog 提示框-->
     <string name="dialog_sure">确定</string>

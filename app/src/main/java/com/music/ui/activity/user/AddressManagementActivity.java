@@ -193,6 +193,8 @@ public class AddressManagementActivity extends BaseActivity implements IChoiceAd
                             GetAddressDefaulBeen.AddressDefaulBeen addressDefaulBeen = getAddressDefaulBeen.getData();
                             et_address.setText(addressDefaulBeen.getProvince()+
                                     addressDefaulBeen.getCity()+addressDefaulBeen.getDistrict());
+
+
                         }catch (Exception e){
                             onError(e);
                         }
@@ -220,7 +222,7 @@ public class AddressManagementActivity extends BaseActivity implements IChoiceAd
 //                options3Items.get(pos1).get(pos2).get(pos3);
         province = options1Items.get(pos1).getPickerViewText();
         city = options2Items.get(pos1).get(pos2);
-        district = options2Items.get(pos1).get(pos2);
+        district = options3Items.get(pos1).get(pos2).get(pos3);
         et_address.setText(province+city+district);
     }
 }

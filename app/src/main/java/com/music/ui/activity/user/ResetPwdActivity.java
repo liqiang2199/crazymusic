@@ -17,6 +17,7 @@ import com.lzy.okrx2.adapter.ObservableResponse;
 import com.music.R;
 import com.music.api.API;
 import com.music.model.ResponseBeen;
+import com.music.model.jsonbeen.SmsSendCodeBeen;
 import com.music.ui.activity.BaseActivity;
 import com.music.utils.CountDownHelper;
 import com.music.utils.UIHelper;
@@ -75,6 +76,7 @@ public class ResetPwdActivity extends BaseActivity implements View.OnClickListen
                     UIHelper.showToast(mContext, getString(R.string.tip_phone_is_sure));
                     return;
                 }
+                mLoadingDialog = new LoadingDialog(this);
                 sendVerificationCode(phoneNumber);
 
                 break;
@@ -106,6 +108,7 @@ public class ResetPwdActivity extends BaseActivity implements View.OnClickListen
                 .doOnSubscribe(new Consumer<Disposable>() {
                     @Override
                     public void accept(@NonNull Disposable disposable) throws Exception {
+                        mLoadingDialog.loading(getString(R.string.Toast_send_sms_ing));
                     }
                 })
                 .observeOn(AndroidSchedulers.mainThread())
@@ -124,9 +127,9 @@ public class ResetPwdActivity extends BaseActivity implements View.OnClickListen
                         Log.e(TAG, msg);
                         try {
 
-                            ResponseBeen responseBeen = getNewGson().fromJson(msg,ResponseBeen.class);
-                            int code = responseBeen.getCode();
-                            if (code == 0){
+                            SmsSendCodeBeen responseBeen = getNewGson().fromJson(msg,SmsSendCodeBeen.class);
+                            String  code = responseBeen.getCode();
+                            if (!TextUtils.isEmpty(code)&&code.equals("0")){
                                 CountDownHelper helper = new CountDownHelper(tvGetVerificationCode, getString(R.string.send_verification_code),
                                         getString(R.string.resend_verification_code), 60, 1);
                                 helper.setOnFinishListener(new CountDownHelper.OnFinishListener() {
@@ -148,12 +151,14 @@ public class ResetPwdActivity extends BaseActivity implements View.OnClickListen
                     @Override
                     public void onError(@NonNull Throwable e) {
                         e.printStackTrace();
+                        mLoadingDialog.cancel();
                         UIHelper.showToast(mContext, getResources().getString(R.string.system_error));
                     }
 
                     @Override
                     public void onComplete() {
                         disposable.dispose();
+                        mLoadingDialog.cancel();
                     }
                 });
     }

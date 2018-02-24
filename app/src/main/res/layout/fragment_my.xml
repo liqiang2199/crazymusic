@@ -50,7 +50,7 @@
                         android:layout_centerVertical="true"
                         android:layout_toEndOf="@+id/iv_avatar"
                         android:layout_toRightOf="@+id/iv_avatar"
-                        android:text="无敌的毛毛在杨帆起航"
+                        android:text="@string/login_or_register"
                         android:textColor="@color/color333333"
                         android:textSize="16sp" />
 

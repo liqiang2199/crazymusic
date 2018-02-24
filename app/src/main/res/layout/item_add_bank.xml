@@ -9,9 +9,10 @@
     android:layout_marginTop="@dimen/gap_10">
 
     <ImageView
-        android:layout_width="@dimen/gap_35"
-        android:layout_height="@dimen/gap_48"
-        android:src="@mipmap/icon_addbank"/>
+        android:layout_width="@dimen/gap_20"
+        android:layout_height="@dimen/gap_20"
+        android:src="@mipmap/icon_addbank"
+        android:layout_gravity="center_vertical"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -20,6 +21,6 @@
         android:layout_gravity="center_vertical"
         android:textSize="@dimen/text_16"
         android:paddingLeft="@dimen/gap_10"
-        android:textColor="@color/cardview_dark_background"/>
+        android:textColor="@color/colorCommonHint"/>
 
 </LinearLayout>

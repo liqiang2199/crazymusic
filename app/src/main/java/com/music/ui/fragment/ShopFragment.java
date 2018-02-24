@@ -35,7 +35,7 @@ import java.lang.reflect.Type;
 /**
  * 商城
  */
-public class ShopFragment extends Fragment implements View.OnClickListener {
+public class ShopFragment extends BaseFragment implements View.OnClickListener {
     protected View rootView;
     protected XRecyclerView mRecyclerEntityView;
     protected TextView etSearch;

@@ -36,7 +36,7 @@ import java.lang.reflect.Type;
 /**
  * 社区
  */
-public class CommunityFragment extends Fragment implements XRecyclerView.PullLoadMoreListener, View.OnClickListener {
+public class CommunityFragment extends BaseFragment implements XRecyclerView.PullLoadMoreListener, View.OnClickListener {
     protected Toolbar toolbar;
     protected TextView btnRight;
     private View rootView;

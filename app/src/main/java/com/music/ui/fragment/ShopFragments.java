@@ -34,7 +34,7 @@ import java.util.List;
  * Created by feq on 2017/12/22.
  */
 
-public class ShopFragments extends Fragment implements View.OnClickListener {
+public class ShopFragments extends BaseFragment implements View.OnClickListener {
 
     private LinearLayout titleListView;
     private List<GoodsAllEntity.DataBean> titleList = new ArrayList<>();

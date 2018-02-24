@@ -2,6 +2,7 @@ package com.music.ui.activity.user
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.text.TextUtils
@@ -98,7 +99,7 @@ class BankListManageActivity :BaseActivity(), DialogCommonTip.DialogOnClickSubmi
 
     private fun initView(){
         recyclerview = findViewById(R.id.mRecyclerEntityView)
-
+        recyclerview!!.setBackgroundColor(Color.parseColor("#444444"))
         Width_Height()
 
     }
@@ -109,6 +110,9 @@ class BankListManageActivity :BaseActivity(), DialogCommonTip.DialogOnClickSubmi
         initData()
     }
 
+    /**
+     * 获取银行卡列表
+     */
     private fun initData (){
         mLoadingDialog = LoadingDialog(this)
         mLoadingDialog!!.show()

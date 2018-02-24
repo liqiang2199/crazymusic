@@ -1,12 +1,15 @@
 package com.music.ui.activity;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
@@ -17,9 +20,12 @@ import com.framework.view.Toolbar;
 import com.google.gson.Gson;
 import com.music.BaseApp;
 import com.music.R;
+import com.music.common.Constants;
 import com.music.model.jsonbeen.JsonBean;
+import com.music.ui.activity.user.LoginActivity;
 import com.music.ui.ihanlder.IChoiceAddressHanlder;
 import com.music.utils.GetJsonDataUtil;
+import com.music.utils.UtilsTools;
 import com.wega.library.loadingDialog.LoadingDialog;
 
 import org.greenrobot.eventbus.EventBus;
@@ -94,6 +100,30 @@ public class BaseActivity extends AppCompatActivity implements View.OnClickListe
         super.onDestroy();
         EventBus.getDefault().unregister(this);
         BaseApp.getActivities().remove(this);
+
+    }
+
+    /**
+     * 界面需要登录
+     */
+    protected boolean isActivityNeedLogin(){
+        if (UtilsTools.isStringNull(UtilsTools.getReadCacheUtilData(Constants.TOKEN))){
+
+            startActivity(new Intent(mContext, LoginActivity.class));
+            return false;
+        }else{
+            String pakgeName = mContext.getClass().getName();
+            if (!pakgeName.equals("com.music.ui.activity.user.SetActivity")
+                    ||!pakgeName.equals("com.music.ui.activity.guide.GuideActivity")
+                    ||!pakgeName.equals("com.music.ui.activity.SplashActivity")
+                    ||!pakgeName.equals("com.music.ui.activity.MainActivity")){
+
+                return true;
+            }else{
+                startActivity(new Intent(mContext, LoginActivity.class));
+                return false;
+            }
+        }
 
     }
 

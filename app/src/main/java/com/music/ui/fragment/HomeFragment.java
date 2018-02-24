@@ -20,7 +20,7 @@ import java.util.List;
 /**
  * 首页的
  */
-public class HomeFragment extends Fragment {
+public class HomeFragment extends BaseFragment {
     protected View rootView;
     protected EditText etSearch;
     protected XRecyclerView mRecyclerEntityView;

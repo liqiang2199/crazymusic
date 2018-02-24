@@ -1,6 +1,7 @@
 package com.music.ui.fragment;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.nfc.Tag;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -16,6 +17,7 @@ import android.widget.TextView;
 
 import com.music.R;
 import com.music.common.Constants;
+import com.music.model.busbeen.LoginFinishBus;
 import com.music.ui.activity.shop.OrderListActivity;
 import com.music.ui.activity.user.AddressManagementActivity;
 import com.music.ui.activity.user.ApplyForTeacherActivity;
@@ -30,10 +32,12 @@ import com.music.utils.CacheUtil;
 import com.music.utils.UIHelper;
 import com.music.utils.UtilsTools;
 
+import org.greenrobot.eventbus.Subscribe;
+
 /**
  * 个人中心
  */
-public class MyFragment extends Fragment implements View.OnClickListener {
+public class MyFragment extends BaseFragment implements View.OnClickListener {
     protected View rootView;
     private ImageView ivAvatar;
     private TextView tvName;
@@ -105,10 +109,14 @@ public class MyFragment extends Fragment implements View.OnClickListener {
 //            startActivity(new Intent(getActivity(), LoginActivity.class));
 //        } else {
         switch (v.getId()) {
-//            case R.id.tv_name:
-//            case R.id.iv_avatar:
+            case R.id.tv_name:
+            case R.id.iv_avatar:
             case R.id.relative_useInfo:
                 //个人信息
+                if (UtilsTools.isStringNull(UtilsTools.getReadCacheUtilData(Constants.TOKEN))){
+                    startActivity(new Intent(getActivity(), LoginActivity.class));
+                    return;
+                }
                 startActivity(new Intent(getActivity(), UserInfoActivity.class));
                 break;
             case R.id.tv_my_courses:
@@ -158,7 +166,13 @@ public class MyFragment extends Fragment implements View.OnClickListener {
     public void onResume() {
         super.onResume();
         if (tvName != null){
-            tvName.setText(UtilsTools.getReadCacheUtilData(Constants.NINCKNAME));
+            if (UtilsTools.isStringNull(UtilsTools.getReadCacheUtilData(Constants.NINCKNAME))){
+                tvName.setText(R.string.login_or_register);
+            }else{
+                tvName.setText(UtilsTools.getReadCacheUtilData(Constants.NINCKNAME));
+            }
+
         }
     }
+
 }

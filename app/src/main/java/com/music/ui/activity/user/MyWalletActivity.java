@@ -25,6 +25,10 @@ public class MyWalletActivity extends BaseActivity implements View.OnClickListen
     protected void onCreate(Bundle savedInstanceState) {
         super.setContentView(R.layout.activity_my_wallet);
         super.onCreate(savedInstanceState);
+        if (!isActivityNeedLogin()){
+            this.finish();
+            return;
+        }
         initView();
     }
 

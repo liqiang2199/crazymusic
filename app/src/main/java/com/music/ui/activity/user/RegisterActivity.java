@@ -24,6 +24,7 @@ import com.music.common.Constants;
 import com.music.model.RegisterBeen;
 import com.music.model.ResponseBeen;
 import com.music.model.busbeen.LoginFinishBus;
+import com.music.model.jsonbeen.SmsSendCodeBeen;
 import com.music.ui.activity.BaseActivity;
 import com.music.utils.CacheUtil;
 import com.music.utils.CountDownHelper;
@@ -58,6 +59,8 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
     private Button btnRegister;
 
     private LoadingDialog mLoadingDialog;
+
+    private String smsCode;//保存发送的短信验证码
 
     private void findViews() {
         edtMobile = (EditText) findViewById(R.id.edt_mobile);
@@ -139,6 +142,7 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
                 .doOnSubscribe(new Consumer<Disposable>() {
                     @Override
                     public void accept(@NonNull Disposable disposable) throws Exception {
+                        mLoadingDialog.loading(getString(R.string.Toast_send_sms_ing));
                     }
                 })
                 .observeOn(AndroidSchedulers.mainThread())
@@ -156,9 +160,11 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
                         String msg = stringResponse.body();
                         Log.e(TAG, msg);
                         try {
-                            ResponseBeen responseBeen = getNewGson().fromJson(msg,ResponseBeen.class);
-                            int code = responseBeen.getCode();
-                            if (code == 0){
+                            SmsSendCodeBeen responseBeen = getNewGson().fromJson(msg,SmsSendCodeBeen.class);
+                            String code = responseBeen.getCode();
+                            if (!TextUtils.isEmpty(code)&&code.equals("0")){
+                                smsCode = responseBeen.getData().getCode();
+
                                 XToastUtil.showToast(RegisterActivity.this,R.string.Toast_send_sms);
                                 // 只有成功 才开始倒计时
                                 CountDownHelper helper = new CountDownHelper(tvGetVerificationCode, getString(R.string.send_verification_code),
@@ -205,8 +211,12 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
             return;
         }
         String verificationCode = edtVerificationCode.getText().toString().trim();
-        if (TextUtils.isEmpty(phoneNumber)) {
+        if (TextUtils.isEmpty(verificationCode)) {
             UIHelper.showToast(mContext, getString(R.string.tip_verification_code_can_not_be_empty));
+            return;
+        }
+        if (!smsCode.equals(verificationCode)){
+            UIHelper.showToast(mContext, getString(R.string.tip_sms_send_code));
             return;
         }
         final String loginPassword = edtPassword.getText().toString().trim();
@@ -259,21 +269,22 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
                             String code = responseBeen.getCode();
                             if (!TextUtils.isEmpty(code)&&code.equals("0")){
                                 //成功
-//                                String data = responseBeen.getData();
-//                                if (!TextUtils.isEmpty(data)){
+                                RegisterBeen.RegisterBeenData data = responseBeen.getData();
+                                if (data != null){
 //                                    RegisterBeen registerBeen = getNewGson().fromJson(data,RegisterBeen.class);
-//
-//                                    CacheUtil.put(Constants.PHONE, phoneNumber);
-//                                    CacheUtil.put(Constants.TOKEN, registerBeen.getToken());
-//                                    CacheUtil.put(Constants.HEADIMAGE,registerBeen.getHead_img());
-//                                    CacheUtil.put(Constants.NINCKNAME, registerBeen.getNick_name());
-//                                }
+
+                                    CacheUtil.put(Constants.PHONE, phoneNumber);
+                                    CacheUtil.put(Constants.TOKEN, data.getToken());
+                                    CacheUtil.put(Constants.HEADIMAGE,data.getHead_img());
+                                    CacheUtil.put(Constants.NINCKNAME, data.getNick_name());
+                                }
                                 //关闭 登录界面
                                 EventBus.getDefault().post(new LoginFinishBus());
+                                XToastUtil.showToast(RegisterActivity.this,responseBeen.getMsg());
                                 finish();
                             }
 
-                            XToastUtil.showToast(RegisterActivity.this,responseBeen.getMsg());
+
                         } catch (Exception e) {
                             onError(e);
                         }

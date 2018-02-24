@@ -11,10 +11,14 @@ import android.widget.CompoundButton;
 import android.widget.TextView;
 
 import com.music.R;
+import com.music.common.Constants;
 import com.music.ui.activity.BaseActivity;
 import com.music.ui.dialog.DialogCommonTip;
+import com.music.utils.CacheUtil;
+import com.music.utils.UtilsTools;
 import com.music.utils.XActionUtil;
 
+import org.greenrobot.eventbus.EventBus;
 import org.xutils.common.util.LogUtil;
 
 import ch.ielse.view.SwitchView;
@@ -55,8 +59,15 @@ public class SetActivity extends BaseActivity implements CompoundButton.OnChecke
         tvVersionUpdate.setOnClickListener(this);
         tvTermsOfTheAgreement.setOnClickListener(this);
         tvClearCache.setOnClickListener(this);
-        tvSignOut.setOnClickListener(this);
         tv_account_manage.setOnClickListener(this);
+        //
+        if (UtilsTools.isStringNull(UtilsTools.getReadCacheUtilData(Constants.TOKEN))){
+            tvSignOut.setOnClickListener(null);
+            tvSignOut.setVisibility(View.GONE);
+        }else{
+            tvSignOut.setOnClickListener(this);
+            tvSignOut.setVisibility(View.VISIBLE);
+        }
 
         Width_Height();
     }
@@ -87,6 +98,8 @@ public class SetActivity extends BaseActivity implements CompoundButton.OnChecke
         Intent intent = new Intent();
         intent.putExtra("isBack", true);
         XActionUtil.action().appStartActivity(intent, XActionUtil.LOGIN);
+        //退出登录后清空所有 保存
+        CacheUtil.deleteAll();
         finish();
     }
 

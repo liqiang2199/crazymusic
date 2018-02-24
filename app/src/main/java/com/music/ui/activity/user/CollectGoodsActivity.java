@@ -20,7 +20,10 @@ public class CollectGoodsActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.activity_list);
         super.onCreate(savedInstanceState);
-
+        if (!isActivityNeedLogin()){
+            this.finish();
+            return;
+        }
         initView();
     }
 

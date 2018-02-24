@@ -37,6 +37,10 @@ public class API {
     //删除绑定银行卡
     public static String USER_ACCOUNTDELETECARD = HOST + "/user/deleteUserAccountCard";
 
+    //绑定手机号码
+    public static String USER_BINDPHONECODE = HOST + "/user/getBindPhoneCode";
+    public static String USER_BINDPHONE = HOST + "/user/bindPhone";
+
     /**
      * 社区模块
      */

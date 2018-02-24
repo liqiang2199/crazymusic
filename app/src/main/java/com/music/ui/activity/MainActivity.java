@@ -1,6 +1,7 @@
 package com.music.ui.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v4.app.FragmentTransaction;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -16,12 +17,17 @@ import android.widget.TextView;
 import com.framework.utils.XToastUtil;
 import com.music.BaseApp;
 import com.music.R;
+import com.music.common.Constants;
+import com.music.ui.activity.index.TipsPostActivity;
+import com.music.ui.activity.user.LoginActivity;
 import com.music.ui.fragment.CommunityFragment;
 import com.music.ui.fragment.HomeFragment;
 import com.music.ui.fragment.MyFragment;
 import com.music.ui.fragment.ShopFragment;
 import com.music.ui.fragment.ShopFragments;
+import com.music.utils.CacheUtil;
 import com.music.utils.DialogUtils;
+import com.music.utils.UtilsTools;
 
 import java.util.ArrayList;
 
@@ -118,7 +124,11 @@ public class MainActivity extends BaseActivity {
                 onPageSelected(3);
                 break;
             case R.id.tab_fb:
-                //发布
+                //发布 判断是否登录 没有请先登录
+                if (UtilsTools.isStringNull(UtilsTools.getReadCacheUtilData(Constants.TOKEN))){
+                    startActivity(new Intent(mContext, LoginActivity.class));
+                    return;
+                }
                 DialogUtils.showPost(this,this);
                 break;
         }
