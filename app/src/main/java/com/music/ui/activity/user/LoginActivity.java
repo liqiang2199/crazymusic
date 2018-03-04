@@ -65,8 +65,8 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     protected void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.activity_login);
         super.onCreate(savedInstanceState);
-        StatusBarUtil.StatusBarDarkMode(this);
-        StatusBarUtil.setStatusBarColor(this, R.color.white);
+//        StatusBarUtil.StatusBarDarkMode(this);
+//        StatusBarUtil.setStatusBarColor(this, R.color.white);
         initView();
     }
 

@@ -12,6 +12,7 @@ import android.widget.EditText;
 import com.framework.view.recyclerView.XRecyclerView;
 import com.music.R;
 import com.music.ui.holder.IndexListHolder;
+import com.music.ui.holder.IndexTeacherHolder;
 import com.music.ui.holder.IndexTopHolder;
 
 import java.util.ArrayList;
@@ -39,12 +40,14 @@ public class HomeFragment extends BaseFragment {
         mRecyclerEntityView = (XRecyclerView) rootView.findViewById(R.id.mRecyclerEntityView);
         mRecyclerEntityView.getAdapter().bindHolder(new IndexTopHolder());
         mRecyclerEntityView.getAdapter().bindHolder(new IndexListHolder());
+        mRecyclerEntityView.getAdapter().bindHolder(new IndexTeacherHolder());
 
         mRecyclerEntityView.getAdapter().setData(0, "ddd");
         List<String> list = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 1; i++) {
             list.add("");
         }
         mRecyclerEntityView.getAdapter().setData(1, list);
+        mRecyclerEntityView.getAdapter().setData(2, "ee");
     }
 }

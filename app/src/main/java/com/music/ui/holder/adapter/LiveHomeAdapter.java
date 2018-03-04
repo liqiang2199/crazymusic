@@ -20,7 +20,7 @@ public class LiveHomeAdapter extends BaseAdapter {
     }
     @Override
     public int getCount() {
-        return 5;
+        return 3;
     }
 
     @Override

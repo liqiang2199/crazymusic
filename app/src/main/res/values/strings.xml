@@ -35,6 +35,7 @@
     <string name="junior_teacher">初级教师</string>
     <string name="intermediate_teacher">中级教师</string>
     <string name="advanced_teacher">高级教师</string>
+    <string name="teacher_phb">教师排行榜</string>
     <string name="publish">发布</string>
     <string name="student">学员</string>
     <string name="last_upload_time_colon">上次上传时间：</string>
@@ -227,5 +228,6 @@
     <string name="weiChat_pay">微信支付</string>
     <string name="zfb_pay">支付宝支付</string>
     <string name="pay_choice_style">选择支付方式</string>
+
 
 </resources>
