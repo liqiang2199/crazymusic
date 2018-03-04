@@ -7,7 +7,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"
+        android:background="@mipmap/bg_bind_phone"
         android:orientation="vertical"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
@@ -31,7 +31,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="47dp"
                 android:layout_marginTop="30dp"
-                android:background="@drawable/bg_gray_holl_fillet_frame40"
+                android:background="@drawable/bg_bind_phone_edit"
                 android:hint="@string/mobile"
                 android:inputType="number"
                 android:maxLength="11"
@@ -39,8 +39,8 @@
                 android:paddingLeft="28dp"
                 android:paddingRight="28dp"
                 android:paddingStart="28dp"
-                android:textColor="@android:color/black"
-                android:textColorHint="@color/color999999"
+                android:textColor="@android:color/white"
+                android:textColorHint="@color/colorCommonHintE"
                 android:textSize="14sp" />
 
             <EditText
@@ -48,7 +48,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="47dp"
                 android:layout_marginTop="24dp"
-                android:background="@drawable/bg_gray_holl_fillet_frame40"
+                android:background="@drawable/bg_bind_phone_edit"
                 android:hint="@string/pwd"
                 android:inputType="textPassword"
                 android:maxLength="12"
@@ -57,8 +57,8 @@
                 android:paddingLeft="28dp"
                 android:paddingRight="28dp"
                 android:paddingStart="28dp"
-                android:textColor="@android:color/black"
-                android:textColorHint="@color/color999999"
+                android:textColor="@android:color/white"
+                android:textColorHint="@color/colorCommonHintE"
                 android:textSize="14sp" />
 
             <Button
@@ -66,7 +66,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="46dp"
-                android:background="@drawable/bg_base_bar_round"
+                android:background="@drawable/bg_btn_base"
                 android:text="@string/login"
                 android:textColor="@android:color/white" />
 
@@ -84,7 +84,7 @@
                     android:paddingBottom="17dp"
                     android:paddingTop="17dp"
                     android:text="@string/forgot_pwd"
-                    android:textColor="@android:color/black" />
+                    android:textColor="@android:color/white" />
 
                 <TextView
                     android:id="@+id/tv_register"
@@ -101,7 +101,7 @@
                     android:paddingStart="17dp"
                     android:paddingTop="17dp"
                     android:text="@string/register"
-                    android:textColor="@android:color/black" />
+                    android:textColor="@android:color/white" />
             </RelativeLayout>
 
         </LinearLayout>
@@ -147,7 +147,7 @@
                 android:gravity="center"
                 android:paddingTop="11dp"
                 android:text="@string/sign_up_and_agree_to_comply_with_the_software_related_agreement"
-                android:textColor="@color/color999999" />
+                android:textColor="@color/white" />
 
         </LinearLayout>
 
