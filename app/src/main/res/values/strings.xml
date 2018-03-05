@@ -36,6 +36,7 @@
     <string name="intermediate_teacher">中级教师</string>
     <string name="advanced_teacher">高级教师</string>
     <string name="teacher_phb">教师排行榜</string>
+    <string name="hot_class">热门课程</string>
     <string name="publish">发布</string>
     <string name="student">学员</string>
     <string name="last_upload_time_colon">上次上传时间：</string>

@@ -55,7 +55,7 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
     private EditText edtVerificationCode;
     private TextView tvGetVerificationCode;
     private EditText edtPassword;
-    private TextView tvAgreement;
+//    private TextView tvAgreement;
     private Button btnRegister;
 
     private LoadingDialog mLoadingDialog;
@@ -67,31 +67,31 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
         edtVerificationCode = (EditText) findViewById(R.id.edt_verification_code);
         tvGetVerificationCode = (TextView) findViewById(R.id.tv_get_verification_code);
         edtPassword = (EditText) findViewById(R.id.edt_password);
-        tvAgreement = (TextView) findViewById(R.id.tv_agreement);
+//        tvAgreement = (TextView) findViewById(R.id.tv_agreement);
         btnRegister = (Button) findViewById(R.id.btn_register);
 
         tvGetVerificationCode.setOnClickListener(this);
         btnRegister.setOnClickListener(this);
 
-        Link link = new Link(getString(R.string.user_agreement_content))
-                .setTextColor(Color.parseColor("#FCC671"))
-                .setTextColorOfHighlightedLink(Color.parseColor("#FCC671"))
-//                .setHighlightAlpha(.0f)
-                .setUnderlined(false)
-                .setBold(false)
-                .setOnLongClickListener(new Link.OnLongClickListener() {
-                    @Override
-                    public void onLongClick(String clickedText) {
-                    }
-                })
-                .setOnClickListener(new Link.OnClickListener() {
-                    @Override
-                    public void onClick(String clickedText) {
-                    }
-                });
-        LinkBuilder.on(tvAgreement)
-                .addLink(link)
-                .build();
+//        Link link = new Link(getString(R.string.user_agreement_content))
+//                .setTextColor(Color.parseColor("#FCC671"))
+//                .setTextColorOfHighlightedLink(Color.parseColor("#FCC671"))
+////                .setHighlightAlpha(.0f)
+//                .setUnderlined(false)
+//                .setBold(false)
+//                .setOnLongClickListener(new Link.OnLongClickListener() {
+//                    @Override
+//                    public void onLongClick(String clickedText) {
+//                    }
+//                })
+//                .setOnClickListener(new Link.OnClickListener() {
+//                    @Override
+//                    public void onClick(String clickedText) {
+//                    }
+//                });
+//        LinkBuilder.on(tvAgreement)
+//                .addLink(link)
+//                .build();
     }
 
     @Override

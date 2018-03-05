@@ -11,6 +11,7 @@ import android.widget.EditText;
 
 import com.framework.view.recyclerView.XRecyclerView;
 import com.music.R;
+import com.music.ui.holder.IndexHotHolder;
 import com.music.ui.holder.IndexListHolder;
 import com.music.ui.holder.IndexTeacherHolder;
 import com.music.ui.holder.IndexTopHolder;
@@ -41,6 +42,7 @@ public class HomeFragment extends BaseFragment {
         mRecyclerEntityView.getAdapter().bindHolder(new IndexTopHolder());
         mRecyclerEntityView.getAdapter().bindHolder(new IndexListHolder());
         mRecyclerEntityView.getAdapter().bindHolder(new IndexTeacherHolder());
+        mRecyclerEntityView.getAdapter().bindHolder(new IndexHotHolder());
 
         mRecyclerEntityView.getAdapter().setData(0, "ddd");
         List<String> list = new ArrayList<>();
@@ -49,5 +51,6 @@ public class HomeFragment extends BaseFragment {
         }
         mRecyclerEntityView.getAdapter().setData(1, list);
         mRecyclerEntityView.getAdapter().setData(2, "ee");
+        mRecyclerEntityView.getAdapter().setData(3, "aa");
     }
 }
