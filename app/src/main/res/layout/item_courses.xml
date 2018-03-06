@@ -94,7 +94,7 @@
 
             <com.music.view.SelectableRoundedImageView
                 android:layout_width="@dimen/gap_150"
-                android:layout_height="@dimen/gap_135"
+                android:layout_height="@dimen/gap_120"
                 android:src="@mipmap/ic_pic"
                 android:scaleType="centerCrop"
                 app:sriv_left_bottom_corner_radius="@dimen/gap_10"

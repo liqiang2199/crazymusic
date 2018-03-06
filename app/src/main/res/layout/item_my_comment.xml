@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="@dimen/common_height10"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/common_height10"
+            android:textColor="@color/color000000"
+            android:textSize="@dimen/common_size15"
+            android:text="3月春风的歌曲"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingRight="@dimen/gap_10"
+            android:paddingLeft="@dimen/gap_10"
+            android:paddingBottom="@dimen/gap_10"
+            android:textColor="@color/colorCommonHint"
+            android:textSize="@dimen/text_14"
+            android:text="2018-2-3"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/gap_150"
+            android:src="@mipmap/ban1"
+            android:scaleType="centerCrop"/>
+
+        <!--<com.framework.view.XGridViewForScrollView-->
+            <!--android:id="@+id/mGridView"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:numColumns="3" />-->
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/common_height10">
+
+            <TextView
+                android:id="@+id/tv_zan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="@dimen/gap_15"
+                android:layout_marginStart="@dimen/gap_15"
+                android:clickable="true"
+                android:drawableLeft="@mipmap/ic_zan"
+                android:drawablePadding="@dimen/common_height5"
+                android:gravity="center"
+                android:text="0"
+                android:textColor="@color/colorCommonHint" />
+
+            <TextView
+                android:id="@+id/tv_ping"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="@dimen/gap_15"
+                android:layout_marginStart="@dimen/gap_15"
+                android:layout_toEndOf="@+id/tv_zan"
+                android:layout_toRightOf="@+id/tv_zan"
+                android:clickable="true"
+                android:drawableLeft="@mipmap/ic_pinglun"
+                android:drawablePadding="@dimen/common_height5"
+                android:gravity="center"
+                android:text="0"
+                android:textColor="@color/colorCommonHint" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

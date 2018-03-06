@@ -15,6 +15,9 @@
     <string name="see_more">查看更多</string>
     <string name="free">免费</string>
     <string name="already_uploaded_classes">已经上传课时</string>
+    <string name="all">全部</string>
+    <string name="teacher_class">课程</string>
+    <string name="home_zl">资料</string>
 
     <!--订单管理-->
     <string name="order_management">订单管理</string>
@@ -230,5 +233,7 @@
     <string name="zfb_pay">支付宝支付</string>
     <string name="pay_choice_style">选择支付方式</string>
 
+    <!--我的视频详情-->
+    <string name="video_btn_pay">购买课程</string>
 
 </resources>

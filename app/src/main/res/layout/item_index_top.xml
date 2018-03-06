@@ -5,170 +5,40 @@
     android:background="@color/white"
     android:orientation="vertical">
 
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:background="@drawable/bg_base_bar">
+
+        <!--<EditText-->
+            <!--android:id="@+id/et_search"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="1"-->
+            <!--android:background="@drawable/bg_write_round20_fame"-->
+            <!--android:gravity="center_vertical"-->
+            <!--android:hint="搜索音乐项目"-->
+            <!--android:padding="8dp"-->
+            <!--android:singleLine="true"-->
+            <!--android:textSize="@dimen/common_size14" />-->
+
+        <ImageView
+            android:id="@+id/iv_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/common_height10"
+            android:src="@mipmap/ic_serch" />
+    </LinearLayout>
+
     <com.framework.view.viewPager.XSlidingPlayView
         android:id="@+id/mXSlidingPlayView"
         android:layout_width="match_parent"
         android:layout_height="233dp" />
 
-    <!--<LinearLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="85dp"-->
-        <!--android:orientation="horizontal"-->
-        <!--android:paddingBottom="@dimen/gap_5"-->
-        <!--android:paddingTop="@dimen/gap_5">-->
-
-        <!--<TextView-->
-            <!--android:id="@+id/bt_live"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:layout_weight="1"-->
-            <!--android:background="@color/white"-->
-            <!--android:drawablePadding="3dp"-->
-            <!--android:drawableTop="@mipmap/ic_zhibo"-->
-            <!--android:gravity="center"-->
-            <!--android:text="@string/live"-->
-            <!--android:textSize="14sp" />-->
-
-        <!--<TextView-->
-            <!--android:id="@+id/bt_video"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:layout_weight="1"-->
-            <!--android:background="@color/white"-->
-            <!--android:drawablePadding="3dp"-->
-            <!--android:drawableTop="@mipmap/ic_shipin"-->
-            <!--android:gravity="center"-->
-            <!--android:text="@string/video"-->
-            <!--android:textSize="14sp" />-->
-
-        <!--<TextView-->
-            <!--android:id="@+id/bt_online"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:layout_weight="1"-->
-            <!--android:background="@color/white"-->
-            <!--android:drawablePadding="3dp"-->
-            <!--android:drawableTop="@mipmap/ic_xianxiayuw"-->
-            <!--android:gravity="center"-->
-            <!--android:text="@string/relevant_information"-->
-            <!--android:textSize="14sp" />-->
-
-        <!--<TextView-->
-            <!--android:id="@+id/bt_music"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:layout_weight="1"-->
-            <!--android:background="@color/white"-->
-            <!--android:drawablePadding="3dp"-->
-            <!--android:drawableTop="@mipmap/ic_wanyinyue"-->
-            <!--android:gravity="center"-->
-            <!--android:text="@string/learn_music"-->
-            <!--android:textSize="14sp" />-->
-    <!--</LinearLayout>-->
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
 
 
-        <LinearLayout
-            android:id="@+id/bt_live"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center">
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:src="@mipmap/ic_zhibo"
-                android:paddingTop="@dimen/gap_5"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/live"
-                android:layout_gravity="center_horizontal"
-                android:textSize="14sp"
-                android:paddingTop="3dp"
-                android:paddingBottom="@dimen/gap_5"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/bt_video"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center">
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:src="@mipmap/ic_shipin"
-                android:paddingTop="@dimen/gap_5"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/video"
-                android:layout_gravity="center_horizontal"
-                android:textSize="14sp"
-                android:paddingTop="3dp"
-                android:paddingBottom="@dimen/gap_5"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/bt_online"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:src="@mipmap/ic_xianxiayuw"
-                android:paddingTop="@dimen/gap_5"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/relevant_information"
-                android:layout_gravity="center_horizontal"
-                android:textSize="14sp"
-                android:paddingTop="3dp"
-                android:paddingBottom="@dimen/gap_5"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/bt_music"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:src="@mipmap/ic_wanyinyue"
-                android:paddingTop="@dimen/gap_5"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/learn_music"
-                android:layout_gravity="center_horizontal"
-                android:paddingTop="3dp"
-                android:paddingBottom="@dimen/gap_5"
-                android:textSize="14sp" />
-
-        </LinearLayout>
-
-
-
-    </LinearLayout>
 </LinearLayout>

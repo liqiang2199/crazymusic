@@ -7,17 +7,18 @@ import com.framework.view.recyclerView.XRecyclerView;
 import com.music.R;
 import com.music.ui.activity.BaseActivity;
 import com.music.ui.holder.CoursesListHolder;
+import com.music.ui.holder.VideoListHolder;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 我课程
+ * Created by empty cup on 2018/3/6.
+ * 我的视频
  */
-public class MyCoursesActivity extends BaseActivity {
 
+public class MyVideoActivity extends BaseActivity {
     protected XRecyclerView mRecyclerEntityView;
-    private int page = 1, total;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +37,7 @@ public class MyCoursesActivity extends BaseActivity {
         mRecyclerEntityView = (XRecyclerView) findViewById(R.id.mRecyclerEntityView);
 
         mRecyclerEntityView.getRecyclerView().setLayoutManager(new LinearLayoutManager(this));
-        mRecyclerEntityView.getAdapter().bindHolder(new CoursesListHolder());
+        mRecyclerEntityView.getAdapter().bindHolder(new VideoListHolder());
 
         List<String> list = new ArrayList<>();
         for (int i = 0; i < 10; i++) {

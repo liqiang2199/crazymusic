@@ -149,5 +149,14 @@
             android:label="账号管理"/>
         <activity android:name=".ui.activity.user.BindPhoneActivity"
             android:label="绑定手机号"/>
+        <activity android:name=".ui.activity.user.MyVideoActivity"
+            android:label="我的视频"/>
+        <activity android:name=".ui.activity.user.VideoCollectionActivity"
+            android:label="视频收藏"/>
+        <activity android:name=".ui.activity.user.MyCommunityActivity"
+            android:label="我的社区"/>
+        <activity android:name=".ui.activity.user.MyVideoDetailActivity"
+            android:label="我的视频详情"/>
+
     </application>
 </manifest>

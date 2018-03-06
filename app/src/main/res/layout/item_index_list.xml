@@ -10,12 +10,14 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/common_item_height"
         android:orientation="horizontal"
-        android:padding="@dimen/common_layout_10">
+        android:layout_margin="@dimen/gap_10">
 
         <View
             android:layout_width="4dp"
             android:layout_height="match_parent"
-            android:background="@color/colorAccent" />
+            android:layout_marginTop="@dimen/gap_10"
+            android:layout_marginBottom="@dimen/gap_10"
+            android:background="@color/coupons_package" />
 
         <TextView
             android:id="@+id/text_title"
@@ -25,15 +27,17 @@
             android:layout_weight="1"
             android:gravity="center_vertical"
             android:text="直播"
-            android:textColor="@color/colorAccent" />
+            android:textColor="@color/black" />
 
         <TextView
             android:id="@+id/text_more"
-            android:layout_width="wrap_content"
+            android:layout_width="30dp"
             android:layout_height="match_parent"
             android:gravity="center_vertical"
-            android:text="进入大厅"
-            android:textColor="@color/colorAccent" />
+            android:text="+"
+            android:textSize="@dimen/text_25"
+            android:textStyle="bold"
+            android:textColor="@color/colorCommonHint" />
     </LinearLayout>
 
     <com.framework.view.XGridViewForScrollView

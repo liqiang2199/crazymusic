@@ -24,10 +24,13 @@ import com.music.ui.activity.user.ApplyForTeacherActivity;
 import com.music.ui.activity.user.CollectGoodsActivity;
 import com.music.ui.activity.user.LoginActivity;
 import com.music.ui.activity.user.MessgeActivity;
+import com.music.ui.activity.user.MyCommunityActivity;
 import com.music.ui.activity.user.MyCoursesActivity;
+import com.music.ui.activity.user.MyVideoActivity;
 import com.music.ui.activity.user.MyWalletActivity;
 import com.music.ui.activity.user.SetActivity;
 import com.music.ui.activity.user.UserInfoActivity;
+import com.music.ui.activity.user.VideoCollectionActivity;
 import com.music.utils.CacheUtil;
 import com.music.utils.UIHelper;
 import com.music.utils.UtilsTools;
@@ -125,12 +128,15 @@ public class MyFragment extends BaseFragment implements View.OnClickListener {
                 break;
             case R.id.tv_my_video:
                 //我的视频
+                startActivity(new Intent(getActivity(), MyVideoActivity.class));
                 break;
             case R.id.tv_video_collection:
                 //视频收藏
+                startActivity(new Intent(getActivity(), VideoCollectionActivity.class));
                 break;
             case R.id.tv_my_community:
                 //我的社区
+                startActivity(new Intent(getActivity(), MyCommunityActivity.class));
                 break;
             case R.id.rlyt_my_wallet:
                 //我的钱包

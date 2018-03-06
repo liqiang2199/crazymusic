@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.AppBarLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/appBar"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:theme="@style/AppTheme.AppBarOverlay"
+    app:elevation="0dp">
+
+    <com.framework.view.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@drawable/bg_base_bar"
+        app:contentInsetEnd="0dp"
+        app:contentInsetRight="0dp"
+        app:popupTheme="@style/AppTheme.PopupOverlay">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/gap_45"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:text="@string/all"
+                android:layout_gravity="center_horizontal"
+                android:paddingTop="3dp"
+                android:paddingBottom="@dimen/gap_5"
+                android:textColor="@color/coupons_package"
+                android:gravity="center"
+                android:textSize="14sp" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:text="@string/teacher_class"
+                android:layout_gravity="center_horizontal"
+                android:paddingTop="3dp"
+                android:paddingBottom="@dimen/gap_5"
+                android:gravity="center"
+                android:textSize="14sp" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:text="@string/home_zl"
+                android:layout_gravity="center_horizontal"
+                android:paddingTop="3dp"
+                android:paddingBottom="@dimen/gap_5"
+                android:gravity="center"
+                android:textSize="14sp" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:text="@string/video"
+                android:layout_gravity="center_horizontal"
+                android:paddingTop="3dp"
+                android:paddingBottom="@dimen/gap_5"
+                android:gravity="center"
+                android:textSize="14sp" />
+
+
+
+        </LinearLayout>
+    </com.framework.view.Toolbar>
+</android.support.design.widget.AppBarLayout>

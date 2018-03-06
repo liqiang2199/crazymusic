@@ -35,10 +35,10 @@ public class IndexTopHolder extends IViewHolder {
 
     private class ViewHolder extends XViewHolder<String> {
         protected XSlidingPlayView mXSlidingPlayView;
-        protected LinearLayout btLive;
-        protected LinearLayout btVideo;
-        protected LinearLayout btOnline;
-        protected LinearLayout btMusic;
+//        protected LinearLayout btLive;
+//        protected LinearLayout btVideo;
+//        protected LinearLayout btOnline;
+//        protected LinearLayout btMusic;
 
         public ViewHolder(View itemView, RecyclerView.Adapter adapter) {
             super(itemView, adapter);
@@ -50,10 +50,10 @@ public class IndexTopHolder extends IViewHolder {
             mXSlidingPlayView.setNavPageResources(R.drawable.circle_zi, R.drawable.circle_gray_kx);
             mXSlidingPlayView.setNavHorizontalGravity(Gravity.CENTER);
             mXSlidingPlayView.startPlay();
-            btLive = (LinearLayout) rootView.findViewById(R.id.bt_live);
-            btVideo = (LinearLayout) rootView.findViewById(R.id.bt_video);
-            btOnline = (LinearLayout) rootView.findViewById(R.id.bt_online);
-            btMusic = (LinearLayout) rootView.findViewById(R.id.bt_music);
+//            btLive = (LinearLayout) rootView.findViewById(R.id.bt_live);
+//            btVideo = (LinearLayout) rootView.findViewById(R.id.bt_video);
+//            btOnline = (LinearLayout) rootView.findViewById(R.id.bt_online);
+//            btMusic = (LinearLayout) rootView.findViewById(R.id.bt_music);
         }
 
         @Override
@@ -63,34 +63,34 @@ public class IndexTopHolder extends IViewHolder {
             addImage(R.mipmap.ban2);
             addImage(R.mipmap.ban3);
 
-            btVideo.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    //视频
+//            btVideo.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    //视频
                     mContext.startActivity(new Intent(mContext, VideoActivity.class));
-                }
-            });
-            btMusic.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    //玩音乐
-                    mContext.startActivity(new Intent(mContext, MusicPlayerHomeActivity.class));
-                }
-            });
-            btOnline.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    //线下约
-                    mContext.startActivity(new Intent(mContext, OffLineActivity.class));
-                }
-            });
-            btLive.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    //直播
-//                    mContext.startActivity(new Intent(mContext, VideoActivity.class));
-                }
-            });
+//                }
+//            });
+//            btMusic.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    //玩音乐
+//                    mContext.startActivity(new Intent(mContext, MusicPlayerHomeActivity.class));
+//                }
+//            });
+//            btOnline.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    //线下约
+//                    mContext.startActivity(new Intent(mContext, OffLineActivity.class));
+//                }
+//            });
+//            btLive.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    //直播
+////                    mContext.startActivity(new Intent(mContext, VideoActivity.class));
+//                }
+//            });
         }
 
         private void addImage(int url) {

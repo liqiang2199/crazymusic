@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:statusBarBackground="@drawable/bg_base_bar_black">
+    <include
+        layout="@layout/base_top"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/gap_224">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/gap_224"
+                android:src="@mipmap/ban1"
+                android:scaleType="centerCrop"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="14dp"
+                android:layout_marginEnd="@dimen/gap_15"
+                android:layout_marginRight="@dimen/gap_15"
+                android:src="@mipmap/icon_collection"
+                android:id="@+id/imageView" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/imageView"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="@dimen/gap_15"
+                android:layout_marginStart="@dimen/gap_15"
+                android:text="第一课时"
+                android:textSize="@dimen/text_14"
+                android:textColor="@color/white"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="点击播放"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_25" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="点击播放"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_16"
+            android:padding="@dimen/gap_10"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="点击播放"
+            android:textColor="@color/colorCommonDark"
+            android:textSize="@dimen/text_14"
+            android:padding="@dimen/gap_10"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/colorCommonLine" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/gap_70"
+            android:gravity="center_vertical">
+
+            <com.music.view.myImageView
+                xmlns:imagecontrol="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/iv_head_me"
+                android:layout_width="@dimen/gap_45"
+                android:layout_height="@dimen/gap_45"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/gap_10"
+                android:layout_marginRight="@dimen/gap_10"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/ic_pic"
+                imagecontrol:border_inside_color="@color/white"
+                imagecontrol:border_outside_color="@color/white"
+                imagecontrol:border_thickness="2dp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="歌王天下"
+                android:textColor="@color/colorCommonDark"
+                android:textSize="@dimen/text_14"
+                android:padding="@dimen/gap_10"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="点击播放"
+                android:textColor="@color/video_color"
+                android:textSize="@dimen/text_14"
+                android:padding="@dimen/gap_10"/>
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10px"
+            android:background="@color/colorCommonLine" />
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/gap_45"
+        android:background="@color/video_color"
+        android:text="@string/video_btn_pay"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_14"/>
+
+
+</LinearLayout>

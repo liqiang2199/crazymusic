@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/common_height10"
+    android:layout_marginLeft="@dimen/common_height10"
+    android:layout_marginRight="@dimen/common_height10"
+    android:layout_marginTop="@dimen/common_height5"
+    android:orientation="vertical"
+    app:cardCornerRadius="@dimen/common_height10">
+
+    <LinearLayout
+        android:id="@+id/video_liner"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/gap_145"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:layout_width="@dimen/gap_150"
+            android:layout_height="@dimen/gap_140"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/gap_15"
+            android:paddingTop="@dimen/gap_10"
+            android:paddingBottom="@dimen/gap_10">
+
+
+            <com.music.view.SelectableRoundedImageView
+                android:layout_width="@dimen/gap_150"
+                android:layout_height="@dimen/gap_120"
+                android:src="@mipmap/ic_pic"
+                android:scaleType="centerCrop"
+                app:sriv_left_bottom_corner_radius="@dimen/gap_10"
+                app:sriv_left_top_corner_radius="@dimen/gap_10"
+                app:sriv_right_bottom_corner_radius="@dimen/gap_10"
+                app:sriv_right_top_corner_radius="@dimen/gap_10"/>
+
+
+
+        </FrameLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/color333333"
+                android:text="@string/app_name"
+                android:textSize="@dimen/text_14"
+                android:paddingTop="@dimen/gap_15"
+                android:paddingBottom="@dimen/gap_15"/>
+
+            <com.music.view.myImageView xmlns:imagecontrol="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/iv_head_me"
+                android:layout_width="@dimen/gap_45"
+                android:layout_height="@dimen/gap_45"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="bottom|right"
+                android:layout_marginBottom="11dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginRight="15dp"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/ic_pic"
+                imagecontrol:border_inside_color="@color/white"
+                imagecontrol:border_outside_color="@color/white"
+                imagecontrol:border_thickness="2dp" />
+
+        </RelativeLayout>
+
+
+
+    </LinearLayout>
+</android.support.v7.widget.CardView>

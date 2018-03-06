@@ -6,15 +6,16 @@ import android.support.v7.widget.LinearLayoutManager;
 import com.framework.view.recyclerView.XRecyclerView;
 import com.music.R;
 import com.music.ui.activity.BaseActivity;
+import com.music.ui.holder.CommentMyHolder;
 import com.music.ui.holder.CoursesListHolder;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 我课程
+ * 我的社区
  */
-public class MyCoursesActivity extends BaseActivity {
+public class MyCommunityActivity extends BaseActivity {
 
     protected XRecyclerView mRecyclerEntityView;
     private int page = 1, total;
@@ -36,7 +37,7 @@ public class MyCoursesActivity extends BaseActivity {
         mRecyclerEntityView = (XRecyclerView) findViewById(R.id.mRecyclerEntityView);
 
         mRecyclerEntityView.getRecyclerView().setLayoutManager(new LinearLayoutManager(this));
-        mRecyclerEntityView.getAdapter().bindHolder(new CoursesListHolder());
+        mRecyclerEntityView.getAdapter().bindHolder(new CommentMyHolder());
 
         List<String> list = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
