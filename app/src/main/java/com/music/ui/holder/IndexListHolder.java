@@ -45,6 +45,7 @@ public class IndexListHolder extends IViewHolder {
             textTitle = (TextView) itemView.findViewById(R.id.text_title);
             textMore = (TextView) itemView.findViewById(R.id.text_more);
             girdView = (XGridViewForScrollView) itemView.findViewById(R.id.girdView);
+            girdView.setFocusable(false);
         }
 
         @Override

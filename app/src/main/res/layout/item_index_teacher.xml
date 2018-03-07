@@ -47,7 +47,7 @@
             android:layout_weight="0.6"
             android:layout_height="240dp"
             android:scaleType="centerCrop"
-            android:src="@mipmap/ban4"
+            android:src="@mipmap/bg_home1"
             android:layout_gravity="center"/>
 
         <LinearLayout

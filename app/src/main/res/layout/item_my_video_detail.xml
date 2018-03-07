@@ -65,7 +65,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:text="点击播放"
+            android:text="内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容"
             android:textColor="@color/black"
             android:textSize="@dimen/text_16"
             android:padding="@dimen/gap_10"/>

@@ -37,7 +37,7 @@
     <com.framework.view.viewPager.XSlidingPlayView
         android:id="@+id/mXSlidingPlayView"
         android:layout_width="match_parent"
-        android:layout_height="233dp" />
+        android:layout_height="@dimen/gap_150" />
 
 
 

@@ -7,6 +7,7 @@ import com.music.ui.activity.BaseActivity;
 
 /**
  * Created by empty cup on 2018/3/6.
+ * 我的视频的详情
  */
 
 public class MyVideoDetailActivity extends BaseActivity {

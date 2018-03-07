@@ -67,7 +67,7 @@ public class IndexTopHolder extends IViewHolder {
 //                @Override
 //                public void onClick(View v) {
 //                    //视频
-                    mContext.startActivity(new Intent(mContext, VideoActivity.class));
+//                    mContext.startActivity(new Intent(mContext, VideoActivity.class));
 //                }
 //            });
 //            btMusic.setOnClickListener(new View.OnClickListener() {
