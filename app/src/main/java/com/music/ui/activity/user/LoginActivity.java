@@ -33,6 +33,7 @@ import com.wega.library.loadingDialog.LoadingDialog;
 import org.greenrobot.eventbus.Subscribe;
 import org.json.JSONObject;
 
+import java.io.IOException;
 import java.util.TreeMap;
 
 import io.reactivex.Observer;
@@ -40,6 +41,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
+import okhttp3.Interceptor;
 
 /**
  * 类说明： 登录页面
@@ -115,6 +117,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     }
 
     private void login() {
+        //http://47.95.215.170:8080/crazyMusic_web/user/login?phone=18081268217&password=123456&login_type=0
         final String phoneNumber = edtPhoneNumber.getText().toString().trim();
         if (TextUtils.isEmpty(phoneNumber)) {
             UIHelper.showToast(mContext, getString(R.string.tip_phone_number_can_not_be_empty));
