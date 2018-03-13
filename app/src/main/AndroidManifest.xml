@@ -158,5 +158,8 @@
         <activity android:name=".ui.activity.user.MyVideoDetailActivity"
             android:label="我的视频详情"/>
 
+        <activity android:name=".ui.activity.video.VideoIndexActivity"
+            android:label="主页视频界面"/>
+
     </application>
 </manifest>
